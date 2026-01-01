@@ -1,0 +1,386 @@
+
+JAVA 8 FEATURES:
+
+1.Lambda Expressions:
+			Simplifies implementation of functional interfaces.
+
+2.Functional Interfaces:	
+			Interfaces with a single abstract method (e.g., 					Runnable, Predicate).
+   
+3.Streams API:
+		STREAM API MAINLY USED TO PROCESS THE DATA.
+
+4.Default/Static Methods:
+		Add methods to interfaces without breaking implementations.
+
+5.Method References: 
+			Shorten lambda expressions.
+
+EX:
+	List<String> names = List.of("Alice", "Bob");
+	names.forEach(System.out::println);
+
+
+6.Optional Class:
+		 Handle null safely. 
+
+7.New Date/Time API:
+		Better date and time handling.
+
+8.Collectors: 
+		Combine stream results.
+
+9.Parallel Streams:
+		Process data in parallel for performance.
+
+10.Map Enhancements:
+		      New methods like forEach, merge, and compute.
+
+
+--------------------------->>>>>>STREAMS--->>>>--------------------------------------
+
+STREAMS-CONCEPT:
+	
+
+ STREAM:
+	STREAM IS A SEQUENCE OF ELEMENTS
+	STREAMS ARE IMMUTABLE.
+	ONCE THE STREAM IS USED WE CAN'T REUSE IT.
+	STREAMS ARE MAINLY USED TO REDUCE THE CODE.
+
+ COLLECTION:
+		TO REPRESENT THE GROUP THE OF DATA [OR] OBJECTS AS A 			SINGLE ENTITY.
+
+ STREAM API:
+	*STREAM API IN A JAVA IS A TOOL.
+	*INTRODUCED IN JAVA 1.8.
+	*STREAM API MAINLY USED TO PROCESS THE DATA.
+
+	---------------------STREAM OBJECTS--------------------------
+	|				|
+         stream()			              of()
+
+ 
+
+
+
+    -----------------------OPERATIONS--------------------------------
+        ||				||
+    [INTERMEDIATE]                         [ TERMINAL OPERATIONS ]
+       ||				||
+     			              COUNT()
+     MAP() 
+     REDUCE() 		              COLLECT()
+     FILTER()
+     DISTINCT()			
+     LIMIT()
+     SKIP()
+     FLATMAP()   
+
+INTERMEDIATE OPERATIONS:
+	 		THE METHODES WHICH PERFOMS SOME OPERATIONS 			  	   AND WHICH RETURN NEW STREAM THOSE ARE 				                   CALLED AS INTERMEDIATE OPERATIONS ON THE 			                   STREAM.
+     
+TERMINAL OPERATIONS:
+		            TERMINAL OPERATIONS PERFOMS THE OPERATIONS 		                                           AND GIVE AS A RESULT IT DOESNOT RETURN A STREAM. 
+	
+
+
+1ST WAY:
+	stream():
+
+
+import java.util.stream.Stream; // Add this import
+import java.util.*;
+public class Main {
+  
+    public static void main(String[] args) {
+      
+      
+      List<Integer>al=new ArrayList<>(Arrays.asList(10,20,30));
+      
+      
+      System.out.println(al);
+      
+      Stream<Integer>s1=al.stream();
+        
+        s1.forEach(s->System.out.println(s));
+    }
+}
+
+
+Output:
+
+[10, 20, 30]
+10
+20
+30
+
+
+
+
+----------------------------------------------
+*2nd WAY:
+
+	of():
+
+public class Main {
+  
+    public static void main(String[] args) {
+      
+        Stream<Integer> s1 = Stream.of(1, 2, 3, 4, 5);
+        System.out.println(s1);
+        s1.forEach(s->System.out.println(s));
+    }
+}
+
+Output:
+
+	java.util.stream.ReferencePipeline$Head@6b1274d2
+	1
+	2
+	3
+	4
+	5
+
+------------------------------------------------------------------
+*FILTER():
+
+	FILTER IS USED TO FILTER THE DATA.
+
+EX:1
+        
+      List<Integer>al=new ArrayList<>(Arrays.asList(10,20,30,40,50,60));
+      
+     Stream<Integer>stream=al.stream();
+
+     stream.filter(n->n>30)
+     .forEach(n->System.out.println(n));
+        
+   
+
+Output:
+
+40
+50
+60
+
+---EX:2:
+
+
+      List<String>al=new ArrayList<>();
+      al.add("vasu");
+      al.add("bala");
+      al.add("venu");
+      al.add("kishore");
+      
+       Stream<String>stream=al.stream();
+
+      stream.filter(name->name.startsWith("v"))
+      .forEach(name->System.out.println(name));
+        
+
+Output:
+
+vasu
+venu
+--------------------------------------------------------------------------
+*MAP():
+
+	MAP FUNCTION USED TO TRANSFORMED THE DATA.
+
+EX:1
+     
+      List<Integer>al=new ArrayList<>();
+      al.add(1);
+      al.add(2);
+      al.add(3);
+      al.add(4);
+      
+      Stream<Integer>stream=al.stream();
+
+      stream.map(n->n*n)
+      .forEach(n->System.out.println(n));
+        
+
+Output:
+
+	1
+	4
+	9
+	16
+
+-----
+EX:2
+
+      List<String>al=new ArrayList<>();
+      al.add("vasu");
+      al.add("bala");
+      al.add("venu");
+      al.add("kishore");
+      
+      Stream<String>stream=al.stream();
+
+      stream.map(n->n.toUpperCase())
+      .forEach(name->System.out.println(name));
+        
+     
+
+  Output:
+
+	VASU
+	BALA
+	VENU
+	KISHORE
+
+--------------------------------------------------------------------------------
+*FILTER AND MAP:
+
+    
+      List<String>al=new ArrayList<>();
+      al.add("vasu");
+      al.add("bala");
+      al.add("venu");
+      al.add("kishore");
+      
+      Stream<String>stream=al.stream();
+
+      stream.filter(name->name.startsWith("v"))
+      .map(n->n.toUpperCase())
+      .forEach(name->System.out.println(name));
+        
+
+	Output:
+
+		VASU
+		VENU
+
+--------------------------------------------------------------------
+*DISTINCT()
+		IT RETURNS THE UNIQUE VALUES
+
+
+      Stream<Integer>stream=Stream.of(1,2,3,4);
+
+      stream.distinct()
+      .forEach(n->System.out.println(n));
+
+	[OR]
+      
+      List<Integer>al=new ArrayList<>();
+      al.add(1);
+      al.add(2);
+      al.add(3);
+      al.add(4);
+      al.add(2);
+      al.add(4);
+
+      Stream<Integer>stream=al.stream();
+      stream.distinct()
+      .forEach(n->System.out.println(n));
+        
+     
+
+
+Output:
+
+	1
+	2
+	3
+	4
+--------------------------------------------------------------------------
+*LIMIT():
+	IT PRINTS THE VALUES IN THE GIVEN LIMIT
+
+      Stream<Integer>stream=Stream.of(1,2,3,4);
+
+      stream.limit(2)
+      .forEach(n->System.out.println(n));	
+
+Output:
+
+	1
+	2
+--------------------------------------------------------------
+*SKIP():
+	IT SKIPS SPECIFIED AMOUT OF   VALUES 
+
+	Stream<Integer>stream=Stream.of(1,2,3,4);
+
+	stream.skip(2)
+	.forEach(n->System.out.println(n));
+
+------------------------------------------------------------------------
+*REDUCE():
+	IT REDUCE THE MULTIPLE VALUES INTO SINGLE VALUE.
+
+
+	Stream<Integer>stream=Stream.of(1,2,3,4);
+
+	int total=stream.reduce(0,(sum,number)->sum+number);
+
+      	System.out.println(total);  
+
+		Output:
+
+			10
+
+------------------------------------
+*SORTED():
+	SORT THE GIVEN VALUE IN THE ASCENDING ORDER.
+
+      
+      	Stream<Integer>stream=Stream.of(10,2,3,40,1);
+     	 stream.sorted()
+      	.forEach(n->System.out.println(n));
+
+	Output:
+
+	1
+	2
+	3
+	10
+	40
+
+
+----------------------------------------------------------------
+
+*COUNT():
+	IT COUNT THE OBJECTS 
+
+	Stream<Integer>stream=Stream.of(1,2,3,4,5);
+
+	long count1=stream.count();
+	System.out.println(count1);
+
+	Output:
+
+		5
+
+---------------------------------------------------------------------------
+*COLLECT():
+	collect(Collectors.toList())is used to collect the  elements into a new List.
+
+import java.util.*;
+import java.util.stream.Stream;
+import java.util.stream.Collectors;
+
+
+public class Main {
+  
+    public static void main(String[] args) {
+     
+      List<Integer>list1=Arrays.asList(1,2,3,4,5);
+      
+      List<Integer>list2=new ArrayList<>();
+      
+      list2=list1.stream().filter(n->n%2==0).collect(Collectors.toList());
+      System.out.println(list2);
+      
+  }
+}
+	Output:
+
+		[2, 4]
+
+*EXPLNATION:
+	The collect(Collectors.toList()) collects the filtered even numbers into a                      new list, which is assigned to list2.

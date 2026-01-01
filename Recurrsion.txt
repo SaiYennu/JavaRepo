@@ -1,0 +1,205 @@
+*Recursion:
+	RECURSION MEANS A FUNCTION CALLING IT SELF IT IS CALLED 			RECURSION.
+
+Advantages of Recursion :
+
+	*Simplifies solving complex problems like trees, Fibonacci, and factorial.
+
+	*Code is cleaner and easier to understand for repetitive structures.
+
+Disadvantages of Recursion :
+
+	*May cause stack overflow if the base case is missing or input is large.
+
+	*Slower and uses more memory than loops due to repeated function calls
+
+
+PROBLEMS:
+
+
+           	 ------------>>>>>PRINTING THE NUMBERS IN THE  ORDER
+
+ import java.util.*;
+ class HelloWorld 
+{
+  public static int i=1;
+  
+  public static void printing_Numbers(int n)
+  {
+      
+      if(i>n)
+      {
+        return;
+      }
+      
+      System.out.println(i);
+      i++;
+      
+      printing_Numbers(n);
+
+  }
+    public static void main(String[] args) 
+   {  
+        int n=5;
+        printing_Numbers(n);
+  }
+}
+
+Output:
+
+	1
+	2
+	3
+	4
+	5
+
+
+	------------>>>>>PRINTING THE NUMBERS IN THE REVERSE ORDER :
+
+
+ import java.util.*;
+ class HelloWorld 
+{
+
+  public static void printing_Numbers_Reverse(int n)
+  {
+      if(n==0)
+      {
+        return ;
+      }
+      System.out.println(n);
+      n--;
+      printing_Numbers_Reverse(n);
+  }
+
+    public static void main(String[] args) 
+   {  
+        int n=5;
+        printing_Numbers_Reverse(n);
+  }
+}
+
+
+Output:
+
+	5
+	4
+	3
+	2
+	1
+
+
+
+--------------------------->>>>>Factorial Of A Number:
+
+
+ Time Complexity:   O[n]
+Space Complexity:  O[n]
+
+
+import java.util.*;
+
+public class Main
+ {
+    public static int factorial(int n) 
+    {
+        
+        if (n == 1)
+        {
+            return 1;
+        }
+        
+        return n * factorial(n - 1);
+    }
+    
+    public static void main(String[] args) {
+       
+        System.out.println("Factorial from 1 to 5 is: " + factorial(5));
+    }
+}
+Output:
+
+Factorial from 1 to 5 is: 120
+
+
+	------------>>>>>CALCULATE THE SUM USING RECURSION
+
+
+NOTE:
+	BOTH ABOVE AND BELOW CODE IS SAME INSTED OF * WE USE THE +.
+
+	 Time Complexity:   O[n]
+	 Space Complexity:  O[n]
+
+
+import java.util.*;
+
+public class Main
+ {
+    public static int sum(int n) 
+    {
+       
+        if (n == 1)
+        {
+            return 1;
+        }
+        
+        return n + sum(n - 1);
+    }
+    
+    public static void main(String[] args) {
+       
+        System.out.println("Sum from 1 to 5 is: " + sum(5));
+    }
+}
+
+
+Output:
+
+Sum from 1 to 5 is: 15
+
+
+
+		------------>>>>>Fibonacci Sequences
+
+import java.util.*;
+
+public class Main 
+{
+  
+  public static int fib(int n)
+  {
+    if(n==0)
+    {
+      return 0;
+    }
+    if(n==1)
+    {
+      return 1;
+    }
+    
+    return fib(n-1)+fib(n-2);
+  }
+    
+public static void main(String[] args)
+ {
+       
+  int n=6;
+  
+  for(int i=1;i<=n;i++)
+  {
+     System.out.println(fib(i));
+  }
+   
+   
+    }
+}
+
+Output:
+
+	1
+	1
+	2
+	3
+	5
+	8

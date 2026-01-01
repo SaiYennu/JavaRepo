@@ -1,0 +1,350 @@
+**SORTING CONCEPT:
+		SORTING IS NOTHING BUT ARRANGING THE ELEMENTS IN THE 			ORDER .EITHER IT ASC OR DESC
+
+DIFFERENT TYPES OF SORTING ALGOS :
+	
+			SELECTION SORT   :[O(n²)]
+
+			BUBLE SORT           :[O(n²)]
+
+			INSERTION SORT    :[O(n²)]
+
+			MERGE SORT   :[O(nlog n)]
+			QUICK SORT    :[O(nlog n)]
+
+			Bucket Sort [O(n²)]
+	
+
+
+-------------------------->>>>>>BUBLE SORT 
+
+	PAIR OF ADJACENT ELEMENTS ARE COMPARED,AND THE ELEMENTS 			SWAPPED IF THEY ARE NOT IN ORDER.
+
+		*QUADRATIC TIME([O(n²)])
+		*SMALL DATA SET=GOOD
+		*LARGE DATA SET=BAD
+
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+         
+      int arr[]={100,20,300,40,50};
+    
+      
+      for(int i=0;i<arr.length-1;i++)
+      {
+          for(int j=0;j<arr.length-1-i;j++)
+          {
+              if(arr[j]>arr[j+1])
+              {
+                  int temp=arr[j];
+                  arr[j]=arr[j+1];
+                  arr[j+1]=temp;
+              }
+          }
+      }
+      
+         System.out.println("Display the array elements");
+       for(int i:arr)
+       {
+           System.out.println(i);
+       }
+       
+    }
+}
+
+-------------------------->>>>>>SELECTION SORT
+
+
+		SEARCH THROUGH AN ARRAY AND KEEP TRACK OF THE 				MINIMUM VALUE DURING EACH ITERATION. AT THE END OF 				EACH ITERATION ,WE SWAP VARIBLES.
+
+			*QUADRATIC TIME([O(n²)])
+			*SMALL DATA SET=GOOD
+			*LARGE DATA SET=BAD
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+           
+      int arr[]={100,20,300,40,50};
+    
+     
+      for(int i=0;i<arr.length;i++)
+      {
+          int min=i;//assign the first value to the min
+          
+          for(int j=i+1;j<arr.length;j++)
+          { 
+              //here to find the min value
+              if(arr[j]<arr[min])
+              {
+                  min=j;
+                  
+              }
+             
+          }
+          //swap the array first element and min value
+          int temp=arr[min];
+          arr[min]=arr[i];
+          arr[i]=temp;
+          
+          
+      }
+      
+         System.out.println("Display the array elements");
+       for(int i:arr)
+       {
+           System.out.println(i);
+       }  
+       
+    }
+}
+--------------------------------------------------------------
+**Quick Sort:
+
+	MOVES SMALLER ELEMENTS TO LEFT OF A PIVOT.
+	RECURSIVELY DIVIDE ARRAY IN 2 PARTITIONS
+
+	*TIME COMPLEXITY :
+
+ 		BESTCASE -->[O(nlog n)]
+
+		AVERAGE CASE -->[O(nlog n)]
+
+		 WORST CASE -->[O(n²)]
+
+	*SPACE COMPLEXITY:
+			 O(log(n)) due to recursion.
+
+
+import java.util.*;
+
+public class Main {
+  
+  public static void quickSort(int arr[],int low,int high){
+    
+    
+    if(low<high){
+      
+        int piviot=partion(arr,low,high);
+        quickSort(arr,low,piviot-1);
+        quickSort(arr,piviot+1,high);
+    
+    }
+  }
+  
+  public static int partion(int arr[],int low,int high){
+    
+     int i=low-1;
+    int piviot=arr[high];
+   
+    
+    for(int j=low;j<high;j++)
+   {
+
+      if(arr[j]<piviot)
+      {
+          i++;
+
+          int temp=arr[i];
+          arr[i]=arr[j];
+          arr[j]=temp;
+      }
+    }
+    int temp=arr[i+1];
+    arr[i+1]=arr[high];
+    arr[high]=temp;
+    
+    return i+1;
+    
+  }
+
+
+public static void main(String[] args) {
+      
+      int arr[]={5,6,4,3,2,1};
+      
+    System.out.println("Before Sorting");
+    for(int i:arr)
+     {
+       System.out.println(i);
+     }
+     
+      quickSort(arr,0,arr.length-1);   
+      
+      
+    System.out.println("After Sorting");
+     for(int i:arr)
+     {
+       System.out.println(i);
+     }
+  }
+}
+
+Output:
+
+Before Sorting
+5
+6
+4
+3
+2
+1
+After Sorting
+1
+2
+3
+4
+5
+6
+
+
+-------------------------------------------------
+INSERTION SORT:
+
+		AFTER COMPARING ELEMENTS TO THE LEFT SHIFT ELEMENTS 			TO THE RIGHT TO MAKE ROOM TO INSERT A VALUE
+
+			*QUADRATIC TIME([O(n²)])
+			*SMALL DATA SET=GOOD
+			*LARGE DATA SET=BAD
+
+LESS STEPS THAN BUBBLE SORT
+BEST CASE IS [O(n)] COMPARED TO SELECTION SORT[[O(n²)]
+
+      
+      int arr[]={9,1,8,2,7,3,6,5,4};
+      
+      System.out.println("BEFORE SORTING");
+      for(int num:arr)
+      System.out.print(num+" ");
+      
+      for(int i=1;i<arr.length;i++){
+        
+        int temp=arr[i];
+        int j=i-1;
+        
+        while(j>=0 && arr[j]>temp){
+          arr[j+1]=arr[j];
+          j--;
+        }
+        arr[j+1]=temp;
+      }
+      
+       System.out.println();
+
+      System.out.println("AFTER SORTING ");
+      for(int num1:arr)
+      System.out.print(num1+" ");
+
+
+Output:
+
+BEFORE SORTING
+9 1 8 2 7 3 6 5 4 
+
+AFTER SORTING 
+1 2 3 4 5 6 7 8 9 
+
+
+
+
+
+--------------------->>>>>>>>>Extra Content-->>>>>>>-------------
+
+
+******Sorting Algorithms**********:
+
+1. Selection Sort:
+
+	Approach:
+		 Iteratively selects the smallest element from the unsorted 			               portion of the list and swaps it with the first unsorted element.
+Time Complexity:
+
+	Best: O(n²)
+	Worst: O(n²)
+	Space Complexity: O(1) (in-place)
+
+Use Case: 
+		Simple to implement; useful for small datasets or when 				memory usage is a constraint.
+
+
+2. Bubble Sort:
+
+	Approach: 
+		Repeatedly compares adjacent elements and swaps them if 				they are in the wrong order, "bubbling" the largest element to 			its correct position in each pass.
+
+Time Complexity:
+		Best: O(n) (when the array is already sorted)
+		Worst: O(n²)
+		Space Complexity: O(1) (in-place)
+Use Case:
+		 Educational purposes; rarely used in practice due to 				inefficiency.
+
+
+
+3. Insertion Sort:
+
+	Approach:
+		 Builds the sorted portion of the list one element at a time by 			 inserting elements into their correct position relative to the 			 sorted portion.
+Time Complexity:
+
+		Best: O(n) (when the array is already sorted)
+		Worst: O(n²)
+		Space Complexity: O(1) (in-place).
+
+Use Case:
+		 Efficient for small or nearly sorted datasets.
+
+4. Merge Sort:
+
+	Approach: 
+		Divides the list into two halves, recursively sorts 					each half, and then merges the sorted halves into a 				single sorted list.
+
+Time Complexity: 
+		O(n log n) (all cases).
+
+Space Complexity: 
+		O(n) (requires extra space for merging).
+
+Use Case: 
+		Suitable for large datasets; works well with external 				sorting (e.g., sorting data that doesn’t fit in memory).
+
+
+
+
+5. Quick Sort:
+
+	Approach:
+ 		Selects a "pivot" element and partitions the list into two 				sublists (elements less than the pivot and elements greater 			than the pivot), then recursively sorts the sublists.
+Time Complexity:
+
+		Best: O(n log n)
+		Average: O(n log n)
+		Worst: O(n²) (occurs when the pivot is poorly chosen)
+
+Space Complexity:
+		 O(log n) (in-place, but recursive stack space is needed).
+
+Use Case: 
+		Highly efficient for large datasets with good pivot selection.
+
+
+
+
+Comparison Overview:
+
+Algorithm 		(Best)        (Worst)	       SpaceComplexity
+
+Selection Sort		O(n²)	   O(n²)		O(1)
+
+Bubble Sort		O(n)	    O(n²)		O(1)
+
+Insertion Sort		O(n)	    O(n²)		O(1)
+
+Merge Sort        	            O(n log n)	   O(n log n)	O(n)
+
+Quick Sort       	              O(n log n)  	      O(n²)	              O(log n)
+

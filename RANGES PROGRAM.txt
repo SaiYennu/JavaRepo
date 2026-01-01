@@ -1,0 +1,960 @@
+
+
+PROGRAM:
+   	 PRINT THE 5 TABLE
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+     
+        int table=5;
+         System.out.println(table+"TABLE :");
+              
+              for(int i=1;i<=10;i++)
+              {
+                  System.out.println(table+"X"+i+"="+table*i);
+              }
+              
+      System.out.println( ); 
+    }
+}
+
+
+-------------PRINT THE TABLES FROM 1 TO 20 TABLES UP TO [1 TO 10]
+
+
+
+    for(int table=1;table<=20;table++)
+      {
+              System.out.println(table+"TABLE :");
+              
+              for(int i=1;i<=10;i++)
+              {
+                  System.out.println(table+"X"+i+"="+table*i);
+              }
+              
+      System.out.println( );
+      
+      }
+      
+
+-----------------------------------------------------------
+PROGRAM:
+	TO CHECK THE WETHER THE ENTER NUMBER IS EVEN OR ODD?
+
+
+     int n=6;
+     
+     if(n%2==0)
+     {
+       System.out.println("even");
+     }
+     else{
+        System.out.println("ODD");
+     }
+      
+-----------RANGE OF EVEN OR ODD
+ 
+      for(int num=1;num<=10;num++)
+      {
+      
+         if(num%2==0)
+         {
+           System.out.println(num+" "+"even");
+         }
+         else{
+            System.out.println(num+" "+"Not even");
+         }
+      
+      }
+      
+  
+
+-------------------------------------------------------------------------------
+
+
+    PROGRAM:
+		CHECK ENTER THE YEAR IS LEAP YEAR OR NOT ?
+
+
+	
+*MAIN RULE FOR LEAPYEARS IS:
+
+			1.LEAP YEAR COMES EVERY 4YEARS SO IF THE YEAR 				IS LEAP YEAR  THEN IT IS DIVISIBLE BY 4
+
+			2.ALL CENTURIES ARE NOT LEAP YEARS IF AND ONLY 				IF THAT CENTURIES IS DIVISBLE BY 400
+
+        EX-1:
+	2016 IS LEAP YEAR IT IS DIVISBLE BY 4
+
+        EX-2:
+	FOR SUPPOSE 100 IS THERE IT IS DIVISIBLE BY 4 AND 100 BUT IT IS A NOT 		A LEAP YEAR IT IS ACUTUALLY  CENTURY IT IS MUST  BE DIVISIBLE BY 400 	THEN ONLY 100 IS LEAP YEAR OTHER WISE NOT.
+
+        EX-3:
+	1600 AND 2000 CENTURIES ARE LEAP YEARS BCZ IT IS DIVISBLE BY 400 	                 1700 AND 1900 ARE NOT LEAPYEARS BCZ IT IS NOT DIVISBLE BY 400.
+	
+
+      
+      int n=2019;
+      
+      if((n%4==0 && n%100!=0) || (n%400==0))
+      {
+        System.out.println(" Leap year");
+      }
+      else{
+         System.out.println(" Not leap year");
+      }
+
+
+
+
+ ---------RANGE OF LEAP YEARS
+
+
+
+ for(int num=2000;num<=2024;num++)
+     {
+      
+            if((num%4==0 && num%100!=0) || (num%400==0))
+            {
+              System.out.println(num+" "+" Leap year");
+              
+            }
+            else{
+               System.out.println(num+" "+" Not leap year");
+            }
+     }
+-------------------------------------------------------------------------------------------
+
+    PROGRAM:  
+      		FACTORS OF A NUMBER
+      
+      int n=6;
+      
+      for(int i=1;i<=n;i++)
+      {
+        if(n%i==0)
+        {
+          System.out.println(i);
+        }
+      }
+
+------RANGE OF FACTORS:
+
+ for(int num=1;num<=10;num++)
+      {
+          System.out.println(num+"FACTORS:");
+
+          for(int i=1;i<=num;i++)
+          {
+              if(num%i==0)
+              {
+                System.out.println(i);
+              }
+          }
+      
+      }
+
+
+
+--------------------------------------------------------------------
+ PROGRAM: 
+		PERFECT NUMBER
+
+*PerfectNumber:
+		Sum of the factors of that number exculding that number it 			self that sum is equlas to the given number if it is  equal then 			it is called perfect number.
+
+EXAMPLE:
+	n=6 
+	factors for the 6=>1,2,3,6
+	but 1+2+3=6 condition is true
+	n=28  it is also perfect number
+
+      int n=6;
+      int sum=0;
+      
+      for(int i=1;i<n;i++)
+      {
+        if(n%i==0)
+        {
+          sum=sum+i;
+        }
+      }
+      if(sum==n)
+      {
+        System.out.println("perferctNumber");
+      }
+      else
+      {
+         System.out.println("Not perferctNumber");
+      }
+
+-----------RANGE OF PERFECT NUMBERS
+	
+  for(int n=1;n<=30;n++)
+      {
+              int sum=0;
+      
+      for(int i=1;i<n;i++)
+      {
+          if(n%i==0)
+          {
+            sum=sum+i;
+          }
+      }
+      
+        if(sum==n)
+        {
+          System.out.println(n+"->"+"perferctNumber");
+        }
+        else
+        {
+           System.out.println(n+"->"+"Not perferctNumber");
+        }
+      
+    }
+
+OUTPUT:
+
+1->Not perferctNumber
+2->Not perferctNumber
+3->Not perferctNumber
+4->Not perferctNumber
+5->Not perferctNumber
+6->perferctNumber
+7->Not perferctNumber
+8->Not perferctNumber
+9->Not perferctNumber
+10->Not perferctNumber
+11->Not perferctNumber
+12->Not perferctNumber
+13->Not perferctNumber
+14->Not perferctNumber
+15->Not perferctNumber
+16->Not perferctNumber
+17->Not perferctNumber
+18->Not perferctNumber
+19->Not perferctNumber
+20->Not perferctNumber
+21->Not perferctNumber
+22->Not perferctNumber
+23->Not perferctNumber
+24->Not perferctNumber
+25->Not perferctNumber
+26->Not perferctNumber
+27->Not perferctNumber
+28->perferctNumber
+29->Not perferctNumber
+30->Not perferctNumber
+
+-------------------------------------------------------------------
+
+    PROGRAM: 
+	STRONG NUMBER [OR] SPECIAL NUMBER PROGRAM:
+      
+*STRONG NUMBER:
+ 	 Sum of the factorials of the each digit is equals to that given number 
+    
+EXAMPLE
+	n=145;
+	1!=1
+	4!=24
+	5!=120
+sum=1+24+120=>145   [STRONG NUMBER]
+
+
+      int n=145,rem=0,fact=1,sum=0;
+      int num=n;
+
+      while(n>0)
+      {
+        rem=n%10;
+        
+        fact=1;
+        for(int i=1;i<=rem;i++)
+        {
+          fact=fact*i;
+        }
+        sum=sum+fact;
+        n=n/10;
+      }
+      if(sum==num)
+      {
+        System.out.println("STRONG NUMBER");
+      }
+      else
+      {
+        System.out.println("NOT STRONG NUMBER");
+      }
+
+
+--------------STRONG NUMBER RANGE:
+ 
+  
+      for(int num=1;num<=150;num++)
+      {
+      
+      int sum=0;
+      int n=num;
+
+      while(n>0)
+      {
+        int rem=n%10;
+        
+       int fact=1;
+        for(int i=1;i<=rem;i++)
+        {
+          fact=fact*i;
+        }
+        sum=sum+fact;
+        n=n/10;
+      }
+      if(sum==num)
+      {
+        System.out.println(num+"-> "+"STRONG NUMBER");
+      }
+      else
+      {
+        System.out.println(num+"-> "+"NOT STRONG NUMBER");
+      }
+
+   } 
+
+
+
+----------------------------------------------------------------------------------------------
+   PROGRAM:
+	CHECK NUMBER IS PRIME:
+
+*PRIME-NUMBER:
+		NUMBER IS DIVISBLE BY ONE AND ITSELF  
+
+     int n=12,count=0;
+     
+       for(int i=1;i<=n;i++)
+       {
+         if(n%i==0)
+         {
+           count++;
+         }
+       }
+             if(count==2)
+               {
+                 System.out.println("Prime");
+               }
+             else
+                 {
+                   System.out.println("Not Prime");
+	}
+
+
+----------PRIME RANGE:
+  
+
+     for(int num=1;num<=20;num++)
+     {
+          int count=0;
+     
+                     for(int i=1;i<=num;i++)
+                     {
+                       if(num%i==0)
+                       {
+                         count++;
+                       }
+                     }
+                     
+                     
+             if(count==2)
+               {
+                 System.out.println(num+" "+"Prime");
+               }
+             else
+                 {
+                   System.out.println(num+" "+"Not Prime");
+                   
+                 }       
+                 
+     }
+
+-----------------------------------------------------------------------------------------------------------
+
+PROGRAM:
+		Check the how many Factors for the given number &Count the 		                factors for the number &check if the Sum of the factors is 		                   	 equal to that Number or not?
+
+       [or] 
+	Write  a code for Perfect Number ?
+
+ 
+ 
+      int n=6,count=0,sum=0;
+      
+      for(int i=1;i<n;i++)
+      {
+        if(n%i==0)
+        {
+          System.out.println(i);
+          count++;
+          sum=sum+i;
+        }
+      }
+      if(n==sum)
+      {
+        System.out.println("PREFECT NUMBER");
+      }
+      else{
+      System.out.println("NOT PREFECT NUMBER");
+      }
+    
+    
+  }
+}
+------------------------------------------------------------
+PROGRAM:
+
+	CALCULATE THE LCM AND HCF OF THE GIVEN NUMBERS:
+
+
+
+*HCF:
+	HIGHEST COMMAN FACTOR.
+*LCM:
+	LEAST COMMON MULTIPLE.
+
+
+
+EXPLANATION:
+		N1=10,N2=20;
+
+FACTORS :
+	10=1,2,5,10;
+	20=1,2,4,5,10,20
+
+MULTIPLES OF:
+	10=>10,20,30,40.............
+	20=>20,40,60.............
+
+COMMON FACTORS: 1,2,5,10 
+	HCF=10
+	LCM=20
+
+
+   
+     int  n1=10,n2=20,a,b,temp=0,hcf,lcm;
+     
+     a=n1;
+     b=n2;
+     while(b>0)
+     {
+       temp=b;
+       b=a%b;
+       a=temp;
+     }
+     
+     hcf=a;
+    
+    lcm=((n1*n2)/hcf);
+    
+    System.out.println("LCM AND HCF ARE "+lcm+"-> "+hcf);
+                 
+ 
+
+------------------------------------------------------------------------------------------------------
+
+PROGRAM:
+	REVERSE OF THE NUMBER
+   
+  int temp=123,rev=0;
+   
+    while(temp>0)
+    {
+      int rem=temp%10;
+      rev=rev*10+rem;
+      temp=temp/10;
+    }
+        System.out.println(rev);
+ 
+ 
+
+Output:
+
+321
+
+-----------RANGE OF THE REVERSE OF THE NUMBER 
+
+  
+ for(int n=1;n<=20;n++)
+ {
+   
+   int temp=n,rev=0;
+   
+       while(temp>0)
+       {
+         int rem=temp%10;
+         rev=rev*10+rem;
+         temp=temp/10;
+       }
+   
+     System.out.println(rev);
+
+   
+     }
+ 
+
+OUTPUT:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+1
+11
+21
+31
+41
+51
+61
+71
+81
+91
+2
+------------------------------------------------------------------------------------------------
+
+PROGRAM:
+	 EXTRACTION  of the number
+
+            int n=123;
+                 while(n>0)
+	 {
+   		int rem=n%10;
+   		System.out.println(rem);
+   		n=n/10;
+	 }
+	
+	OUTPUT:
+	  	 3
+	 	 2
+	 	 1
+
+
+------------- Extraction   NUMBERS RANGE:
+
+                for(int n=121;n<=130;n++)
+  	{
+  
+  	int temp=n;
+  	   System.out.println(n+"Extraction");
+
+     	 while(temp>0)
+     	{
+      		 int rem=temp%10;
+     		  System.out.println(rem);
+      		 temp=temp/10;
+    	 }
+     System.out.println(" ");
+ 
+  }     
+
+  
+Output:
+
+121Extraction
+	1
+	2
+	1
+ 
+122 Extraction
+	2
+	2
+	1
+ 
+123 Extraction
+	3
+	2
+	1
+ 
+124 Extraction
+	4
+	2
+	1
+ 
+125 Extraction
+	5
+	2
+	1
+ 
+126 Extraction
+	6
+	2
+	1
+ 
+127 Extraction
+	7
+	2
+	1
+ 
+128 Extraction
+	8
+	2
+	1
+ 
+129 Extraction
+	9
+	2
+	1
+ 
+130 Extraction
+	0
+	3
+	1
+   
+ ------------------------------------------------------------------------------------------------
+	
+ PROGRAM:
+	PALNIDROME PROGRAM:
+
+           int n=121,rev=0;
+  
+	  int temp=n;
+ 		 while(temp>0)
+ 		 {
+  		  	int rem=temp%10;
+    			rev=rev*10+rem;
+    			temp=temp/10;
+		  }
+	  if(rev==n)
+ 	 {
+  	  	System.out.println(n+"->"+"PALINDROME");
+ 	 }
+  	else{
+     		System.out.println(n+"->"+"Not PALINDROME");
+  	} 
+
+OUTPUT:
+          121->PALINDROME
+
+
+-------------PALNIDROME PROGRAM RANGE:
+
+   for(int n=121;n<=135;n++)
+     {
+          int temp=n,rev=0;
+
+          while(temp>0)
+          {
+            int rem=temp%10;
+            rev=rev*10+rem;
+            temp=temp/10;
+          }
+          if(rev==n)
+          {
+            System.out.println(n+"->"+"PALINDROME");
+          }
+          else{
+             System.out.println(n+"->"+"Not PALINDROME");
+          } 
+   
+    }
+
+Output:
+
+121->PALINDROME
+122->Not PALINDROME
+123->Not PALINDROME
+124->Not PALINDROME
+125->Not PALINDROME
+126->Not PALINDROME
+127->Not PALINDROME
+128->Not PALINDROME
+129->Not PALINDROME
+130->Not PALINDROME
+131->PALINDROME
+132->Not PALINDROME
+133->Not PALINDROME
+134->Not PALINDROME
+135->Not PALINDROME
+
+
+----------------------------------------------------------------------------------------------------------------
+
+PROGRAM:
+	TAKE  A NUMBER EXTRACT A EACH DIGIT FROM A NUMBER IF THE DIGIT 		IS EVEN THEN DO SUM OTHER WISE DO PRODUCT.
+
+      
+      
+     int num=1234;
+
+     int prod=1,sum=0;
+  
+            while(num>0)
+            {
+              	int rem=num%10;
+              
+              	if(rem%2==0)
+              	{
+                   sum=sum+rem;
+              	}
+              else
+	{
+               	 prod=prod*rem;
+              	}
+              num=num/10;
+            }
+            
+            System.out.println("sum of the even digit is"+ " ->"+sum);
+     
+         System.out.println("product of the odd digit is"+"-> "+prod);
+     
+
+----------------------------------------------------------------------------------------------------------------
+PROGRAM:
+	Armstrong CODE
+      
+  *Armstrong:  
+		If a number is an Armstrong number, the sum of its digits 				raised to the power of the total digits equals the number itself.
+Example:
+	153 → 1^3+5^3+3^3=153   ✅ (Armstrong number)
+
+	9474 → 9^4+4^4+7^4+4^4 =9474 ✅ (Armstrong number)
+
+	123 → 1^3+2^3+3^3=36 ❌ (Not an Armstrong number)
+
+
+ int n=153,sum=0,count=0;
+ 
+ int temp=n;
+ 
+       while(temp>0)
+       {
+         int rem=temp%10;
+         count++;
+         temp=temp/10;
+       }
+       
+    temp=n;
+         while(temp>0)
+         {
+       
+           int rem=temp%10;
+           int pow=(int)Math.pow(rem,count);
+           sum=sum+pow;
+           temp=temp/10;
+           
+         }
+             if(sum==n)
+             {
+                   System.out.println(n+"->"+"Armstrong");
+             }
+            else{
+                    System.out.println(n+"->"+"NOT Armstrong");
+                 }
+ 
+ Output:
+
+	153->Armstrong
+
+
+----------Armstrong RANGE:
+
+ for(int n=1;n<=160;n++)
+ {
+ int sum=0,count=0;
+ 
+ int temp=n;
+ 
+       while(temp>0)
+       {
+         int rem=temp%10;
+         count++;
+         temp=temp/10;
+       }
+       
+    temp=n;
+         while(temp>0)
+         {
+           
+           int rem=temp%10;
+           int pow=(int)Math.pow(rem,count);
+           sum=sum+pow;
+           temp=temp/10;
+           
+         }
+             if(sum==n)
+             {
+                   System.out.println(n+"->"+"Armstrong");
+             }
+            else{
+                    System.out.println(n+"->"+"NOT Armstrong");
+   
+   
+   }         
+  }
+
+
+Output:
+
+1->Armstrong
+2->Armstrong
+3->Armstrong
+4->Armstrong
+5->Armstrong
+6->Armstrong
+7->Armstrong
+8->Armstrong
+9->Armstrong
+10->NOT Armstrong
+11->NOT Armstrong
+12->NOT Armstrong
+13->NOT Armstrong
+14->NOT Armstrong
+15->NOT Armstrong
+16->NOT Armstrong
+17->NOT Armstrong
+18->NOT Armstrong
+19->NOT Armstrong
+20->NOT Armstrong
+21->NOT Armstrong
+22->NOT Armstrong
+23->NOT Armstrong
+24->NOT Armstrong
+25->NOT Armstrong
+26->NOT Armstrong
+27->NOT Armstrong
+28->NOT Armstrong
+29->NOT Armstrong
+30->NOT Armstrong
+31->NOT Armstrong
+32->NOT Armstrong
+33->NOT Armstrong
+34->NOT Armstrong
+35->NOT Armstrong
+36->NOT Armstrong
+37->NOT Armstrong
+38->NOT Armstrong
+39->NOT Armstrong
+40->NOT Armstrong
+41->NOT Armstrong
+42->NOT Armstrong
+43->NOT Armstrong
+44->NOT Armstrong
+45->NOT Armstrong
+46->NOT Armstrong
+47->NOT Armstrong
+48->NOT Armstrong
+49->NOT Armstrong
+50->NOT Armstrong
+51->NOT Armstrong
+52->NOT Armstrong
+53->NOT Armstrong
+54->NOT Armstrong
+55->NOT Armstrong
+56->NOT Armstrong
+57->NOT Armstrong
+58->NOT Armstrong
+59->NOT Armstrong
+60->NOT Armstrong
+61->NOT Armstrong
+62->NOT Armstrong
+63->NOT Armstrong
+64->NOT Armstrong
+65->NOT Armstrong
+66->NOT Armstrong
+67->NOT Armstrong
+68->NOT Armstrong
+69->NOT Armstrong
+70->NOT Armstrong
+71->NOT Armstrong
+72->NOT Armstrong
+73->NOT Armstrong
+74->NOT Armstrong
+75->NOT Armstrong
+76->NOT Armstrong
+77->NOT Armstrong
+78->NOT Armstrong
+79->NOT Armstrong
+80->NOT Armstrong
+81->NOT Armstrong
+82->NOT Armstrong
+83->NOT Armstrong
+84->NOT Armstrong
+85->NOT Armstrong
+86->NOT Armstrong
+87->NOT Armstrong
+88->NOT Armstrong
+89->NOT Armstrong
+90->NOT Armstrong
+91->NOT Armstrong
+92->NOT Armstrong
+93->NOT Armstrong
+94->NOT Armstrong
+95->NOT Armstrong
+96->NOT Armstrong
+97->NOT Armstrong
+98->NOT Armstrong
+99->NOT Armstrong
+100->NOT Armstrong
+101->NOT Armstrong
+102->NOT Armstrong
+103->NOT Armstrong
+104->NOT Armstrong
+105->NOT Armstrong
+106->NOT Armstrong
+107->NOT Armstrong
+108->NOT Armstrong
+109->NOT Armstrong
+110->NOT Armstrong
+111->NOT Armstrong
+112->NOT Armstrong
+113->NOT Armstrong
+114->NOT Armstrong
+115->NOT Armstrong
+116->NOT Armstrong
+117->NOT Armstrong
+118->NOT Armstrong
+119->NOT Armstrong
+120->NOT Armstrong
+121->NOT Armstrong
+122->NOT Armstrong
+123->NOT Armstrong
+124->NOT Armstrong
+125->NOT Armstrong
+126->NOT Armstrong
+127->NOT Armstrong
+128->NOT Armstrong
+129->NOT Armstrong
+130->NOT Armstrong
+131->NOT Armstrong
+132->NOT Armstrong
+133->NOT Armstrong
+134->NOT Armstrong
+135->NOT Armstrong
+136->NOT Armstrong
+137->NOT Armstrong
+138->NOT Armstrong
+139->NOT Armstrong
+140->NOT Armstrong
+141->NOT Armstrong
+142->NOT Armstrong
+143->NOT Armstrong
+144->NOT Armstrong
+145->NOT Armstrong
+146->NOT Armstrong
+147->NOT Armstrong
+148->NOT Armstrong
+149->NOT Armstrong
+150->NOT Armstrong
+151->NOT Armstrong
+152->NOT Armstrong
+153->Armstrong
+154->NOT Armstrong
+155->NOT Armstrong
+156->NOT Armstrong
+157->NOT Armstrong
+158->NOT Armstrong
+159->NOT Armstrong
+160->NOT Armstrong
+
+

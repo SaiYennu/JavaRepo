@@ -1,0 +1,1366 @@
+WHAT IS STRING?
+
+	1.STRING IS A SEQUENCE OF CHARACTERS
+
+	2.STRINGS ARE IMMUTABLE [VALUE CAN'T CHANGE].
+
+EX:
+
+ 	2.Point Reason:
+
+	 	String s="HelloWorld";
+
+ 		s.concat("hi");  
+		here value cant be changed so thats why it prints as same as 			previous value
+
+		System.out.println(s)
+
+     	Output:
+		HelloWorld
+  
+-----
+BELOW modification done but the new concated string points the another memory location. previous value can't be modified here it changed address not String .
+
+	 s= s.concat("hello");
+	System.out.println(s)
+
+	Output:
+		HelloWold hello
+---
+
+Here  after modification the value will be assigned to the exisiting obj  and it will assigned to the same memory address then only it is mutuable but in this case once the string is modified that refernce varible points towards the new memory location here memory location will be changes not the actual string so that's why String  is immutable
+
+
+
+*STRINGBUFFER IS MUTABLE:
+
+  
+   		 StringBuffer sb=new StringBuffer("Hello");
+
+    		    sb.append("good morning");
+
+       		   System.out.println(sb);
+
+	OUTPUT:
+		Hello good morning
+
+      Here modification done to the string and that modification value assigned               to the same memory address so that's why  StringBuffer is mutable.
+
+ *STRING BUILDER IS ALSO MUTABLE:
+
+		StringBuilder sb=new  StringBuilder("Hello");
+       	 	sb.append(" good morning");
+      	    	System.out.println(sb);
+
+	OUTPUT:
+		Hello good morning
+ 
+--------------------------------------------------------------------------------------------------------------------------
+
+PROGRAM:
+	PRINTINTG THE STRING:
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+  String s="HelloWorld";
+  
+  for(int i=0;i<=s.length()-1;i++)
+  {
+      System.out.print(s.charAt(i));
+  }
+        
+        
+    }
+}
+
+---------------------------------------------------------------
+PROGRAM:
+	REVERSE OF A STRING:
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+	  String s="Hello World";
+  
+	  for(int i=s.length()-1;i>=0;i--)
+ 	 {
+     		 System.out.print(s.charAt(i));
+  	}        
+        
+      }
+ }
+
+	OUTPUT:
+		dlroWolleH
+
+------------------------------------
+PROGRAM:
+	REVERSE OF THE STRING WITH THE SAME INDEXES
+
+
+class HelloWorld {
+
+    public static void main(String[] args) 
+    {
+        
+       String s="Hello All Good Mornining";
+
+       String arr[]=s.split(" ");
+       
+       for(int x=0;x<arr.length;x++)
+       {
+           String temp=arr[x];
+           
+           StringBuffer sb=new StringBuffer(temp);
+           sb.reverse();
+           System.out.print(sb+" ");
+           }
+       
+       
+    }
+}
+
+Output:
+	 olleH llA dooG gnininroM
+
+--------------------------------------------------------
+
+*PROGRAM:
+	     CHECK GIVEN STRING IS PALINDROME OR NOT ?
+
+
+	*ONE WAY-USING STRING BUFFER OR STRING BUILDER 
+
+import java.util.*;
+
+public class Main {
+  
+  
+    public static void main(String[] args)
+    {
+          String str1="MOM";
+    
+        StringBuffer sb=new StringBuffer(str1);
+        sb.reverse();
+        
+        String str2=new String(sb);
+        
+        if(str1.equals(str2))
+        {
+          System.out.println("Palindrome");
+        }
+        else{
+          System.out.println("Not-Palindrome");
+        }
+      
+    }    
+}
+
+
+
+**----Another WAY :
+
+import java.util.*;
+
+public class Main 
+{
+    public static boolean isPalindrome(String str)
+    {
+      
+      str=str.toLowerCase();  // To Avoid The Case Senstive Errors purpose
+      
+      char arr[]=str.toCharArray();
+
+      
+      for(int i=0;i<arr.length/2;i++)
+      {
+         	if(arr[i]!=arr[arr.length-1-i])
+       	 {
+        	return false;
+        	}
+      }
+      return true;
+    }
+    
+public static void main(String[] args) 
+{
+       
+  String str="moM";
+
+    if(isPalindrome(str))
+    {
+        System.out.println("Palindrome");
+    }
+    else
+   {
+    System.out.println("Not-Palindrome");
+   }
+   
+    }
+}
+
+Output:
+
+	Palindrome
+
+---------------------------------------------------
+
+PROGRAM:
+	CHECK THE  GIVEN TWO STRINGS ARE ANAGRAM OR NOT?
+  
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+{  
+  	String s1="silent";
+ 	 String s2="listen";
+  
+ 		 char c1[]=s1.toCharArray();
+ 		char c2[]=s2.toCharArray();
+				
+	Arrays.sort(c1);
+      	Arrays.sort(c2);
+
+  if(s1.length()==s2.length())
+  {
+      
+      if(Arrays.equals(c1,c2))
+      {
+          System.out.println("Anagram");
+      }
+      else
+      {
+           System.out.println("Not Anagram");
+      }
+  }
+  else
+  {
+      System.out.println("NOT A ANAGRAM");
+  }
+
+         
+        
+    }
+}
+	Output:
+
+		Anagram
+----------------------------------------------------------------
+
+ PROGRAM:
+	SORT THE GIVEN STRING BY USING NORMAL METODE
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+  
+ 	 String s1="DCBA";
+ 
+	  char c1[]=s1.toCharArray();
+  
+  for(int i=0;i<c1.length;i++)
+  {
+      for(int j=i+1;j<c1.length;j++)
+      {
+          if(c1[i]>c1[j])
+          {
+              
+         	 char temp=c1[i];
+          	c1[i]=c1[j];
+         	c1[j]=temp;
+          
+             }
+      }
+  }
+  
+
+  for(char ch:c1)
+  System.out.print(ch);
+  
+    }
+}
+
+OUTPUT:
+	ABCD
+-----------------------------------------------------------------------------
+
+PROGRAM:
+	SORT THE GIVEN STRING  BY USING PREDEFIENED METHODE
+  
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+  String s1="DCBA";
+ 
+  char c1[]=s1.toCharArray();
+  
+        Arrays.sort(c1);
+  
+     for(char ch:c1)
+        System.out.print(ch);
+  
+    }
+}
+
+OUTPUT:
+	ABCD
+	
+
+----------------------------------------------------------------------
+PROGRAM:
+		TAKE A STRING AND TO CONVERT THE EACH EVEN INDEXED 		               CHARACTER INTO CAPITAL AND ODD INDEXED CHARACTERS 		               INTO SMALL
+  
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+  String s="Apple";
+ 
+for(int i=0;i<s.length();i++)
+{  
+    char ch=s.charAt(i);
+    if(i%2==0)
+    {
+        System.out.println(Character.toUpperCase(ch));
+    }
+    else
+    {
+         System.out.println(Character.toLowerCase(ch));
+    }
+}
+  
+   
+  
+    }
+}
+
+OUTPUT:
+
+ApPlE
+------------------------------------------------------
+PROGRAM:
+			TAKE A STRING EXTRACT THE EACH AND EVERY 					CHARACTER FROM THE STRING IF THE CHARACTER IS 			CAPTIAL 	LETTER THEN CONVERTED INTO THE 					LOWER CASE IF THE CHARACTER IN LOWER CASE 					THEN CONVERT IN TO THE UPPER CASE OTHER WISE  				PRINT NORMALLY?
+
+
+
+    String s="Apple12";
+ 
+ for(int i=0;i<s.length();i++)
+ {
+     char ch=s.charAt(i);
+     
+     if(Character.isUpperCase(ch))
+     {
+          System.out.print(Character.toLowerCase(ch));
+        
+     }
+     else if(Character.isLowerCase(ch))
+     {
+          System.out.print(Character.toUpperCase(ch));
+     }
+     else
+     {
+     System.out.print(ch);
+     }
+    
+    
+ } 
+ 
+  }
+}
+
+OUTPUT:
+              aPPLE12
+
+-----------------------------------------------------
+PROGRAM:
+	Split THE  STRING BASED UPON SPACE OR ANY GIVEN STRING:?
+
+
+==>SPACE BASED PROGRAM
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+       String s="Hello All Good Mornining";
+       
+       String arr[]=s.split(" ");
+       
+       for(int x=0;x<arr.length;x++)
+       {
+           System.out.println(arr[x]);
+       }
+    }
+}
+
+OUTPUT:
+Hello
+All
+Good
+Mornining
+
+	==>HERE STRING SPLIT BASED UPON THE STRING "All"
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+       String s="Hello All Good Mornining";
+       
+       String arr[]=s.split("All");
+       
+       for(int x=0;x<arr.length;x++)
+       {
+           System.out.println(arr[x]);
+       }
+    }
+}
+
+OUTPUT:
+
+Hello 
+ Good Mornining
+
+-----------------------------------------------------------
+PROAGRAM:
+
+	INPUT:Hello All Good Mornining
+
+	OUPUT:HellO AlL GooD MornininG
+
+HERE EACH AND EVERY FIRST AND LAST CHARACTER OF THE WORD CONVERTED IN TO THE CAPTIAL
+
+
+             
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+     
+
+  String s="Hello All Good Mornining";
+  
+  String arr[]=s.split(" ");
+
+  
+    for(int i=0;i<arr.length;i++)
+    {
+
+      String temp=arr[i];
+
+      
+          for(int j=0;j<temp.length();j++)
+          {
+                if(j==0 || j==temp.length()-1)
+                {
+                  System.out.print(Character.toUpperCase(temp.charAt(j)));
+                }
+                else{
+                  System.out.print(temp.charAt(j));
+                }
+          }
+
+      System.out.print(" ");
+
+    }
+
+        
+    }
+}
+
+
+Output:
+
+	HellO AlL GooD MornininG 
+
+-----------------------------------------------------------
+
+PROGRAM:
+
+	REVERSE OF THE STRING WITH THE SAME INDEXES
+
+	INPUT:Hello All Good Mornining
+
+	OUTPUT:olleH llA dooG gnininroM
+
+
+
+    
+String s="Hello All Good Mornining";
+     
+       
+       String arr[]=s.split(" ");
+       
+       for(int x=0;x<arr.length;x++)
+       {
+           String temp=arr[x];
+           
+           StringBuffer sb=new StringBuffer(temp);
+           sb.reverse();
+           System.out.print(sb+" ");
+           
+           }
+
+output:
+ olleH llA dooG gnininroM
+
+---------------------------------------------------------
+PROGRAM:
+	INPUT: mom and DAD
+
+	OUTPUT:
+		mom
+		DAD
+
+
+
+class HelloWorld {
+
+    public static void main(String[] args) 
+   {
+        
+       String s="mom and DAD";
+       String s2=" ";
+       
+       String arr[]=s.split(" ");
+       
+       for(int x=0;x<arr.length;x++)
+       {
+           String temp=arr[x];
+           
+           StringBuffer sb=new StringBuffer(temp);
+           sb.reverse();
+            String s12=new String(sb);      [or]   String s12=sb.toString();
+
+           if(s12.equals(temp))
+           {
+               System.out.println(temp);
+           }
+	[or]
+                   
+           if(s12.equalsIgnoreCase(temp))
+           {
+               System.out.println(temp);
+           }
+         
+          
+           }
+   
+       
+    }
+}
+
+OUTPUT:
+	mom
+	DAD
+
+--------------------------------------------------
+PROGRAM:
+	
+	INPUT:
+		"mom1 and DAD2"
+
+	OUTPUT:
+		3 //1+2=3
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+
+         String str="mom1 and DAD2"; 
+         int sum=0;
+         
+      for(int i=0;i<str.length();i++)
+      {
+           char ch=str.charAt(i);
+           
+           if(Character.isDigit(ch))
+           {
+             int num=Character.getNumericValue(ch);
+             sum=sum+num;
+           }
+
+      }
+         
+      System.out.println("TotalSum:"+sum);
+        
+    }
+}
+
+
+Output:
+
+	TotalSum:3
+
+
+------------------------------------------------------------
+PROGRAM:
+	INPUT:
+		a2b5c3
+
+	OUTPUT:
+		aabbbbbccc
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+
+         String str="a2b5c3"; 
+         
+      for(int i=0;i<str.length();i++)
+      {
+           char ch=str.charAt(i);
+           
+           if(Character.isDigit(ch))
+           {
+              int num=Character.getNumericValue(ch);
+              char prevChar=str.charAt(i-1);
+            
+              for(int j=0;j<num;j++)
+              {
+                System.out.print(prevChar);
+              }
+           }
+
+      }
+               
+        
+    }
+}
+
+Output:
+	aabbbbbccc
+--------------------------------------
+
+
+PROGRAM:
+		PRINT THE WORD AND  LENGTH  OF THE EACH WORD  IN THE 			GIVEN STRING ARRAY.
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+     
+    String str="Hello All Good Mornining";
+    
+    String arr[]=str.split(" ");
+    
+    for(int i=0;i<arr.length;i++)
+    {
+      String temp=arr[i];
+      int length=0;
+      
+        for(int y=0;y<temp.length();y++)
+        {
+          length++;
+        }
+        
+      System.out.println(temp+"-->"+length);
+      
+    }
+      
+        
+    }
+}
+
+Output:
+
+	Hello-->5
+	All-->3
+	Good-->4
+	Mornining-->9
+
+----------------------------------------------------------------------
+
+PROGRAM:
+	PRINT THE MAX LENGTH OF THE WORD IN THE GIVEN STRING ARRAY.
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+     
+    String str="Hello All Good Mornining";
+    int Max_Length=0;
+    String max_String="";
+    
+    String arr[]=str.split(" ");
+    
+    for(int i=0;i<arr.length;i++)
+    {
+      String temp=arr[i];
+      int length=0;
+      
+        for(int y=0;y<temp.length();y++)
+        {
+          length++;
+        }
+        if(length>Max_Length)
+        {
+          max_String=temp;
+          Max_Length=length;
+        }
+      
+    }
+    System.out.println(max_String +"->"+Max_Length);
+      
+    }
+}
+
+Output:
+
+	Mornining->9
+
+
+------------------------------------------------
+
+PROGRAM:
+		PRINT THE EACH WORD LENGTH AND  PRINT THE MAX  LENGTH 		OF  THAT WORD IN THE GIVEN ARRAY
+
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+     
+    String str="Hello All Good Morning";
+    
+    int Max_Length=0;
+    String max_String="";
+    
+    String arr[]=str.split(" ");
+    
+    for(int i=0;i<arr.length;i++)
+    {
+      String temp=arr[i];
+      
+      int length=0;
+      
+        for(int y=0;y<temp.length();y++)
+        {
+          length++;
+        }
+        if(length>Max_Length)
+        {
+          max_String=temp;
+          Max_Length=length;
+        }
+        
+            System.out.println(temp+"->"+length);
+      
+    }
+    System.out.println("MAXIMUM Length String:"+max_String +"->"+Max_Length);
+      
+    }
+}
+
+
+
+Output:
+
+	Hello->5
+	All->3
+	Good->4
+	Morning->7
+
+	MAXIMUM Length String:Morning->7
+
+----------------------------------------------------------------------
+
+PROGRAM:
+		FIND THE COUNT OF THE ALPHBETS AND NUMBERS AND 				SPEICAL SYMBOLS COUNT
+
+ String s="HELLO12@";
+      
+     int  alpCount=0,numCount=0,speCount=0;
+     
+      for(int i=0;i<s.length();i++)
+      {
+          char ch=s.charAt(i);
+
+          if(ch>='A'&&ch<='z')
+          {
+              alpCount++;
+          }
+          else if(ch>='0'&&ch<='9')       //OR   else if(Character.isDigit(ch))
+          {
+              numCount++;
+          }
+          else{
+              speCount++;
+          }
+      }
+      
+      System.out.println("ALPHA_COUNTS"+"->"+alpCount);
+      System.out.println("NUMBERS_COUNTS"+"->"+numCount);
+      System.out.println("SpecialChar_COUNTS"+"->"+speCount);
+
+
+OUTPUT:
+
+	ALPHA_COUNTS->5
+	NUMBERS_COUNTS->2
+	SpecialChar_COUNTS->1
+
+
+---------------------------------------------------------------
+
+PROGRAM:
+		REMOVING  A CHARACTER IN THE STRING
+
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+    
+
+  String s="vasu";
+
+  char arr[]=s.toCharArray();
+
+   char remove_char='a';
+  
+  
+    System.out.println("BEFORE REMOVING the character in the Given String:");
+  
+      for(int i=0;i<arr.length;i++)
+      {
+        System.out.print(arr[i]);
+      }
+ 
+  System.out.println();
+  
+  
+  
+  for(int i=0;i<arr.length;i++)
+  {
+    if(arr[i]==remove_char)
+    {
+      for(int j=i;j<arr.length-1;j++)
+      {
+        arr[j]=arr[j+1];
+      }
+    }
+    
+    
+  }
+  
+    System.out.println("After removing the character in the Given String:");
+  
+        for(int i=0;i<arr.length-1;i++)
+        {
+          System.out.print(arr[i]);
+        }
+  
+
+Output:
+
+ BEFORE REMOVING the character in the Given String:
+vasu
+After removing the character in the Given String:
+vsu
+
+
+---------------------------------------------------------------
+
+PROGRAM:
+		REMOVING THE CHARACTER WHICH IT OCCURS TWO TIMES IN 		THE GIVEN STRING.
+
+=>NOTE:
+		1.BOTH ARE SAME CODE .
+
+		2.IF NO.OF DUPLICATES INCREASES THAT INNER CODE 				WRITE THAT DUPLICATE  NO OF TIMES
+
+      EX:
+	s="vaasu"
+   	HERE aa is occurs two times so that's why we write INNER CODE 2 times.
+	for suppose my string contains aaa 's then we write inner CODE 3 times
+	
+    
+  String s="vaasu";
+  char arr[]=s.toCharArray();
+   char remove_char='a';
+  
+  
+    System.out.println("After removing the character in the Given String:");
+  
+      for(int i=0;i<arr.length;i++)
+      {
+        System.out.print(arr[i]);
+      }
+ 
+  System.out.println();
+  
+  for(int i=0;i<arr.length;i++)
+  {
+    if(arr[i]==remove_char)
+    {
+      for(int j=i;j<arr.length-1;j++)
+      {
+        arr[j]=arr[j+1];
+      }
+    }
+    
+    
+    if(arr[i]==remove_char)
+    {
+      for(int j=i;j<arr.length-1;j++)
+      {
+        arr[j]=arr[j+1];
+      }
+    }
+    
+    
+  }
+  
+    System.out.println("After removing the character in the Given String:");
+  
+        for(int i=0;i<arr.length-2;i++)
+        {
+          System.out.print(arr[i]);
+        }
+  
+ OUTPUT:
+
+After removing the character in the Given String:
+vaasu
+After removing the character in the Given String:
+vsu
+
+
+
+
+
+
+
+------------------->>>>>SAME QUESTION BUT I WANT ADD ONE MORE CHARACTER TO 			REMOVING PURPOSE?
+
+NOTE:
+	ABOVE AND THIS CODE ARE SAME SMALL DIFFERENCE IS ADDING 			ONE MORE REMOVING CHARACTER.
+
+ String s="vaasu";
+  char arr[]=s.toCharArray();
+   char remove_char='a';
+  char remove_char2='s';
+  
+    System.out.println("After removing the character in the Given String:");
+  
+      for(int i=0;i<arr.length;i++)
+      {
+        System.out.print(arr[i]);
+      }
+ 
+  System.out.println();
+  
+  
+  for(int i=0;i<arr.length;i++)
+  {
+
+    if(arr[i]==remove_char)
+    {
+      for(int j=i;j<arr.length-1;j++)
+      {
+        arr[j]=arr[j+1];
+      }
+    }
+    
+    
+    if(arr[i]==remove_char)
+    {
+      for(int j=i;j<arr.length-2;j++)
+      {
+        arr[j]=arr[j+1];
+      }
+    }
+    
+        
+    if(arr[i]==remove_char2)
+    {
+      for(int j=i;j<arr.length-1;j++)
+      {
+        arr[j]=arr[j+1];
+      }
+    }
+    
+  }
+  
+    System.out.println("After removing the character in the Given String:");
+  
+        for(int i=0;i<arr.length-3;i++)
+        {
+          System.out.print(arr[i]);
+        }
+
+-------------------------------------------------------------
+PROGRAM:
+	HOW CAN YOU REMOVE THE SPACES IN THE STRING
+
+CODE:
+
+	String s="HELLO VASU HOW ARE    YOU";
+                
+               String result = s.replaceAll(" ", "");
+
+              System.out.println(result);
+
+OUTPUT:
+		HELLOVASUHOWAREYOU
+
+
+-----------------------------------------------------------------
+
+PROGRAM:
+	    REPLACE ALL  WORDS IN THE FIRST CHARACTER IS                                 	    REPLACE  WITH @ SYMBOL. 
+        
+  String arr[]={"vasu","hello","kishore"};
+  
+       for(int i=0;i<arr.length;i++)
+      {
+
+         String temp=arr[i];
+
+         String res="@"+temp.substring(1);
+
+         System.out.println(res);
+
+       }
+    
+    //refernce
+    String k="vasu";
+    System.out.println(k.substring(1));   OUTPUT: asu
+
+OUTPUT:
+	@asu
+       	@ello
+	@ishore	
+	asu
+
+-----------------------------------------------------------
+PROGRAM:
+	REPLACE THE ALL   I  WITH EMPTYSPACE("")
+
+        String s="today is my interview ";
+         String res=s.replaceAll("i","");
+         System.out.println(res);
+
+output:
+
+today s my ntervew
+
+-----------------------------------------------------------------
+
+    *PROGRAM:
+		PRINT THE ALL EVEN INDEXED AND ALL ODD INDEXED 				CHARACTERS IN THE GIVEN STRING
+
+       
+	String s="today is my interview ";
+
+	StringBuffer even=new StringBuffer();
+
+	StringBuffer odd=new StringBuffer();
+
+
+	for(int i=0;i<s.length();i++)
+	{
+
+	 	 char ch=s.charAt(i);
+
+ 		 if(i%2==0)
+		{
+
+    		   even.append(ch);
+
+  		}
+	  	else
+		{
+    		    odd.append(ch);
+
+  		}
+	}
+
+
+	System.out.println(even);
+	System.out.println(odd);
+
+OUTPUT:
+	tdyi yitriw
+         	oa sm neve 
+
+----------------------------------------------------------
+
+PROGRAM:
+	REMOVE THE DUPLICATE ELEMENTS IN THE GIVEN STRING BUT 			ORDER CAN'T BE CHANGED?
+
+NOTE:
+	1.TO ELEMINATE THE DUPLICATE VALUES DUMP IN THE SET
+
+	2.IF YOU WANT TO PRESERVE THE ORDER THEN U USED THE 			LINKEDHASHSET.
+
+	3.SET REMOVES THE DUPLICATE VALUES BUT IT DOESNOT 				PRESERVES THE ORDER.
+
+	4.ONLY LINKEDHASHSET PRESERVES THE ORDER WHY BCZ
+	LINKEDHASHSET=LINKEDLIST+HASHSET .
+
+
+INPUT:
+	geeksforgeeks
+
+OUTPUT:
+	g, e, k, s, f, o, r
+
+
+  String s = "geeksforgeeks";
+  
+  char arr[]=s.toCharArray();
+  
+        Set<Character> linkedhs = new  LinkedHashSet<>();
+  
+  for(int i=0;i<arr.length;i++)
+  {
+      linkedhs.add(arr[i]);
+  }
+  
+  System.out.print(linkedhs);
+
+OUTPUT:[g, e, k, s, f, o, r]
+
+
+-------------------------------------------------------------------
+**QUESTION FROM GEEKS FOR GEEKS.
+
+PROGRAM:      
+	PRINT THE EVEN LENGTH WORDS IN THE GIVEN STRING?
+
+  String s="i am Geeks for Geek and a Geek ";
+      
+      String arr[]=s.split(" ");
+
+      for(int i=0;i<arr.length;i++)   
+      {
+        
+        String temp=arr[i];
+        
+        if(temp.length()%2==0)
+        {
+          System.out.println(temp);
+        }
+      }
+OUTPUT:
+	am
+	Geek
+	Geek
+
+----------------------------------------------------------------
+
+PROGRAM:
+	FIND FREQUNCY  OF THE EACH WORD IN THE GIVEN STRING?
+
+  import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+      
+     String str="Java is great Python is also great ";
+     String arr[]=str.split(" ");
+     
+     int Ones[]=new int[arr.length];
+     
+     for(int i=0;i<arr.length;i++)
+     {
+         int count=1;
+         if(Ones[i]==1)
+         {
+           continue;
+         }
+         
+       for(int j=i+1;j<arr.length;j++)
+       {
+           if(arr[i].equals(arr[j]))
+           {
+             Ones[j]=1;
+             count++;
+           }
+       }
+     
+       System.out.println(arr[i]+" ->"+count);
+       
+     }
+
+}
+}
+Output:
+
+	Java ->1
+	is ->2
+	great ->2
+	Python ->1
+	also ->1
+
+------------------------------------------
+
+PROGRAM:
+	FIND THE UNIQUE WORDS IN THE GIVEN STRING?
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+     
+ 
+     String str="Java is great Python is also great ";
+
+     String arr[]=str.split(" ");
+     
+     int Ones[]=new int[arr.length];
+     
+     for(int i=0;i<arr.length;i++)
+     {
+         	int count=1;
+         	if(Ones[i]==1)
+        	 {
+         	      continue;
+                 }
+         
+       for(int j=i+1;j<arr.length;j++)
+       {
+           if(arr[i].equals(arr[j]))
+           {
+             Ones[j]=1;
+             count++;
+           }
+       }
+        if(count==1)
+        {
+          System.out.println(arr[i]+"->"+count);
+        }
+      
+       
+     }
+
+}
+}
+
+Output:
+
+	Java->1
+	Python->1
+	also->1
+
+------------------------------------------------------------------
+PROGRAM:
+	FIND THE DUPLICATE WORDS IN THE GIVEN STRING? 
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+      
+     String str="Java is great Python is also great ";
+     String arr[]=str.split(" ");
+     
+     int Ones[]=new int[arr.length];
+     
+     for(int i=0;i<arr.length;i++)
+     {
+         	int count=1;
+
+         	if(Ones[i]==1)
+       	  {
+                      continue;
+         	   }
+         
+       for(int j=i+1;j<arr.length;j++)
+       {
+           if(arr[i].equals(arr[j]))
+           {
+             Ones[j]=1;
+             count++;
+           }
+       }
+        if(count>1)
+        {
+          System.out.println(arr[i]+"->"+count);
+        }
+      
+       
+     }
+
+}
+}
+
+
+Output:
+
+	is->2
+	great->2
+-------------------------------------------------------------
+PROGRAM:
+	FIND THE UNIQUE CHARACTERS IN THE GIVEN ARRAY ?
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+    
+       String str = "geeksforgeeks";
+       
+       char arr[]=str.toCharArray();
+       
+       int Ones[]=new int[arr.length];
+       
+       for(int i=0;i<arr.length;i++)
+       {
+         	int count=1;
+         
+         	if(Ones[i]==1)
+        	 {
+          	 continue;
+        	 }
+
+         for(int j=i+1;j<arr.length;j++)
+         {
+           	if(arr[i]==arr[j])
+           	{
+            	     Ones[j]=1;
+                     count++;
+                }
+         }
+         if(count==1)
+         {
+           System.out.println(arr[i]+"->"+count);
+         }
+       }
+   }
+}
+
+Output:
+
+	f->1
+	o->1
+	r->1

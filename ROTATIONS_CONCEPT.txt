@@ -1,0 +1,184 @@
+
+*LEFT ROTATION:
+		ALL THE ELEMENTS MOVES TOWOWARDS THE LEFT 
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {   
+       
+      int arr[]={10,20,30,40,50};
+    
+     int first_ele=arr[0];
+      for(int i=0;i<arr.length-1;i++)
+      {
+         arr[i]=arr[i+1];
+      }
+      arr[arr.length-1]=first_ele;
+      
+         System.out.println("Display the array elements");
+       for(int i:arr)
+       {
+           System.out.println(i);
+       }
+         //or
+
+	System.out.println(Arrays.toString(arr)); 
+       
+    }
+}
+
+
+OUTPUT:
+
+
+Display the array elements
+20
+30
+40
+50
+10
+-----------------------------------------------------
+
+*RIGHT ROTATION:
+		ALL THE ELEMENTS MOVES TOWOWARDS THE RIGHT. 
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {  
+       
+      int arr[]={10,20,30,40,50};
+    
+    
+     System.out.println("Display the array elements BEFORE ROTATION");
+     
+      System.out.println(Arrays.toString(arr));
+    
+     int last_ele=arr[arr.length-1];
+     
+      for(int i=arr.length-2;i>=0;i--)
+      {
+         arr[i+1]=arr[i];
+      }
+      arr[0]=last_ele;
+      
+        
+
+	//or
+    System.out.println("Display the array elements AFTER ROTATION");
+	System.out.println(Arrays.toString(arr));
+      
+      
+       
+    }
+}
+
+
+Output:
+
+Display the array elements BEFORE ROTATION
+[10, 20, 30, 40, 50]
+Display the array elements AFTER ROTATION
+[50, 10, 20, 30, 40]
+
+--------------------------------------------------------------
+
+BY USING THE ROTAIONS CONCEPT WE GET THE BELOW PROBLEMS?
+
+
+	1.INSERTING THE ELEMENT AT CERTAIN INDEX:
+
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+         
+      int arr[]={10,20,30,40,50,0};
+
+      Scanner sc=new Scanner(System.in);
+      
+      System.out.println("enter the position");
+      int pos=sc.nextInt();
+      
+      System.out.println("enter element");
+      int element=sc.nextInt();
+      
+      for(int i=arr.length-2;i>pos;i--)
+      {
+          arr[i+1]=arr[i];
+      }
+      arr[pos]=element;
+      
+         System.out.println("Display the array elements");
+       for(int i:arr)
+       {
+           System.out.println(i);
+       }
+       
+    }
+}
+OUTPUT:
+
+	enter the position
+	3
+	enter element
+	222
+	Display the array elements
+	10
+	20
+	30
+	222
+	50
+	50
+
+------------------2.DELETE THE ELEMENT AT CERTAIN INDEX?
+
+
+ import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+       
+       
+      int arr[]={10,20,30,40,50};
+      Scanner sc=new Scanner(System.in);
+      
+      System.out.println("BEFORE DELETION");
+      
+      System.out.println(Arrays.toString(arr));
+      
+      System.out.println("enter the position");
+      int pos=sc.nextInt();
+      
+    
+      
+      for(int i=pos;i<arr.length-2;i++)
+      {
+          arr[i]=arr[i+1];
+      }
+      
+      
+         System.out.println("Display the array elements");
+       for(int i:arr)
+       {
+           System.out.println(i);
+       }
+       
+    }
+}
+
+OUTPUT:
+
+	BEFORE DELETION
+	[10, 20, 30, 40, 50]
+	enter the position
+	1
+	Display the array elements
+	10
+	30
+	40
+	40
+	50
+

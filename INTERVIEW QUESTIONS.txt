@@ -1,0 +1,1250 @@
+PROGRAM:
+
+	RIGHT ROTATION
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+       
+       //ALL THE ELEMENTS MOVES TOWOWARDS THE RIGHT 
+       
+      int arr[]={10,20,30,40,50};
+    
+     int last=arr[arr.length-1];
+     
+      for(int i=arr.length-2;i>=0;i--)
+      {
+         arr[i+1]=arr[i];
+      }
+      arr[0]=last;
+      
+         System.out.println("Display the array elements");
+       for(int i:arr)
+       {
+           System.out.println(i);
+       }
+	//or
+
+	System.out.println(Arrays.toString(arr));
+      
+      
+       
+    }
+}
+----------------------------------------------------
+PROGRAM:
+
+	BY USING THE ROTAIONS CONCEPT WE GET THE BELOW PROBLEMS?
+
+
+1.INSERTING THE ELEMENT AT CERTAIN INDEX:
+
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+       
+       
+      int arr[]={10,20,30,40,50,0};
+      Scanner sc=new Scanner(System.in);
+      
+      System.out.println("enter the position");
+      int pos=sc.nextInt();
+      
+      System.out.println("enter element");
+      int element=sc.nextInt();
+      
+      for(int i=arr.length-2;i>pos;i--)
+      {
+          arr[i+1]=arr[i];
+      }
+      arr[pos]=element;
+      
+       System.out.println("Display the array elements");
+       for(int i:arr)
+       {
+           System.out.println(i);
+       }
+       
+    }
+}
+
+-----------
+PROGRAM:
+	2.DELETE THE ELEMENT AT CERTAIN INDEX?
+
+ import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+         
+      int arr[]={10,20,30,40,50};
+      Scanner sc=new Scanner(System.in);
+      
+      System.out.println("enter the position");
+      int pos=sc.nextInt();
+      
+      for(int i=pos;i<arr.length-2;i++)
+      {
+          arr[i]=arr[i+1];
+      }
+      
+      
+         System.out.println("Display the array elements");
+       for(int i:arr)
+       {
+           System.out.println(i);
+       }
+       
+    }
+}
+----------------------------------------------------------------------------
+PROGRAM:
+
+	WRITE A PROGRAM TO ROTATE THE ARRAY TO THE RIGHT BY K STEPS 		WHERE K IS  NON-NEGITAVE 
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int k = 3;
+        int arr[] = {1, 2, 3, 4, 5, 6, 7};
+        
+        for (int i = 0; i < k; i++)
+        {
+            rotateArray(arr);
+        }
+        
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void rotateArray(int[] arr) 
+    {
+
+        int last = arr[arr.length - 1];
+        for (int i = arr.length - 2; i >= 0; i--)
+        {
+            arr[i + 1] = arr[i];
+        }
+        arr[0] = last;
+    }
+}
+
+Output:
+
+[5, 6, 7, 1, 2, 3, 4]
+
+
+
+--------------------------------------------------------------------------------------------
+PROGRAM:
+
+	WRITE A PROGRAM TO ROTATE THE ARRAY TO THE LEFT BY K STEPS 			WHERE K IS  NON-NEGITAVE 
+
+
+import java.util.*;
+
+public class Main {
+  
+  public static void rotate_left(int arr[])
+ {
+
+    int first_elem=arr[0];
+
+    for(int i=0;i<arr.length-1;i++)
+    {
+
+      arr[i]=arr[i+1];
+    }
+
+    arr[arr.length-1]=first_elem;
+
+  }
+
+    public static void main(String[] args) {
+      
+     
+     int arr[]={10,20,30,40};
+     int k=2;
+
+      System.out.println("BEFORE ROTATION");
+     System.out.println(Arrays.toString(arr));
+     int count=0;
+
+     for(int i=0;i<k;i++)
+     {
+       rotate_left(arr);
+       count++;
+     }
+
+     System.out.println("AFTER ROTATION");
+     System.out.println(Arrays.toString(arr));
+     System.out.println("NO OF ROTATIONS"+"=>"+count);
+  }
+}
+
+Output:
+
+BEFORE ROTATION
+[10, 20, 30, 40]
+
+AFTER ROTATION
+[30, 40, 10, 20]
+
+NO OF ROTATIONS=>2
+
+
+
+
+--------------------------BY USING PREDEFINED METHODES:
+
+ PROGRAM:
+	 RIGHT ROTATION AND LEFT ROTATION IN THE ARRAYLIST:
+
+  
+import java.util.*;
+
+public class Main {
+  
+ 
+    public static void main(String[] args)
+    {
+      
+	int arr[]={10,20,30,40};
+
+ 	List<Integer> al=new ArrayList<>();
+
+ 	for(int i=0;i<arr.length;i++)
+                 {
+
+   	       al.add(arr[i]);
+	 }
+
+  System.out.println("BEFORE ROTATION");
+  System.out.println(al);
+
+  System.out.println("RIGHT ROTATION");
+ Collections.rotate(al,2);
+ System.out.println(al);
+
+  System.out.println("LEFT ROTATION");
+ Collections.rotate(al,-2);
+  System.out.println(al);
+ 
+   
+  }
+}
+
+Output:
+
+	BEFORE ROTATION
+	[10, 20, 30, 40]
+
+	RIGHT ROTATION
+	[30, 40, 10, 20]
+
+	LEFT ROTATION
+	[10, 20, 30, 40]
+
+---------------------------------------------------------------------------------------------------
+PROGRAM:
+	write a program to print the following series less than 'n'
+
+INPUT:
+	n=20
+
+	Input:   5,3,9,10,8,24,25,23,69
+
+	Output:3,5,8,9,10
+
+
+       int arr[] = {5,3,9,10,8,24,25,23,69};
+        
+        Arrays.sort(arr);
+        
+        int n=20;
+        for(int i=0;i<arr.length;i++)
+       {
+          if(arr[i]<n)
+          {
+          System.out.println(arr[i]);
+            
+          }
+          
+        }
+
+output:3,5,8,9,10
+-----------------------------------------------------------------------------------------
+
+PROGRAM:
+	UNIQUE ALBHATES
+
+WRITE A PROGRAM TO MERGE TWO STRINGS TO CONTAIN UINQUE CHARACTERS IN ALPHABETIC ORDER?
+
+  String s1="wednesday";
+     String s2="december";
+
+FINAL OUTPUT:  abcmnrswy
+
+   
+    String s1="wednesday";
+     String s2="december";
+     String s3=s1+s2;
+
+     
+     
+     char arr1[]=s3.toCharArray();
+      
+     int Ones[]=new int [arr1.length];
+     
+    char arr2[]=new char[arr1.length];
+    
+     int k=0;
+     
+     for(int i=0;i<arr1.length;i++)
+    {
+       int count=1;
+       
+       if(Ones[i]==1)
+       {
+         continue;
+       }
+
+       for(int j=i+1;j<arr1.length;j++)
+       {
+
+         if(arr1[i]==arr1[j])
+         {
+           Ones[j]=1;
+           count++;
+         }
+       }
+       if(count==1)
+       {
+        System.out.println(arr1[i]);
+        arr2[k]=arr1[i];
+        k++;
+         
+       }
+     }
+     
+     Arrays.sort(arr2);
+System.out.println("FINAL OUTPUT:");
+     System.out.print(arr2);
+
+
+Output:
+
+	w
+	n
+	s
+	a
+	y
+	c
+	m
+	b
+	r
+FINAL OUTPUT:
+		abcmnrswy
+
+
+-------------------------------------------------------------------------------------------------------------
+
+PROGRAM:
+	WRITE A PROGRAM FOR PANAGRAM
+
+PANAGRAM:
+
+           A pangram is a sentence that contains every letter of the alphabet at least once
+
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String str = "The quick Brown fox jumps over the lazy dog";
+        
+        if(ispanagram(str))
+       {
+          System.out.println("pangaram");
+        }
+        else
+        {
+          System.out.println("Not pangaram");
+        }
+        
+    }
+    
+    public static boolean ispanagram(String str)
+    {
+      
+      Set<Character>set=new HashSet<>();
+      
+      for(char ch:str.toLowerCase().toCharArray())
+      {
+        if(ch>='a'&&ch<='z')
+        set.add(ch);
+      }
+
+      return set.size()==26;
+      
+    }
+}
+
+----------------------------------------------
+PROGRAM:
+	HOW TO ROUND THE VALUES WITHOUT USING THE ROUND FUNCTION
+
+ import java.util.*;
+ class HelloWorld 
+{
+    public static void main(String[] args) 
+   {  
+       double i = 10.6;
+       double res= i-(int)i;
+       
+       if(res<=0.5)
+       {
+         System.out.println((int)i);
+       }
+       else
+       {
+             System.out.println((int)i+1);
+       }
+  }
+}
+
+
+Output:
+
+	11
+
+-------------------------------------------------------------------------------
+PROGRAM:
+	PRINT THE UNIQUE ELEMENTS IN THE GIVEN ARRAY?
+
+
+     Integer arr[]={1,2,3,4,2,1};
+     
+     ArrayList<Integer> al=new ArrayList<>(Arrays.asList(arr));
+     
+     for(int i=0;i<al.size();i++)
+     {
+       
+       if(al.indexOf(al.get(i))==al.lastIndexOf(al.get(i)))
+       {         
+              System.out.println(al.get(i));
+
+          }
+     
+       
+     }
+
+
+Output:
+
+	3
+	4
+
+
+
+--------------->>DUPLICATE VALUES
+
+SAME CODE BUT SAMLL CHANGE IN CONDITION[insted of == to put !=]
+
+     Integer arr[]={1,2,3,4,2,1};
+     
+   ArrayList<Integer> al=new ArrayList<>(Arrays.asList(arr));
+   
+   for(int i=0;i<al.size();i++)
+   {
+     
+     	if(al.indexOf(al.get(i))!=al.lastIndexOf(al.get(i)))
+     	   {  
+            		  System.out.println(al.get(i));
+                   }
+       }
+
+OUTPUT:
+	1
+	2
+	2
+	1
+
+
+--------------------------------------------------------------------------------------------------------
+PROGRAM:
+		REMOVE THE DUPLICATE ELEMENTS  IN THE ARRAYLIST AND 			ORDER MUST BE SAME
+
+NOTE:
+	Set => IT STORES THE UNIQUE ELEMENTS.
+
+	 LinkedHashSet => PRESEVERS THE ORDER .
+
+
+   ArrayList<Integer> al=new ArrayList<>();
+   al.add(1);
+   al.add(2);
+   al.add(3);
+   al.add(4);
+   al.add(2);
+   al.add(1);
+   System.out.println("BEFORE ARRAYLIST ELEMENT");
+   System.out.println(al);
+   
+  
+   Set<Integer> set=new LinkedHashSet<>(al);
+
+	System.out.println("After Remove the Duplicate elements and it preseves 	The Order");
+
+   System.out.println(set);
+
+
+Output:
+
+	BEFORE ARRAYLIST ELEMENT
+
+			[1, 2, 3, 4, 2, 1]
+
+	After Remove the Duplicate elements and it preseves The Order
+					[1, 2, 3, 4]
+
+
+----------------------------------------------------------------------
+
+
+PROGRAM:
+	SWAP THE EVEN INDEXED ELEMENTS INTO ODD INDEXEDS  AND ODD 			INDEXED ELEMENT INTO EVEN INDEXES.
+
+		[OR] 
+
+	SWAP THE SIDE BY SIDE ELEMTNS IN THE GIVEN ARRAY?
+
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       
+     int arr[]={10,20,30,40,50,60};
+     int even[]=new int[arr.length/2];
+     int odd[]=new int[arr.length/2];
+     
+     int j=0,k=0;
+
+     for(int i=0;i<arr.length;i++)
+     {
+       if(i%2==0)
+       {
+         even[j]=arr[i];
+         j++;
+       }
+       else
+       {
+         odd[k]=arr[i];
+         k++;
+       }
+     }
+     
+     
+     System.out.println("ALL EVEN INDEXED ELEMENTS:"+Arrays.toString(even));
+     System.out.println("ALL ODD INDEXED ELEMENTS:"+Arrays.toString(odd));
+     
+       j=0;
+       k=0;
+       
+     for(int i=0;i<arr.length;i++)
+     {
+       if(i%2==0)
+       {
+         arr[i]=odd[j];
+         j++;
+       }
+       else
+       {
+         arr[i]=even[k];
+         k++;
+       }
+     }
+     
+      System.out.println("AFTER SWAPPING EVEN INDEX TO  ODD        INDEXED:"+Arrays.toString(arr));
+     
+  }
+}
+
+OUTPUT:
+
+ALL EVEN INDEXED ELEMENTS:[10, 30, 50]
+ALL ODD INDEXED ELEMENTS:[20, 40, 60]
+AFTER SWAPPING EVEN INDEX TO ODD INDEXED:[20, 10, 40, 30, 60, 50]
+
+
+--------------------------------------------------------------------------------
+
+
+PROGRAM:
+	PRINT THE NON DUPLICATE PRIME NUMBERS IN THE GIVEN ARRAY 
+
+        int arr[] = {2, 8, 7, 11, 13,2, 1, 7};
+
+	OUTPUT:  11
+		13
+
+
+public class Main {
+  
+    public static void main(String[] args)
+ {
+      
+     int arr[] = {2, 8, 7, 11, 13,2, 1, 7};
+
+        int Ones[]=new int[arr.length];
+
+        
+        for(int i=0;i<arr.length;i++)
+        {
+             int count=1;
+            
+            if(Ones[i]==1)
+            {
+                continue;
+            }
+            for(int j=i+1;j<arr.length;j++)
+            {
+               
+                if(arr[i]==arr[j])
+                {
+                    Ones[j]=1;
+                    count++;
+                }
+            }
+            if(count==1)
+            {
+                
+                int count1=0;
+                   
+                for(int p=1;p<=arr[i];p++)
+                {
+                   if(arr[i]%p==0)
+                   {
+                       count1++;
+                   }
+               }
+               if(count1==2)
+               {
+                   System.out.println(arr[i]);
+               }
+           }
+        }
+        
+    }    
+}
+
+OUTPUT:
+	11
+	13
+
+
+--------------------------->>>>FIND THE Majority element IN THE GIVEN ARRAY?
+
+Def:
+	
+	A Majority element is an element that appears more than half 				the time  in an array.
+ex:
+	int arr[] = new int[]{-1,20,-1,20,-1};
+
+	HERE THE SIZE OF THE ARRAY IS ---->5
+
+	HALF OF THE SIZE OF THE ARRAY IS 5/2 -->2
+
+	HERE -1 APPEARS ------3 TIMES
+	 SO -1 IS MAJORITY ELEMENT.
+
+
+
+
+int arr[] = new int[]{-1,20,-1,20,-1};
+  
+        int majorityelement=0;
+        boolean found=false;
+        
+        for(int x=0;x<arr.length;x++)
+       {
+          
+            int count=0;
+
+            for(int y=0;y<arr.length;y++)
+           {
+                if(arr[x]==arr[y])
+                {
+                    count++;
+                }
+            }
+            if(count>arr.length/2)
+            {
+                majorityelement=arr[x];
+                found=true;
+                break;
+            }
+        }
+        if(found) 
+        {
+            System.out.println("majority element"+"->"+majorityelement);
+        }
+        else
+        {
+            System.out.println("no majority element");
+        }
+
+Output:
+
+majority element->-1
+
+
+-------------------------->>>>Find The Union Of Two Arrays:
+
+
+import java.util.*;
+
+public class Main
+ {
+    public static void main(String[] args) 
+    {
+
+    int arr1[]={3,3,4,5,6,6,7};
+    int arr2[]={4,5,6,7,8,8};
+    
+    Set<Integer>set=new HashSet<>();
+    
+    for(int i=0;i<arr1.length;i++)
+    {
+      set.add(arr1[i]);
+    }
+    
+        for(int i=0;i<arr2.length;i++)
+       {
+           set.add(arr2[i]);
+      }
+    
+    for(Integer i:set)
+    System.out.println(i);
+
+  }
+}
+
+Output:
+
+	3
+	4
+	5
+	6
+	7
+	8
+--------------------------->>>>Find the Intersection of Two Arrays
+    
+  int[] arr1 = {1, 2, 2, 1, 3};
+  int[] arr2 = {2, 2, 3};
+
+    Set<Integer> set1 = new HashSet<>();
+    Set<Integer> intersection = new HashSet<>();
+    
+    for (int num : arr1) 
+     {
+        set1.add(num);
+    }
+
+      for (int num : arr2)
+      {
+          if (set1.contains(num)) 
+          {
+              intersection.add(num);
+          }
+      }
+
+System.out.println("Intersection: " + intersection);
+
+Output:
+
+	Intersection: [2, 3]
+
+
+-------------------------->>>>SPIRAL MATRIX CODE:
+
+
+import java.util.*;
+
+public class Main {
+  
+    public static void main(String[] args) 
+   {
+      
+       int n=3;
+          
+      int arr[][]=new int[n][n];
+
+      int r1=0,r2=n-1;
+      int c1=0,c2=n-1;
+
+      int val=1;
+      
+      while(r1<=r2&& c1<=c2)
+      {
+        
+        //moving from left to right
+        
+        for(int i=c1;i<=c2;i++)
+        arr[r1][i]=val++;
+        
+        //move down 
+        
+        for(int j=r1+1;j<=r2;j++)
+        arr[j][c2]=val++;
+        
+       
+        
+          //move right to left
+          
+          for(int i=c2-1;i>c1;i--)
+          arr[r2][i]=val++;
+          
+          //move upwards:
+          for(int j=r2;j>r1;j--)
+          arr[j][c1]=val++;
+        
+        
+        
+        
+        r1++;
+        r2--;
+        c1++;
+        c2--;
+      }
+      
+      //Printing The Whole Array:
+      for(int a[]:arr)
+     {
+        System.out.println(Arrays.toString(a));
+      }
+  }
+}
+
+
+
+Output:
+
+	[1, 2, 3]
+	[8, 9, 4]
+	[7, 6, 5]
+
+
+
+DIRECTION:
+
+	Top   =  =>  1 =  Top2
+             	||                        ||
+	5
+	||	         ||
+            4Bottom  <===Bottom3
+
+
+
+--------------- ----->DIRECTION:
+
+	Top   =  =  5 =  Top4
+            1 	||                        ||
+	
+	||	         ||
+            2Bottom   ===>Bottom3
+
+
+
+
+	int n=3;
+     
+    int arr[][]=new int[n][n];
+    int r1=0,r2=n-1;
+    int c1=0,c2=n-1;
+    int val=1;
+    
+    while(r1<=r2&&c1<=c2)
+    {
+      for(int i=r1;i<=r2;i++)
+      arr[i][c1]=val++;
+      
+      for(int j=c1+1;j<c2;j++)
+      arr[r2][j]=val++;
+      
+      for(int i=r2;i>r1;i--)
+      arr[i][c2]=val++;
+      
+      for(int j=c2;j>c1;j--)
+      arr[r1][j]=val++;
+      
+      r1++;
+      r2--;
+      c1++;
+      c2--;
+    }
+    
+    
+    for(int ar1[]:arr)
+    {
+      System.out.println(Arrays.toString(ar1));
+    }
+
+Output:
+
+	[1, 8, 7]
+	[2, 9, 6]
+	[3, 4, 5]
+
+
+--------------------------->>>SLIDING WINDOW Technique :
+
+import java.util.*;
+
+public class SlidingWindowFixed {
+
+    public static int maxSum(int[] arr, int k) 
+   {
+
+        int maxSum = 0, windowSum = 0;
+
+        // Step 1: Calculate the sum of the first window
+
+        for (int i = 0; i < k; i++) 
+        {
+            windowSum += arr[i];  // Add first k elements
+        }
+
+        maxSum = windowSum;  // This is the first max
+
+
+        // Step 2: Slide the window
+
+        for (int i = k; i < arr.length; i++) 
+        {
+
+            windowSum =windowSum+ arr[i]-arr[i - k];     //   1.Add the new element 					                                          2.Remove the old element
+               
+            maxSum = Math.max(maxSum, windowSum);  // Update max if needed
+        }
+
+        return maxSum;
+    }
+
+    public static void main(String[] args)
+   {
+
+        int[] arr = {1, 3, 2, 4, 6, 2};
+
+        int k = 3;
+
+        	System.out.println("Maximum sum of subarray of size " + k + " is: " + 			maxSum(arr, k));
+    }
+
+}
+
+Output:
+
+Maximum sum of subarray of size 3 is: 12
+
+
+-------------------------------------->>CHECK IF ARR2 IS SUBSET OF ARR1 OR NOT
+
+
+import java.util.*;
+
+public class Main {
+
+  
+  public static boolean is_subset(int arr1[],int arr2[])
+  {
+    
+  Set<Integer>set1=new HashSet<>();
+  
+  	for(int num:arr1)
+                {
+   	    set1.add(num);
+ 	 }
+  
+  		for(int num:arr2)
+		{
+
+   		 if(!(set1.contains(num)))
+		{
+     		   return false;
+
+    		}
+	         }
+
+    return true;
+  }
+
+    public static void main(String[] args) {
+
+     int arr1[]={1,2,3,4,5};
+     int arr2[]={1,2,9};
+     
+    if(is_subset(arr1,arr2))
+    {
+      System.out.println("Arr2 is subset of Arr1 ");
+    }
+    else
+     {
+       System.out.println("Arr2 is NOT subset of Arr1 ");
+    }
+  }
+}
+
+OUTPUT:
+	Arr2 is NOT subset of Arr1 
+
+----------------------------------------
+SORT THE SOME ELEMENTS IN THE GIVEN ARRAY
+
+
+import java.util.Arrays;
+
+class SubarraySorter {
+  
+    public static void main(String[] args)
+  {
+        int[] a = {6,5,4,3,2,1};
+           
+        Arrays.sort(a,0,3);
+        System.out.println(Arrays.toString(a));
+    }
+}
+
+Output:
+
+[4, 5, 6, 3, 2, 1]
+
+---------------------------------
+
+CHECK GIVEN ARRAY IS PALINDROME OR NOT ?
+
+import java.util.*;
+
+public class Main 
+{
+    public static boolean isPalindrome(int arr[])
+    {
+    
+      for(int i=0;i<arr.length/2;i++)
+      {
+        if(arr[i]!=arr[arr.length-1-i])
+        {
+        return false;
+        }
+      }
+      return true;
+    }
+    
+public static void main(String[] args) {
+       
+  int arr[]={1,2,3,2,1};
+
+    if(isPalindrome(arr))
+    {
+        System.out.println("Palindrome");
+    }
+    else
+   {
+    System.out.println("Not-Palindrome");
+   }
+   
+    }
+}
+
+Output:
+
+	Palindrome
+-----------------------------
+ 
+
+*PROGRAM:
+	     CHECK GIVEN STRING IS PALINDROME OR NOT ?
+
+
+NOTE:
+	BOTH ABOVE AND THIS CODE ARE SAME 
+
+import java.util.*;
+
+public class Main 
+{
+    public static boolean isPalindrome(String str)
+    {
+      
+      str=str.toLowerCase();  // To Avoid The case Senstive Errors purpose
+      
+      char arr[]=str.toCharArray();
+      
+      for(int i=0;i<arr.length/2;i++)
+      {
+        if(arr[i]!=arr[arr.length-1-i])
+        {
+        return false;
+        }
+      }
+      return true;
+    }
+    
+public static void main(String[] args) {
+       
+  String str="moM";
+
+    if(isPalindrome(str))
+    {
+        System.out.println("Palindrome");
+    }
+    else
+   {
+    System.out.println("Not-Palindrome");
+   }
+   
+    }
+}
+
+Output:
+
+	Palindrome
+
+
+------------------------------------------------
+*Program:
+	IF THE N IS ODD NUMBER THEN ADD +1 TO THAT N IF IT IS EVEN NUMBER 	THEN SUBTRACT 1 FROM THAT NUMBER ?
+
+INPUT :
+	1    2   3   4   5   6   7  8  9  10
+OUTPUT:
+	2 1 4 3 6 5 8 7 10 9 
+
+
+
+     for(int i=1;i<=10;i++)
+     {
+         if(i%2==0)
+         {
+           System.out.print(i-1+" ");
+         }
+         else
+         {
+            System.out.print(i+1+" ");
+         }
+     }
+
+Output:
+
+2 1 4 3 6 5 8 7 10 9 
+
+------------------------------------------------------
+*Program:
+	CHECK WETHER THE NUMBER IS EVEN OR NOT WITHOUT USING  % 		OPERATOR.
+
+
+      int num=6;
+
+     if( (num&1) == 0)
+     {
+       System.out.println("Even");
+     }
+     else
+     {
+        System.out.println("Odd");
+     }
+
+Output:
+
+	Even
+---------------------------------------------------------
+*Program:
+	HOW TO PRINT THE REMAINDER AND  Quotient WITHOUT USING % AND / 		SYMBOLS ?
+
+
+int a=5,b=2,quotient=0;
+     
+     while(a>=b)
+     {
+       a=a-b;
+       quotient++;
+     }
+     System.out.println("Remainder"+"-->"+a);
+      System.out.println("quotient"+"-->"+quotient);
+
+------------------------------------------------------------------------------
+  *Program:
+	Evaluate a postfix expression using a stack. Given an array of numbers 		and operators (*, +, /, %), compute the result.
+
+import java.util.*;
+
+public class Main {
+  
+    public static void main(String[] args)
+    {
+      
+	Stack <Integer> st1=new Stack<>();
+
+	String[] ip= {"2","3","4","5","*","+","*"};
+
+
+for(int i=0;i<ip.length;i++)
+{
+	
+	 if(ip[i].equals("*") ||   ip[i].equals("+")  ||  ip[i].equals("-") ||  ip[i].equals("%") 			||  ip[i].equals("/"))
+    	{
+		
+	int b=st1.pop();
+	int a=st1.pop();
+	
+      	if(ip[i].equals("*"))
+      	{
+      	        st1.push(a*b);
+      	}
+      	
+      	else if(ip[i].equals("+"))
+      	{
+      	       st1.push(a+b);
+      	}
+      	
+      	else if(ip[i].equals("-"))
+      	{
+      	        st1.push(a-b);
+      	}
+      	else if(ip[i].equals("/"))
+      	{
+      	        st1.push(a/b);
+      		
+      	}
+      	else if(ip[i].equals("%"))
+      	{
+      	        st1.push(a%b);
+      	}
+      	
+    }
+    else
+    {
+	st1.push(Integer.parseInt(ip[i]));
+    }
+	
+	
+}
+	
+
+	System.out.println("Final Output"+"-->"+st1.pop());
+  }
+}   
+
+Output:
+
+	Final Output-->46

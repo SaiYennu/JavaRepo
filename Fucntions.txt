@@ -1,0 +1,1160 @@
+1.SIMPLE INTREST PROBLEM:
+
+public class Main {
+  
+  int simpleIntrest(int P ,int T,int R)
+  {
+    int SI=P*T*R;
+    
+    return SI;
+  }
+
+      public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+     System.out.println( "SIMPLE INTREST"+" "+m.simpleIntrest(1000,2,3));
+
+}
+}
+-----------------------------------------------
+FIND THE AREA AND PERIMINTER OF THE RECTANGLE
+
+import java.util.*;
+
+public class Main {
+
+void rectangle(int length, int breadth) {
+  
+    int area = length * breadth;
+    System.out.println("Area: " + area);
+    
+    int perimeter = 2 * (length + breadth);
+    System.out.println("Perimeter: " + perimeter);
+}
+
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+      
+    System.out.println("ENTER  LENGTH  OF A RECTANGEL:");
+    int length=sc.nextInt();
+
+      System.out.println("ENTER  BREATH OF A RECTANGEL:");
+    int breath=sc.nextInt();
+
+
+     m.rectangle(length,breath);
+     
+ 
+  }
+}
+
+-----------------------------------------------------
+ CIRCLE PROGRAM:
+
+import java.util.*;
+
+public class Main {
+ 
+
+void circle(int radius)
+{
+    int area=(int)(Math.PI)*(int) (Math.sqrt(radius));
+    System.out.println("Area: " + area);
+    
+    int circumfrence=2*(int)(Math.PI)*(int) (Math.sqrt(radius));
+    
+     System.out.println("Circumfrence: " + circumfrence);
+    
+}
+
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+  
+    
+     System.out.println("ENTER  RADIUS  OF A CIRCLE:");
+     int radius=sc.nextInt();
+     
+     m.circle(radius);
+     
+     
+  }
+}
+---------------------------------------------------
+CALCULATE THE PERCENTAGE OF THE STUDENT BASED UPON MARKS
+
+import java.util.*;
+
+public class Main {
+  
+  
+  void percentage()
+  {
+      Scanner sc=new Scanner(System.in);
+      
+      System.out.println("MARKS FOR TELUGU:");
+      int telugu=sc.nextInt();
+      
+        System.out.println("MARKS FOR MATHS:");
+      int maths=sc.nextInt();
+      
+        System.out.println("MARKS FOR SCIENCE:");
+      int science=sc.nextInt();
+      
+      
+     System.out.println("MARKS FOR ENGLISH:");
+      int english=sc.nextInt();
+      
+           System.out.println("MARKS FOR HINDI:");
+      int hindi=sc.nextInt();
+         
+      
+        int total_marks=maths+science+telugu+english+hindi;
+        double percentage =(double)total_marks/500*100;
+        
+        System.out.println( "TOTAL MARKS OF THE STUDENT"+total_marks);
+        System.out.println("TOTAL  PERCENTAGE "+percentage);
+      
+  }
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+     m.percentage();
+    
+     
+  }
+}
+----------------------------------------------
+SWAPPING OF THE TWO NUMBERS WITHOUT OUT USING THIRD VARIBLE:
+
+import java.util.*;
+
+public class Main {
+
+void swapping(int a ,int b)
+{
+    System.out.println("BEFORE SWAPPING"+" "+a+" "+b);
+    
+    a=a^b;
+    b=a^b;
+    a=a^b;
+    
+    System.out.println("AFTER SWAPPING"+" "+a+" "+b);
+}
+  
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+     m.swapping(2,4);
+     
+     
+  }
+}
+-----------------------------------------
+FIND THE GROSS SALARY OF THE EMPLOYEE:
+
+import java.util.*;
+
+public class Main {
+  
+
+void grossSalary(int basicSalary)
+{
+    int dearness=8000;
+    int houserent=4000;
+    int grosssalary=dearness+houserent+basicSalary;
+    System.out.println("TOTAL GROSS SALARY OF MURALI"+" ->"+grosssalary);
+}
+  
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+      
+    
+    System.out.println("ENTER A BASIC SALARY");
+    int basicSalary=sc.nextInt();
+    
+    m.grossSalary(basicSalary);
+     
+     
+     
+     
+     
+  }
+}
+----------------------------------------------
+
+BASE SALARY:
+
+import java.util.*;
+
+public class Main {
+  
+
+void grossSalary(double basicSalary,double dearness_percentage,double house_percentage)
+{
+     double dearness=dearness_percentage*basicSalary;
+     double houserent= house_percentage*basicSalary;
+    double grosssalary=dearness+houserent+basicSalary;
+    
+    System.out.println("TOTAL GROSS SALARY OF MURALI"+" ->"+grosssalary);
+}
+  
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+    
+    
+    System.out.println("ENTER A BASIC SALARY");
+    double basicSalary=sc.nextInt();
+
+      System.out.println("ENTER A dearness_percentage ");
+    double dearness_percentage=sc.nextDouble();
+
+      System.out.println("ENTER A house_percentage ");
+    double house_percentage=sc.nextDouble();
+    
+     m.grossSalary(basicSalary,dearness_percentage,house_percentage);
+     
+     
+     
+     
+     
+  }
+}
+-------------------------------------
+CONCEPT:
+ 	CONDITIONAL STATEMENT:
+
+
+1.PROFIT OR LOSS TO SELLER PROGRAM:
+
+import java.util.*;
+
+public class Main {
+  
+
+   void profit_loss_seller( int cost_price,int selling_price)
+  {
+      
+      if(selling_price>cost_price)
+      {
+          int profit=selling_price-cost_price;
+          double profit_per=((double) profit / cost_price) * 100;
+          System.out.println(profit_per);
+          
+          System.out.println(profit+" ->"+"PROFIT");
+      }
+      else if(cost_price==selling_price){
+          System.out.println("HE DIDN'T NOT GET ANY PROFIT OR LOSS");
+          
+      }
+      else
+      {
+                 int loss=cost_price-selling_price;
+                  double lost_per=((double) loss / cost_price) * 100;
+          System.out.println(lost_per);
+                 
+          System.out.println(loss+" ->"+"LOSS "); 
+      }
+      
+  }
+  
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+
+     
+      System.out.println("ENTER A COST PRICE");
+      int cost_price=sc.nextInt();
+      
+       System.out.println("ENTER A SELLING PRICE");
+      int selling_price=sc.nextInt();
+     
+     m.profit_loss_seller(cost_price,selling_price);
+     
+  }
+}
+---------------------------------------
+CHECK ENTER NUMBER IS EVEN OR ODD
+
+import java.util.*;
+
+public class Main {
+ 
+
+void evenOrOdd(int number)
+{
+    if(number%2==0)
+    System.out.println(number+" ->"+"EVEN");
+    else
+    System.out.println(number+" ->"+"ODD");
+}
+  
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+    
+    
+         System.out.println("ENTER A NUMBER");
+      int number=sc.nextInt();
+      
+      m.evenOrOdd(number);
+    
+     
+  }
+}
+---------------------------------------------
+
+AREA OF THE RECTANGEL IS > RECTANGLE PERIMINTER CONDITION?
+import java.util.*;
+
+public class Main {
+
+  
+   void rectangle_area_perimiter_greater(int length, int breadth) {
+  
+  
+    int area = length * breadth;
+    System.out.println("Area: " + area);
+    
+    int perimeter = 2 * (length + breadth);
+    System.out.println("Perimeter: " + perimeter);
+    
+    if(area>perimeter)
+    {
+    
+        System.out.println("AREA OF RECTANGLE IS GREATER");
+    }
+    else{
+     System.out.println("PERMITER OF RECTANGLE IS GREATER");
+    }
+    
+}
+  
+  
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+      
+  
+        System.out.println("ENTER  LENGTH  OF A RECTANGEL:");
+       int length=sc.nextInt();
+
+      System.out.println("ENTER  BREATH OF A RECTANGEL:");
+     int breath=sc.nextInt();
+    
+     m.rectangle_area_perimiter_greater(length,breath);
+    
+  
+     
+  }
+}
+---------------------------------------------
+
+CHECK WETHER THE ENTER THE CHARACTER IS CAPITAL OR SMALL ALPHABETA OR NUMBER?
+
+import java.util.*;
+
+public class Main {
+
+
+       void  check_capital_small_digit(int ch){
+           
+        if(ch>='A' && ch<='Z'  )
+       {
+           System.out.println("It is a captial"+" --> " +(char)ch);
+       }
+       else if(ch>='a'&&ch<='z')
+       {
+           System.out.println("It is a small "+" -->" +(char)ch);
+       }
+       else if(ch>=0&&ch<=9)
+       {
+           System.out.println(" It is a digit"+" -->" +(char)ch);
+       }
+       else
+       {
+           System.out.println("It is a symbol");
+       }
+           
+      
+   }
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+       
+      int ch=65;
+
+          m. check_capital_small_digit(ch);
+   
+---------------------------------------------
+GIVE THE PREMIMUM BASED UPON CERTAIN CONDITIONS
+
+import java.util.*;
+
+public class Main {
+  
+  
+    
+    void cal_premimum(String per_health_cond,int age,String city,String gender )
+    {
+        if(per_health_cond=="excellent" && age>25&&age<35 && city=="city"&& gender=="male")
+        {
+            System.out.println("THE PERSON IS INSURED");
+            System.out.println("secured 4 PER THOUSAND AMOUNT NOT GREATER THAN-> 2LAK");
+        }
+        else  if(per_health_cond=="excellent" && age>25&&age<35 && city=="city"&& gender=="female")
+        {
+            System.out.println("THE PERSON IS INSURED");
+            System.out.println("secured 3 PER THOUSAND AMOUNT NOT GREATER THAN ->1lak");
+        }
+           else  if(per_health_cond=="poor" && age>25&&age<35 && city=="village"&& gender=="male")
+           {   
+               System.out.println("THE PERSON IS INSURED");
+               System.out.println("secured 6 THOUSAND PER THOUSAND AMONT NOT GREATEER 10K ");
+           }
+           else
+           {    System.out.println("THE PERSON IS NOT INSURED");
+               System.out.println("NOT APPLICABLE");
+           }
+        
+    }
+  
+  
+  
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+      
+   
+
+        System.out.println("ENTER HELATH CONDITION");
+        
+        String per_health_cond=sc.nextLine();
+        
+        System.out.println("ENTER PERSONS AGE:");
+         int age=sc.nextInt();
+         
+         System.out.println("ENTER THE PERSONS CITY");
+         String city=sc.nextLine();
+         
+         System.out.println("ENTER THE GENDER");
+         String gender=sc.nextLine();
+         
+         m.cal_premimum(per_health_cond,age,city,gender);
+
+
+
+}
+}
+------------------------------------------------------------
+
+1.GRADES BASED UPON THE HARDNESS AND TENSILESTRENGTH AND CARBONCONTENT QULAITYS
+2.STUDENT IS PASS OR QUALIFIED OR FOR THE UNIVERSITY EXAM?
+
+import java.util.*;
+
+public class Main {
+  
+
+    
+     void  determineGrade(double hardness,double carbonContent,double tensileStrength)
+       {
+           if(hardness>50)
+           {
+               if(carbonContent < 0.7)
+               {
+                   if(tensileStrength > 5600)
+                   {
+                       System.out.println("grade 10");
+                   }
+               }
+           }
+           
+           else if(hardness>50)
+           {
+                if(carbonContent < 0.7)
+               {
+                   System.out.println("grade 9");
+               }
+
+           }
+
+              else if(hardness>50)
+           {
+                if(tensileStrength > 5600)
+                   {
+                       System.out.println("grade 8");
+                   }
+           }
+
+                else if(hardness>50)
+              {
+
+                if(tensileStrength > 5600)
+                   {
+                       System.out.println("grade 7");
+                   }
+           }
+
+           else if(hardness>50 ||carbonContent < 0.7||tensileStrength > 5600)
+           {
+              System.out.println("grade 6");
+           }
+
+           else
+           {
+               System.out.println("grade 5");
+           }
+           
+           
+       }
+
+
+void student_pass_fail(int a_sub,int b_sub)
+    {
+        if(a_sub>=55||b_sub>=45)
+        {
+            System.out.println("pass");
+        }
+        else if(a_sub<55&&a_sub>45 || b_sub>=55 )
+        {
+            System.out.println("pass");
+        }
+         else if(a_sub>65|| b_sub<45 )
+        {
+            System.out.println("allowed to reaperar in examination to qualify to B");
+        }
+        else
+        {
+            System.out.println("fail");
+        }
+    }
+
+   
+    public static void main(String[] args) {
+      
+      Main m=new Main();
+      
+      Scanner sc=new Scanner(System.in);
+      
+        
+         // Get user input
+        System.out.print("Enter hardness: ");
+        double hardness = sc.nextDouble();
+
+        System.out.print("Enter carbon content: ");
+        double carbonContent = sc.nextDouble();
+
+        System.out.print("Enter tensile strength: ");
+        double tensileStrength = sc.nextDouble();
+        
+        m.determineGrade(hardness, carbonContent, tensileStrength);
+
+
+-----------------------------------
+        System.out.println("enter A SUB PERCENTAGE ");
+        int a_sub=sc.nextInt();
+          System.out.println("enter B SUB PERCENTAGE ");
+        int b_sub=sc.nextInt();
+        
+        HelloWorld h=new HelloWorld();
+        h.student_pass_fail( a_sub, b_sub);
+}
+}
+   
+    
+    
+    
+    
+     
+  }
+}
+
+----------------------------------------------
+CHAPTER-3
+
+import java.util.*;
+class HelloWorld {
+    
+    void print()
+    {
+        for(int i=1;i<=10;i++)
+        {
+        System.out.print("Coding Hub ");
+        }
+    }
+    
+     void display()
+    {
+        for(int i=1;i<=10;i++)
+        {
+        System.out.println("Java ");
+        System.out.println("Programming ");
+        
+        }
+    }
+    
+    void factors(int n)
+    {
+        System.out.println(n+"FACTORS");
+
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0)
+            {
+                System.out.println(i);
+            }
+        }
+    }
+    
+    
+    void factors_backward(int n)
+    {
+        System.out.println(n+"FACTORS BACKWARD ITERATION");
+
+        for(int i=n;i>=1;i--)
+        {
+            if(n%i==0)
+            {
+                System.out.println(i);
+            }
+        }
+    }
+
+int difference_min_max(int [] number,int n)
+{
+    int min=number[0];
+    int max=number[0];
+
+    for(int i=1;i<=n;i++)
+    {
+        if(number[i]<=min)
+        {
+            min=number[i];
+        }
+        else
+        {
+           max=number[i]; 
+        }
+    }
+    return max-min;
+    
+}
+
+int sum_forwad(int n)
+{
+    int sum=0;
+    for(int i=1;i<=n;i++)
+    {
+        sum=sum+i;
+    }
+    return sum;
+}
+
+int sum_backward(int n)
+{
+    int sum=0;
+    for(int i=n;i>=1;i--)
+    {
+        sum=sum+i;
+    }
+    return sum;
+}
+
+int pow(int base,int exp )
+{
+    int count=1,res=1;
+    while(count<=exp)
+    {
+        res=res*base;
+        count++;
+    }
+    return res;
+}
+
+void prime_range(int n)
+{
+     
+     int count=0;
+     
+     for( int num=1;num<=n;num++)
+     {
+           count=0;
+     
+                     for(int i=1;i<=num;i++)
+                     {
+                       if(num%i==0)
+                       {     
+                         count++;
+                       }
+                     }
+                     
+                     
+             if(count==2)
+               {
+                 System.out.println(num+" "+"Prime");
+               }
+             else
+                 {
+                   System.out.println(num+" "+"Not Prime");
+                   
+                 }
+                 
+    
+    
+}
+}
+
+void table_printing(int table)
+{
+    
+              System.out.println(table+"TABLE :");
+              
+              for(int i=1;i<=10;i++)
+              {
+                  System.out.println(table+"X"+i+"="+table*i);
+              }
+              
+      System.out.println( );
+      
+      }
+
+
+public static void main(String[] args)
+ {
+        
+ Scanner sc=new Scanner(System.in);
+    HelloWorld h=new HelloWorld();
+    
+        // h.print();
+        
+        // h.display();
+        
+        // System.out.println("ENTER N VALUE");
+        // int n=sc.nextInt();
+        
+        // h.factors_forwad(n);
+        // h.factors_backward(n);
+        
+    //     int[] numbers = {15, 22, 8, 19, 31};
+        
+    //  int result=h.difference_min_max(numbers,n);
+    //   System.out.println(result);
+     
+     
+       
+       
+    //   System.out.println("ENTER N VALUE");
+    //     int n=sc.nextInt();
+        
+    //   int result_sum=h.sum_forwad(n);
+    //   System.out.println(result_sum+"->"+"THE RESULTANT SUM");
+       
+        
+    //     System.out.println("ENTER N VALUE");
+    //     int n=sc.nextInt();
+        
+    //   int result_sum=h.sum_backward(n);
+    //   System.out.println(result_sum+"->"+"THE RESULTANT SUM");
+     
+     
+        
+    //     int base=2,exp=3;
+    //   int result= h.pow(base,exp);
+       
+    //   System.out.println("THE "+base +" pow "+ exp+" is "+result);
+        
+        
+        // System.out.println("ENTER N VALUE");
+        // int n=sc.nextInt();
+        
+        //  h.prime_range(n);
+        
+        
+        //     System.out.println("ENTER N VALUE");
+        // int n=sc.nextInt();
+        
+        //  h.table_printing(n);
+         
+              
+    }
+}
+
+
+------------------------------
+FINAL -4 CHAPTER
+
+
+import java.util.*;
+class HelloWorld 
+{
+      
+     void leap_year_check(int n)
+     {      
+ 
+     	 if((n%4==0 && n%100!=0) || (n%400==0))
+      	 {
+       		 System.out.println(n+" ->"+" leap year");
+     	 }
+     	 else{
+        		 System.out.println(n+" ->"+" not leap year");
+    	      }         
+      }
+      
+      int factorial1(int n)
+      {
+               
+        int fact=1;
+        for(int i=1;i<=n;i++)
+        {
+              fact=fact*i;
+        }
+        return fact;
+          
+      }
+
+      
+      int  reverse_num(int n)
+      {
+           int rev=0,rem=0;
+          
+            while(n>0)
+            {
+               rem=n%10;
+               rev=rev*10+rem;
+              n=n/10;
+            }
+            return rev;
+      }
+
+      
+      void fib(int n)
+      {
+          int a=1,b=0,c=0;
+          
+          while(n>0)
+          {
+              System.out.println(a);
+               c=a+b;
+               a=b;
+               b=c;
+               n--;
+          }
+      }
+      
+               
+
+
+    // Function to find the minimum of three numbers
+
+    int findMin(int a, int b, int c) 
+   {
+        int min = Math.min(a, b);
+        min = Math.min(min, c);
+        return min;
+    }
+
+    // Function to find the maximum of three numbers
+
+    int findMax(int a, int b, int c)
+   {
+        int max = Math.max(a, b);
+        max = Math.max(max, c);
+        return max;
+    }
+     
+
+
+
+public static void main(String[] args)
+ {
+        
+ Scanner sc=new Scanner(System.in);
+    HelloWorld h=new HelloWorld();
+   
+        
+        //     System.out.println("ENTER YEAR VALUE");
+        // int year=sc.nextInt();
+        
+        //  h.leap_year_check(year);
+        
+        
+        // System.out.println("ENTER N VALUE");
+        // int n=sc.nextInt();
+        
+        //  int result=h.factorial1(n);
+         
+        // System.out.println(n+"FACTORIAL OF THE NUUMBER"+"->"+result);
+        
+        
+        
+        //      System.out.println("ENTER N VALUE");
+        // int n=sc.nextInt();
+        
+        //  int result=h.reverse_num(n);
+         
+        // System.out.println(n+"Reverse OF THE NUUMBER"+"->"+result);
+        
+        
+        // System.out.println("ENTER N VALUE");
+        // int n=sc.nextInt();
+        // h.fib(n);
+         
+
+         
+         
+
+
+    
+        int a = 10;
+        int b = 20;
+        int c = 30;
+
+        int min = h.findMin(a, b, c);
+        int max = h.findMax(a, b, c);
+
+        System.out.println("The minimum of the given numbers is: " + min);
+        System.out.println("The maximum of the given numbers is: " + max);
+    }
+}
+
+        
+        
+    ------------------------------------------------    
+        
+
+CHAPTER -5
+
+
+import java.util.*;
+
+class HelloWorld {
+    
+    int  factorial(int n)
+    {
+           int  fact=1;
+        for(int i=1;i<=n;i++)
+        {
+          fact=fact*i;
+        }
+        return fact;
+    }
+    
+    void factors_num(int num)
+    {
+       
+         System.out.println(num+"FACTORS:");
+          for(int i=1;i<=num;i++)
+          {
+              if(num%i==0)
+              {
+                System.out.println(i);
+              }
+          }
+        
+        
+    }
+    
+    
+     void fib(int n)
+      {
+          int a=1,b=0,c=0;
+          
+          while(n>0)
+          {
+              System.out.println(a);
+               c=a+b;
+               a=b;
+               b=c;
+               n--;
+          }
+      }
+           
+      
+       int  reverse_num(int n)
+      {
+           int rev=0,rem=0;
+              
+            while(n>0)
+            {
+               rem=n%10;
+               rev=rev*10+rem;
+              n=n/10;
+            }
+            return rev;
+      }
+      
+      
+      
+      void armstrong(int n)
+      {
+                 
+     int count=0,rem=0,pow=0,sum=0;
+     int temp=n;
+     
+     while(n>0)
+     {
+       rem=n%10;
+       count++;
+       n=n/10;
+     }
+     
+     n=temp;
+     
+       while(n>0)
+       {
+         rem=n%10;
+         pow=(int)Math.pow(rem,count);
+         sum=sum+pow;
+         n=n/10;
+       }
+           if(sum==temp)
+           {
+             System.out.println("Armstrong");
+           }
+           else
+           {
+             System.out.println("NOT Armstrong");
+           }
+          
+          
+      }
+      
+      
+      void palindrome(int num)
+      {       
+           int rev=0,rem=0;
+          
+          int temp=num;
+          
+            while(num>0)
+            {
+               rem=num%10;
+               rev=rev*10+rem;
+              num=num/10;
+            }
+            
+            
+            if(temp==rev)
+            {
+              System.out.println("PALNIDROME ");
+            }
+            else{
+              System.out.println("NOT PALNIDROME ");
+            }
+          
+          
+      }
+    
+    public static void main(String[] args)
+ {
+        
+      HelloWorld h=new HelloWorld();
+      Scanner sc=new Scanner(System.in);
+      
+    //       System.out.println("FACTORIAL OF TH NUMBER I ");
+    //   int n=sc.nextInt();
+      
+    //  int result= h.factorial(n);
+    //  System.out.println(n+"FACTORIAL OF TH NUMBER I "+result);
+    
+    
+    //     System.out.println("ENTR THE N VALUE ");
+    //   int n=sc.nextInt();
+    
+    // h.factors_num(n);
+    
+    
+        System.out.println("ENTR THE N VALUE ");
+      int n=sc.nextInt();
+    
+      //56 h.fib(n);
+       
+
+    //      int result=  h.reverse_num( n);
+    //  System.out.println(n+"REVERSE OF TH NUMBER I "+result);
+    
+    
+    
+    //h.armstrong(n);
+    
+    h.palindrome(n);
+
+        
+        
+    }
+}
+
+-------------------------------------------------------------------
+PRIME RANGE:
+
+import java.util.Scanner;
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+     int num1=1;
+     
+     for( num1=1;num1<=100;num1++)
+     {      
+          int c=0;
+             for(int i=2;i<=num1/2;i++)
+             {
+                 if(num1%i==0)
+                 {
+                     c++;
+                     break;
+                 }
+                 
+             }
+     if(c==0 && num1!=0&&num1!=1)
+     {
+         System.out.println(num1+"prime");
+     }
+      else
+     System.out.println(num1+" not prime");
+    
+            
+             
+     }    
+   
+     
+
+      
+    }
+}
+

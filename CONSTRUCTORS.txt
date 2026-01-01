@@ -1,0 +1,354 @@
+
+
+CONSTUCTORS:
+		Constructor is similar to methode but it doesnot have a return
+type.constructors are mainly used to installize the instance varibles.
+Conditions:
+	1.Constructor name same as Class Name
+	2.Constructor cant be private
+	3.We can't create a STATIC Constructor .
+ 
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+
+        Test t1= new Test(20.0,10);
+        
+        
+    }
+}
+class Test{
+    
+    int x;
+    int y;
+    
+    
+    Test()
+    {
+        System.out.println("Default Constructor");
+    }
+    
+    Test(int x,int y)
+    {
+        this.x=x;
+        this.y=y;
+    }
+    Test(int x,double y)
+    {
+        System.out.println("parameter with Int and Double");
+    }
+    Test(double x,int y){
+        System.out.println("parameters with Double and INT");
+    }
+    
+    
+}
+
+---------------------------------------------------
+
+*Constructors internally call the non static blocks by default.
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+
+        Test t1= new Test(20);
+        
+    }
+}
+class Test{
+    
+    int x;
+    int y;
+    
+    {
+        System.out.println("Non static block");
+    }
+    
+    Test(int x)
+    {
+        System.out.println("INT PARAMETER Constructor");
+    }
+    
+    
+}
+
+output:
+Non static block
+INT PARAMETER Constructor
+
+
+----------------------------------------
+
+*Here each child constructor calls  the parent class constructor by default
+this is the main reason for the output.
+ 
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+        
+     grandChild gc=new grandChild();
+       
+
+    }
+}
+
+
+class parent
+ {
+    
+    
+    parent()
+    {
+        System.out.println("parent Constructor");
+    }
+    
+        
+  }
+  
+  class child extends parent
+  {
+      child()
+      {
+          System.out.println("child class constructor");
+      }
+  }
+  class grandChild extends child {
+      
+      grandChild()
+      {
+          System.out.println("grand Child constructor");
+      }
+  }
+    
+ OUTPUT:
+
+	parent Constructor
+	child class constructor
+	grand Child constructor  
+
+---------Java by default it takes the  above program as
+
+class HelloWorld {
+
+    
+    public static void main(String[] args) {
+        
+        
+     grandChild gc=new grandChild();
+       
+
+    }
+}
+
+
+class parent
+ {
+    
+    
+    parent()
+    {
+        super();
+        System.out.println("parent Constructor");
+    }
+    
+        
+  }
+  
+  class child extends parent
+  {  
+      child()
+      {
+          super();
+          System.out.println("child class constructor");
+      }
+  }
+  class grandChild extends child {
+      
+      grandChild()
+      {
+          super();
+          System.out.println("grand Child constructor");
+      }
+  }
+    
+    
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+ DIFFERENCE BETWEEN THIS AND SUPER KEY WORD:
+
+THIS:
+	This key word use to access the instance varibles and methodes in the 		same class.
+	THIS() INTERNALLY CALLS THE SAME CLASS CONSTRUCTOR.
+
+SUPER:
+		super keyword used to access the immediate parent class 				varibles and methods and  in the child class.
+
+		SUPER() INTERNALLY CALLS THE IMMEDIATE PARENT CLASS 				CONSTRUCTOR
+
+
+
+class HelloWorld {
+
+    
+    public static void main(String[] args) {
+        
+        
+     grandChild gc=new grandChild(10,20);
+       
+
+    }
+}
+
+
+class parent
+ {
+IMP NOTE:
+	1.The super class of the all the class is object class .
+	so by default parent class internally calls the object classs constructor.
+	2.while using the super() and this() of in constructor these both 	             	  statements must be the first statement in that block.
+EXP:
+we can't use the both keywords at the same time in the constructor  if i use like this it shows the error
+why bcz as i already said that super() and this() must be in the first line  but u write super() as first line this() bcms second line 
+according to the rules this () also written in first so thats why it shows error
+
+
+parent()
+    {
+        super();     
+       this();
+
+        System.out.println("parent Constructor");
+    }
+
+----------------------------------
+    
+    int z=30;
+    parent()
+    {
+        super();     //here it calls the parent class constructor
+
+        System.out.println("parent Constructor");
+    }
+    
+        
+  }
+  
+  class child extends parent
+  {  
+      int z=2;
+      child()
+      {
+          super();here it calls the parent class constructor
+          System.out.println("child class constructor");
+      }
+  }
+  class grandChild extends child {
+      int x,y;
+      
+      grandChild(int x,int y)
+      {
+          super();//here it calls the parent class constructor
+          this.x=x;
+          this.y=y;
+          System.out.println(this.x+this.y+super.z);//here z internally takes the value =2 why bcz the value for the z in immediate class is 2
+      }
+  }
+    
+    
+OUTPUT:
+
+	parent Constructor
+	child class constructor
+	32
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+ALL THIS AND SUPER KEY WORDS USAGE
+
+
+class HelloWorld  {
+    
+    public static void main(String[] args) {
+        
+        Child child = new Child(20,10);
+        child.ChilMehthode();
+        
+        
+    }
+}
+
+
+
+class  Parent
+{
+    int y=300;
+    
+    Parent(int x){
+        System.out.println("parent class"+x);
+        
+         }
+    
+        public void parentMehthode1(){
+                    System.out.println("Parent methode11");
+          }
+    
+    public void parentMehthode2(){   
+            this.parentMehthode1();
+            System.out.println("CURRENT class Varible"+"-->"+this.y);
+            System.out.println("Parent methode22");
+       }
+    
+}
+class Child extends Parent{
+    
+    int x;
+    int y;
+    
+    
+    Child(int x)
+    {
+        super(10);
+        System.out.println("child SINGLE PARAMETER Constructor"+x);
+    }
+    
+    Child(int x,int y)
+    {  
+        this(10);
+        this.x=x;
+        this.y=y;
+         System.out.println("child DOUBLE PARAMETER Constructor"+x);
+          System.out.println("child DOUBLE Constructor"+y);
+        
+     }
+       public void ChilMehthode(){
+
+           super.parentMehthode2();
+           System.out.println("Parent class Varible"+"-->"+super.y);
+        System.out.println("Parent methode");
+
+    }
+    
+    
+}
+
+
+OUTPUT:
+
+parent class10
+child SINGLE PARAMETER Constructor10
+child DOUBLE PARAMETER Constructor20
+child DOUBLE Constructor10
+Parent methode11
+CURRENT class Varible-->300
+Parent methode22
+Parent class Varible-->300
+Parent methode
+
+
+
+

@@ -1,0 +1,1178 @@
+
+
+
+PROGRAM:
+	NCR PROBLEM:
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+       
+       //NCR PROBELEM
+       
+        int n=5 ,r=2;
+        int res=n-r;
+        
+        int fact=1,fac=1,fa=1;
+        for(int i=1;i<=n;i++)
+        {
+            fact=fact*i;
+        }
+        System.out.println(fact);
+        
+        for(int i=1;i<=r;i++)
+        {
+            fac=fac*i;
+        }
+        System.out.println(fac);
+        
+         for(int i=1;i<=res;i++)
+        {
+            fa=fa*i;
+        }
+        System.out.println(fa);
+        
+        System.out.println(fact/fac*fa); 
+           
+    }
+}
+-----------------------------------------------
+
+ PROGRAM:
+	COMMON FACTRORS:
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+
+     int num2=12,num1=6,start=1;
+
+     while(start<=num2)
+     {
+         if(num1%start==0&&num2%start==0)
+         {
+             System.out.println(start);
+             
+         }
+         start++;
+     }
+    }
+}
+-----EFFEICENT METHODE
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+
+     int num2=12,num1=6,start=1;
+
+     while(start<=num1)
+     {
+         if(num1%start==0)
+         {
+             System.out.println(start);
+             
+         }
+         start++;
+     }
+    }
+}
+---------Efficeint methode using for loop
+
+TIP:
+	SMALL TRICK ALWAYS FIND THE FACTORS FOR THE SMALLEST NUMBER 
+
+ int n1=6,n2=12;
+
+      for(int i=1;i<=n1;i++)
+      {
+          if(n1%i==0&&n2%i==0)
+          {
+              System.out.println(i);
+          }
+      }
+OUTPUT
+1
+2
+3
+6
+
+
+*-----------------PRINT THE  HIGHEST COMMON FACTOR ONLY
+
+int num1 = 6;
+int num2 = 12;
+
+int hcf = 1;  
+
+for (int i = 1; i <= num1; i++) {
+
+    if (num1 % i == 0 && num2 % i == 0) {
+
+        hcf = i;  // Update hcf to the latest common factor
+    }
+}
+
+System.out.println("HCF: " + hcf);
+
+	Output:
+
+		HCF: 6
+------------------------------------------------------------------
+PROGRAM:
+	PRIME NUMBER OR NOT?
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+
+     int num1=11,start=1,count=0;
+
+     while(start<=num1)
+     {
+         if(num1%start==0)
+         {
+            
+             count++;
+         }
+         start++;
+     }
+     if(count==2)
+     {
+         System.out.println("prime");
+     }
+     else
+     {
+         System.out.println("Not prime");
+         
+     }
+    }
+}
+-------SECOND METHODE
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+
+     int num1=5,start=1,count=0;
+
+     while(start<=num1/2)
+     {
+         if(num1%start==0)
+         {
+             System.out.println(start);
+             count++;
+             
+         }
+         start++;
+     }
+     
+     System.out.println(count==1?"prime":"not prime");
+    }
+}
+
+--------- 3RD METHODE
+
+PRIME OR NOT PRIME CONDITON IN EFFICENT MANNER
+
+
+import java.util.Scanner;
+
+class HelloWorld {
+    
+    
+    public static void main(String[] args) {
+     
+     int c=0,n=11;
+
+             for(int i=2;i<=n/2;i++)
+             {
+                 if(n%i==0)
+                 {
+                     c++;
+                     break;
+                 }
+             }
+             
+             
+     if(c==0 &&n!=0&&n!=1)
+     {
+         System.out.println("prime");
+     }
+     else
+     System.out.println(" not prime");
+      
+    }
+}
+
+--------PRIME NUMBER CONDITON WITH FOR--LOOP
+
+int n=11,count=0;
+    
+    for(int i=1;i<=n;i++)
+    {
+      if(n%i==0){
+        count++;
+      }
+    }
+    if(count==2)
+    {
+      System.out.println("PrimeNumber");
+    }
+    else
+    {
+       System.out.println("Not-PrimeNumber");
+    }
+
+Output:
+
+	PrimeNumber
+----------------------------------------------------------------
+PROGRAM:
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+
+     int num1=3,start=1,count=0;
+     
+     while(start<=num1)
+     {
+   if(num1%2==0)
+   {
+       System.out.println("even");
+       num1=num1/2;
+        System.out.println(num1);
+   }
+   else
+   {
+       System.out.println("odd");
+       num1=3*num1+1;
+       
+       System.out.println(num1);
+   }
+   
+     }
+     
+     start++;
+}
+}
+
+
+
+----------------------------------------------------------------
+PROGRAM:
+		ENTER A NUMBER EXTRACT THE EACH DIGIT FROM THE 				NUMBER AND IF THE DIGIT IS EVEN THEN  DO SUM OTHERWISE 			DO PRODUCT?
+
+int sum=0,prod=1;
+
+         Scanner sc=new Scanner(System.in);
+
+            System.out.println("Enter a number");
+            int n=sc.nextInt();
+
+       
+                         while(n>0)
+                         {
+                            int rem=n%10;
+
+                            if(rem%2==0)
+                            {
+                                sum=sum+rem;
+                            }
+                            else
+                            {
+                                prod=prod*rem;
+                            }
+                            
+                             n=n/10;
+                         }
+
+                System.out.println( "THE SUM IS"+sum);
+                 System.out.println( "THE SUM IS"+prod);
+
+-----------------------------------------
+
+PROGRAM:
+	FIND THE MAX DIGIT FORM THE GIVEN NUMBER?
+
+ int sum=0,max=0;
+
+         Scanner sc=new Scanner(System.in);
+
+            System.out.println("Enter a number");
+            int n=sc.nextInt();
+        
+                         while(n>0)
+                         {
+                            int rem=n%10;
+
+                            if(rem>max)
+                            {
+                                max=rem;
+                            }
+                               n=n/10;
+                         }
+                System.out.println( "MAX NUMBER IS "+max);
+
+---------------------------------------------
+
+PROGRAM:
+	FIND THE MIN DIGIT IN THE GIVEN NUMBER? 
+
+         Scanner sc=new Scanner(System.in);
+
+            System.out.println("Enter a number");
+
+            int n=sc.nextInt();
+	 int min=9;
+        
+                         while(n>0)
+                         {
+                            int rem=n%10;
+
+                            if(rem<min)
+                            {
+                                min=rem;
+                            }
+                               n=n/10;
+                         }
+                System.out.println( "Min  DIGIT  IS "+min);
+-----------------------------------------------------------------
+
+PROGRAM:
+	FIND THE MAX AND MINMUM DIGITS IN THE GIVEN NUMBER
+
+
+         int n=153;
+         int max=0;
+         int min=9;
+
+         while(n>0)
+         {
+             int rem=n%10;
+
+             if(rem>max)
+             {
+                 max=rem;
+             }
+             else 
+             {
+                 min=rem;
+             }
+             n=n/10;
+             
+         }
+         System.out.println("MINIMUM"+"->"+min+"MAXIMUM"+" ->"+max);
+
+OUTPUT:
+	MINIMUM->1MAXIMUM ->5
+----------------------------------------------------------------
+
+PROGRAM:
+	FIRST _MIN AND SECOND _MIN VALUE IN THE GIVEN NUMBER ?
+
+   int n=12405;
+
+         int first_min=9;
+         int sec_min=9;
+
+         while(n>0)
+         {
+             int rem=n%10;
+
+             if(rem<first_min)
+             {
+                 sec_min=first_min;
+                 first_min=rem;
+             }
+             else if(rem>first_min&&rem<sec_min)
+             {
+                 sec_min=rem;
+             }
+            
+             n=n/10;
+             
+         }
+         System.out.println("FIRST_MINIMUM"+"->"+first_min+" "+"SEC_MINIMUM"+" ->"+sec_min);
+
+	OUTPUT:
+		FIRST_MINIMUM->0 SEC_MINIMUM ->1
+-------------------------------------------------------
+
+PROGRAM:
+	FIND THE FIRST_MAX DIGIT AND SECOND_MAX DIGIT IN GIVEN NUMBER?
+
+import java.util.Scanner;
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+      
+        int first_max = 0, sec_max = 0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a number:");
+        int n = sc.nextInt();
+        
+        while (n > 0) 
+      {
+
+            int rem = n % 10;
+
+            	 if (rem > first_max)
+	 {
+               		sec_max = first_max;
+                	first_max = rem;
+            	} 
+	else if (rem > sec_max && rem < first_max) 
+	{
+                	sec_max = rem;
+           	 }
+            n = n / 10;
+        }
+        
+        System.out.println("First Max is: " + first_max);
+        System.out.println("Second Max is: " + sec_max);
+    }
+}
+
+
+**--------------- LARGEST PRODUCT OF TWO INTEGERS IN THE GIVEN ARRAY
+ 
+      
+class HelloWorld {
+
+    public static void main(String[] args) {
+
+        int arr []=new int[]{1,6,4,2,10};
+        
+	int first_max=arr[0];
+        	int sec_max=arr[0];
+
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>first_max)
+            {
+                sec_max=first_max;
+                first_max=arr[i];
+            }
+         else if(arr[i] > sec_max && arr[i] <first_max)
+            {
+                sec_max=arr[i];
+            }
+        }
+        System.out.println("MAX NUMBER IN THE ARRAY:"+" ->"+first_max);
+        System.out.println("Second MAX NUMBER IN THE ARRAY:"+" ->"+sec_max);
+
+        System.out.println("Max_Product"+"->"+first_max*sec_max);
+    }
+}
+
+Output:
+
+	MAX NUMBER IN THE ARRAY: ->10
+	Second MAX NUMBER IN THE ARRAY: ->6
+
+	Max_Product->60
+
+
+
+----------------------------------------------------
+PROGRAM:
+	If the enter a number is 479 then the output is 580?
+
+PROCESS:
+	Step 1: Reverse the digits of the number (e.g., 479 becomes 974).
+	Step 2: For EXTRACT THE each digit FROM the reversed number:
+	If the digit is 9, add 0 
+	For any other digit, add 1 
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+       
+       
+       int n=479,rev1=0,rev2=0;
+       
+       while(n>0)
+       {
+           int rem=n%10;
+           rev1=rev1*10+rem;
+           n=n/10;
+       }
+       System.out.println(rev1);
+       
+   	    while(rev1>0)      //974  97 9
+   	    {
+        		   int rem=rev1%10;     //4  7 9
+
+         		if(rem==9)
+		{
+         		  rev2=rev2*10+rem/10;
+		}
+         		else
+		{
+           		rev2=rev2*10+rem+1;       //5+58
+		}
+
+           rev1=rev1/10;      //97
+       }
+       System.out.println(rev2);
+       
+    }
+}
+
+
+-------------------------------------------
+PROGRAM:
+	TWIN PRIMES PROGRAM:
+
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+     
+     
+     Scanner sc=new Scanner(System.in);
+     System.out.println("enter a n1");
+     int n1=sc.nextInt();
+     
+     System.out.println("enter a n2");
+     int n2=sc.nextInt();
+     int count1=0,count2=0;
+
+     int i=1;
+     
+     while(i<=n1/2)
+     {
+         if(n1%i==0)
+         {
+             count1++;
+         }
+         i++;
+     }
+     
+     i=1;
+     while(i<=n2/2)
+     {
+         if(n2%i==0){
+             count2++;
+         }
+         i++;
+     }
+     if((count1==1)&&(count2==1)&&((n2-n1)==2))
+     {
+         System.out.println("Twin primes");
+     }
+    else
+    {
+     System.out.println("NOT TWIN");
+    }
+     
+     
+     
+     
+    }
+}
+
+----------USING FOR LOOP TO REPRESENTS TWIN PRIME'S
+
+MAIN CONDITION:
+	1.BOTH NUMBERS MUST BE PRIMES
+	2.DIFFERENCE MUST BE 2 BW THE TWO NUMBERS
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+       
+      int n1=3 ,n2=5;
+      int count1=0,count2=0;
+      
+      for(int i=1;i<=n1;i++)
+      {
+          if(n1%i==0)
+          {
+              count1++;
+          }
+      }
+       
+      for(int i=1;i<=n2;i++)
+      {
+          if(n2%i==0)
+          {
+              count2++;
+          }
+      }
+      
+      if(count1==2&&count2==2&&(n2-n1==2))
+      {
+          System.out.println("Twin Prime");
+      }
+      else
+       {
+          System.out.println("Not Twin Prime");
+      }
+      
+    }
+}
+----------------------------------------------------------
+PROGRAM:
+		TAKE A NUMBER EXTRACT EACH DIGIT  FROM THAT NUMBER 			CALCULATE THE FACTORIAL OF EACH NUMBER ADD THE SUM 			OF EACH NUMBER AND CHECK IF THE NUMBER IS 					STRONG  OR NOT?
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+
+       int n=145,rem=0,fact=1,sum=0,temp;
+       temp=n;
+       
+       while(n>0)
+       {
+            rem=n%10;
+
+            fact=1;
+           
+           for(;rem>=1;rem--)
+           {
+               fact=fact*rem;
+           }
+           
+           sum=sum+fact;
+           
+           System.out.println(fact);
+           n=n/10;
+       }
+        
+       if(temp==sum){
+           
+       System.out.println("strong number");
+       
+       }
+       else{
+                System.out.println(" Not a strong number");
+       }
+    }
+}
+----------------------------------------------------
+
+PROGRAM:
+	FIND THE MISSING DIGIT IN THE GVIEN ARRAY:
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+       int arr[]={1,2,3,4,5,6,8,9,10};
+
+       int n=10;
+
+       int acutual_sum=n*(n+1)/2;
+       int arr_sum=0;
+       
+       for(int i:arr)
+       {
+           arr_sum=arr_sum+i;
+       }
+       int missing_number=acutual_sum-arr_sum;
+       System.out.println(missing_number);
+    }
+}
+
+OUTPUT:
+	7
+-------------------------------------------------------------
+
+PROGRAM:
+	SECOND MAX VALUE IN THE GIVEN ARRAY 
+
+--->EFFICIENT MANNER 
+
+
+import java.util.*;
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+        
+     int arr[]=new int[]{100,20,30,40};
+     
+     Arrays.sort(arr);
+     
+     int max=arr[arr.length-1],smax=0;
+     
+     for(int x=0;x<=arr.length-2;x++)
+     {
+         if(max!=arr[x])
+         {
+             smax=arr[x];
+         }
+     }
+     System.out.println("Second max with sorting"+"->"+smax);
+    
+     
+    
+    
+    }
+}
+
+-----------------ANOTHER WAY[SIMPLE]
+     
+    int arr[]={10,30,20,60};
+       
+    Arrays.sort(arr);
+    
+    System.out.println("FIRST_MAX"+"->"+arr[arr.length-1]); //first max
+    System.out.println("SECOND_MAX"+"->"+arr[arr.length-2]);//second max
+
+
+Output:
+
+	FIRST_MAX->60
+	SECOND_MAX->30
+--------------------------------------------------
+PROGRAM:
+	PERFECT SQUARE OR NOT ?
+
+DEFINATION:
+	If the square root of a number is an integer, it's a perfect square.
+
+EX:	2*2=4
+	3*3=9
+	4*4=16
+	5*5=25
+
+NOT A PERFECTSQUARE:
+		SQUARE ROOT OF A NUMBER IS NOT A INTEGER  IT IS NOT A 			PERFECT SQUARE
+
+EX:---->SQRT(1.5 ) =2.25
+
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+        
+        int num=25, i=1,count=0;
+        
+        while(i<=num)
+        {
+            if(i*i==num)
+            count=1;
+           
+            i++;
+        }
+        
+        if(count==1)
+        System.out.println("perfect sqaure");
+        else
+        System.out.println("not   perfect sqaure");
+    }
+}
+
+----USING FOR LOOP
+
+
+	int num=25; 
+    
+    for(int i=1;i<=num;i++)
+    {
+      
+      if(i*i==num)
+      {
+        System.out.println(num+" "+"Perfect square");
+      }
+      
+    }
+
+OUTPUT:
+	
+	25 Perfect square
+-------------------------------------------------------------------
+
+TOPIC:
+	To Know the Difference BW Converstions
+
+import java.util.*;
+class HelloWorld {
+
+    public static void main(String[] args) {
+    
+        String s="123";
+
+*NOTE:
+	Convertion of String to primitive data type as result then we used  			below method.
+
+                                    int num=Integer.parseInt(s);
+                                     System.out.println(num);
+        
+*NOTE:
+	Convertion of String to INTEGER OBJECT data type as result 			then we used  below method.
+
+                WE RECQURIED OBJECT AS RESULT THEN WE USED BELOW METHODE.
+
+       		 Integer obj=Integer.valueOf(s);
+        		 System.out.println(obj);
+        
+        ArrayList<Integer>al=new ArrayList<>();
+        al.add(obj);
+        System.out.println(al);
+    }
+}
+
+
+
+
+--------------------------------------------------------
+
+QUESTION :
+	1500 REV->51 REV->1500
+
+class HelloWorld {
+
+    public static void main(String[] args) 
+    {
+
+    int n=1500; 
+
+        int rev1=0,rev2=0,count1=0,count2=0 ,diff_count=0;
+
+	System.out.println(n);
+
+        while(n>0)
+        {
+            int rem=n%10;
+            count1++;
+            rev1=rev1*10+rem;
+            n=n/10;
+            
+        }
+
+        System.out.println(rev1);
+
+        while(rev1>0)
+        {
+            int rem=rev1%10;
+            count2++;
+            rev2=rev2*10+rem;
+            rev1=rev1/10;
+            
+        }
+        diff_count=count1-count2;
+        System.out.println(rev2*(int)Math.pow(10,diff_count));
+}
+}
+
+
+OUTPUT:
+
+	1500
+	51
+  	1500
+---------------------------------------------------------------------------
+
+PROGRAM:
+	PRINT THE NUMBER IN THE WORDS
+
+N=561->FIVE SIX ONE
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+      
+      int n=561;
+      int rev=0;
+      
+      while(n>0)
+      {
+          int rem=n%10;
+          rev=rev*10+rem;
+          n=n/10;
+      }
+      
+      
+      while(rev>0)
+      {
+          int rem=rev%10;
+          
+          switch(rem)
+         {
+              case 1:
+                  System.out.println("one");
+                  break;
+             case 2:
+                  System.out.println("TWO");
+                  break;  
+             case 3:
+                  System.out.println("THREE");
+                  break;
+            case 4:
+                  System.out.println("FOUR");
+                  break;
+             case 5:
+                  System.out.println("FIVE");
+                  break;
+            case 6:
+                  System.out.println("SIX");
+                  break;
+            case 7:
+                  System.out.println("SEVEN");
+                  break;
+             case 8:
+                  System.out.println("EIGHT");
+                  break;
+             case 9:
+                  System.out.println("NINE");
+                  break;
+            default:
+                    System.out.println("invalid");
+          }
+    rev=rev/10;
+          
+    }
+      System.out.println("completed");
+        
+    }
+}
+
+OUTPUT:
+	FIVE
+	SIX
+	one
+	completed
+
+--------------------------------------------------------------
+
+PROGRAM:
+	CALCULATE THE POWER OF THE GIVEN NUMBER
+
+      int base=2,exp=3,result=1;
+      int start=1;
+      while(start<=exp)
+      {
+          result=result*base;
+          start++;
+      }
+      System.out.println(result);
+
+OUTPUT:8
+
+-----------WITH FOR LOOP:
+
+  int base=2;
+  int exp=3,result=1;
+  
+  for(int i=1;i<=exp;i++)
+  {
+    result=result*base;
+  }
+  System.out.println("power is"+"->"+result);
+  
+  }
+
+Output:
+
+power is->8
+------------------------------------------------------
+//FIBNOICSERIES 
+
+
+int n=5;
+        int a=1,b=1,c=0;
+          
+          while(n>0)
+          {
+              System.out.println(a);
+               c=a+b;
+               a=b;
+               b=c;
+               n--;
+          };
+
+OUTPUT:
+
+	1
+	1
+	2
+	3
+	5
+
+
+--------------------------------------------------------
+PROGRAM:
+	FIBNOICSERISE USING RECURSSION
+
+class HelloWorld {
+
+    static int  fib(int n)
+    {
+        if(n==0)
+        {
+        return 0;
+        }
+        else if (n==1)
+        {
+            return 1;
+        }
+        else 
+        return fib(n-1)+fib(n-2);
+    }
+    public static void main(String[] args) {
+        
+	int n=5;
+
+	for(int i=1;i<=n;i++)
+	{
+   	 System.out.println(fib(i));
+	}     
+      
+    }
+}
+
+OUTPUT:
+
+1
+1
+2
+3
+5
+-------------------------------------------
+PROGRAM:
+	FIND THE MAX AND MIN VALUES BW THE TWO NUMBERS WITHOUT USING 
+	IF AND ELSE CONCEPT?
+
+        int a=10,b=20;
+        
+        int max=Math.max(a,b);
+     
+        System.out.println("MAXIMUM-->"+max);
+        
+        int min=Math.min(a,b);
+      
+         System.out.println("MINMUM-->"+min);
+
+OUTPUT:
+
+MAXIMUM-->20
+MINMUM-->10
+--------------------------------------------------
+PROGRAM:
+	FIND THE MAX AND MIN VALUES BW THE 3 NUMBERS
+
+    int a=10,b=20,c=30;
+        
+        int max=Math.max(a,b);
+        max=Math.max(max,c);
+        System.out.println("MAXIMUM-->"+max);
+        
+        int min=Math.min(a,b);
+        min=Math.min(min,c);
+         System.out.println("MINMUM-->"+min);
+
+OUTPUT:
+	MAXIMUM-->30
+                MINMUM-->10
+
+
+-----------------------------------------------
+PROGRAM:
+	FIND THE MAX AND MIN VALUES BW THE FOUR NUMBERS
+
+
+ int a=10,b=20,c=30,d=60;
+        
+        int max=Math.max(a,b);
+        max=Math.max(max,c);
+        max=Math.max(max,d);
+        System.out.println("MAXIMUM-->"+max);
+        
+        int min=Math.min(a,b);
+        min=Math.min(min,c);
+        min=Math.min(min,d);
+         System.out.println("MINMUM-->"+min);
+
+OUTPUT:
+MAXIMUM-->60
+MINMUM-->10
+
+---------------------------------------
+PROGRAM:
+	SUM OF THE TWO VARIBLES WITHOUT USING + OPERATOR?
+
+
+==>METHODE -1
+     
+  int n1=2,n2=5;
+
+  int count1=0;
+   int count2=0;
+
+  for(int i=0;i<n1;i++)
+  {
+    n2++;
+    count1++;
+  }
+  System.out.println("SUM OF THE N1+N2"+"-->"+n2);
+   System.out.println("NO OF ITERATIONS IT TAKES"+"-->"+count1);
+   
+
+==>>METHODE -2
+   
+   int num1=2 ,num2=5;
+   for(int i=0;i<num2;i++)
+   {
+     num1++;
+     count2++;
+   }
+      System.out.println("SUM OF THE NUM1+NUM2"+"-->"+num1);
+   System.out.println("NO OF ITERATIONS IT TAKES"+"-->"+count2);
+   
+OUTPUT:
+
+	SUM OF THE N1+N2-->7
+	NO OF ITERATIONS IT TAKES-->2
+	SUM OF THE NUM1+NUM2-->7
+	NO OF ITERATIONS IT TAKES-->5
+
+EXPLANATION:
+
+	METHODE-1 IS MORE EFFICENT THAT METHODE-2 BCZ THE NO OF 			ITERATIONS WILL BE REDUCED 
+	SO ALWAYS.
+ 
+	1.TAKE SMALL NO FOR ITEARATIONS 
+	2.TAKE LARGE NUMBER FOR INCREMENTION PURPOSE.
+
+
+------------------------------------------------------------
+PROGRAM:
+	HOW TO PRINT THE MULTIPLES OF 7 WITHOUT USING %, / AND * SYMBOLS
+
+
+         int number=7;
+         int end=30;
+	
+  * USING FOR-LOOP:
+   
+      for(int i=number;i<=end;i=i+number)
+      {
+        System.out.println(i);
+      }
+
+
+  *USING WHILE -LOOP:
+         
+         while(number<=end)
+         {
+                 System.out.println(number);
+             
+             number=number+7;
+         }
+
+OUTPUT:
+7
+14
+21
+28

@@ -1,0 +1,4079 @@
+
+MySQL Overview:
+
+	MySQL: 
+		Created by MySQL AB, it's an open-source relational database 			management system (RDBMS).
+
+           Database: 
+		A collection of organized data, stored in tables (which are 				made up of rows and columns).
+
+      SCHEMA:
+	         IT IS THE COLLECTIONS OF DATABASES.
+
+	SQL:
+		STRUCTURED QUERY LANGUAGE.
+	SEQUEL:
+		STRUCTURED ENGLISH QUERY LANGUAGE.
+		
+
+Types of Keys:
+
+Primary Key: 
+		A unique key that identifies each record in a table. It must 				contain unique values and cannot be NULL.
+Foreign Key: 
+		A key used to link two tables together. It acts as a primary key 			in one table and is referenced in another table to maintain the 			relationship between them.
+
+--------------------------------------->> SQL BASIC COMMANDS>>------------------
+
+CREATE: 
+	Used to create a new database or table.
+
+DROP: 
+	Deletes an entire table or database.
+
+SHOW: 
+	Displays existing databases or tables.
+
+USE: 
+	Selects a specific database to work with.
+
+DESCRIBE:
+	 Shows the structure of a table, including column names and data types.
+
+ADD:
+	 Adds new columns or constraints to an existing table.
+
+DISTINCT: 
+	Used in a SELECT query to return only unique values.
+
+TRUNCATE: 
+		Removes all records from a table but keeps the structure 				(columns remain intact).
+
+INSERT INTO:
+		 Inserts new records into a table.
+
+UPDATE:
+		 Modifies existing records in a table.
+
+AND & OR: 
+		Logical operators used to filter results based on multiple 				conditions.
+
+
+
+	------->> DATABASE CONCEPT:>>------------------
+
+*DATABASE CONCEPT:
+			DATA BASE IS A STORAGE MEDIUM WHICH IS USED TO 			STOREING THE DATA ,RETRIVING THE DATA ,UPDATE 				THE DATA ,DELETE THE DATA FROM A DATA BASE.
+
+	DBMS IS INTERFACE BETWEEN  DATABASE AND USER.
+
+
+*RELATIONAL DATABASE:
+  			A RELATIONAL DATA BASE IS USED TO STORE THE 				DATA IN A TABULAR FORMAT.
+*TABLE:
+
+	A TABLE CONSISTS OF ROWS AND COLUMNS.
+
+		ROW--TRUPLES  (OR) RECODS.
+
+		COLUMNS--ATTRIBUTES/FIELDS
+
+
+
+*DIFFERENCES:
+
+*DELETE: 
+	DELETE WHOLE ROW  BASED UPON CONDITON IT REMOVES MULTIPLE 			ROWS ALSO.
+
+*TRUNCATE:
+	TO DELETE ALL ROWS IN A TABLE WITHOUT DELETING THE STRUCTURE.
+
+*DROP :
+	TO DELETE THE WHOLE TABLE.
+
+*ALTER-DROP:
+		TO DELETE PARTICULAR COLUMN IN THE TABLE.		
+
+
+
+------->> ALIAS CONCEPT:>>------------------
+
+*ALIAS:
+
+	GIVING ANOTHER NAME TO THE TABLE OR COLUMN
+	NORMALLY IT CAN BE ACHIEVIED WITH AS KEYWORD.
+	WITHOUT MENTIONG THE AS KEYWORD ALSO WE CAN ACHIEVE.
+
+EX: 
+	SELECT S.NAME S.AGE FROM STUDENT AS S
+
+	SELECT S.NAME AS FULL_NAME FROM STUDENT AS S.
+
+	SELECT S.NAME FULL_NAME FROM STUDENT.
+
+
+------->>>>Aggregate Functions:
+
+	MAX(): Returns the maximum value from a set of values.
+
+	MIN(): Returns the minimum value from a set of values.
+
+	AVG(): Returns the average value of a numeric column.
+
+	SUM(): Returns the total sum of a numeric column.
+
+	COUNT(): Returns the number of rows that match a specified condition.
+
+	ROUND(): Rounds a numeric value to a specified number of 					decimal places.
+
+
+
+------->> SQL  COMMANDS>>------------------
+
+		DATA DEFINATION LANGUAGE[DDL].
+
+		DATA MAINIPULATION LANGUAGE[DML].
+
+		TRANSCATION CONTROL LANGUAGE[TCL].
+
+		DATA QUERY LANGUAGE[DQL].
+
+		DATA CONTROL LANGUAGE[DCL].
+
+
+
+  --------------------------------------------------SQL COMMANDS------------------------------------------
+||         		  ||                   ||        	    ||                            ||
+
+[DDL]		[DML]            [ TCL]                     [DCL]                     [DQL]
+
+||		   ||	         ||		     ||                           ||
+		
+CREATE                    INSERT             COMMIT               GRANT                SELECT
+ALTER                       UPDATE            ROLLBACK            REVOKE
+DROP                          DELETE	           SAVEPOINT
+TRUNCATE
+RENAME
+
+
+	------>> DDL COMMANDS>>------------------
+
+   CREATE :
+	CREATE A TABLE.
+
+   ALTER :
+	ALTER A TABLE.
+
+			ALTER
+			   ||
+  --------------------------------------------------------------------------------------------------------------------------------------
+    |                           |                                     |                                                 |           
+  ADD                   DROP                           MODIFY                                    RENAME
+
+
+ALTER-ADD:
+	 ADD THE COLUMN/FIELDS TO THE EXISTING TABLE.
+
+ALTER-DROP:
+	IT IS USED TO DELETE A PARTICULAR COLUMN IN THE EXISTING TABLE.
+
+ALTER-MODIFY:
+	CHANGE THE DATA TYPE OF A COLUMN 
+	ADD CONSTRAINTS TO A  PARTICULAR COLUMN.
+
+ALTER-RENAME:
+		WE CAN RENAME THE PARTICULAR COLUMN OR A TABLE.
+	
+
+    DROP :
+	DELETE A WHOLE  TABLE  OR DATA BASE.
+
+    TRUNCATE:
+	TO DELETE THE ALL ROWS IN THE TABLE BUT STRUCTURE OF THE 			TABLE DOESNOT DELETE.
+	IF U TRUNCATE A TABLE IT CAN'T BE ROLLBACK.
+
+
+	------->> DML COMMANDS:>>------------------
+
+INSERT:
+	INSERT THE DATA IN TO THE TABLE.
+
+UPDATE:
+	UPDATE THE DATA IN THE ROW .
+
+DELETE:
+	TO DELETE A PARITCULAR ROW OR MULTIPLE ROWS BASED UPON 			CONDITION.
+
+
+
+------->> DQL COMMANDS:>>-------------
+
+	SELECT: 
+		IT USED FOR  GET THE DATA  PURPOSE.
+
+
+
+	------->> TCL COMMANDS:>>------------------
+
+COMMIT :
+	 IT SAVES THE CURRENT TRANSCATION.
+
+SAVEPOINT :
+	 IT SAVES THE CURRENT TRANSCATION POINT WITH SOME NAME.
+
+ROLLBACK TO:
+		IT GOES BACKS TO THE PARTICULAR SAVEPOINT.
+
+ROLLBACK:
+	        IT GO BACK TO THE INTIAL STAGE
+
+
+
+------>> DCL COMMANDS:>>-------------
+
+ 	GRANT : 
+		TO GRANT THE PERMISSIONS TO THE USER.
+
+	REVOKE:
+		 TO GET BACK THE PERMISSIONS FROM THE USER.
+
+
+
+NOTE:
+
+	DDL:
+		OPERATIONS ON THE COLUMNS.
+
+	DML:
+		OPERATIONS ON THE ROWS.
+
+	DQL:
+		RETRIVES THE ROWS.
+
+	TCL:
+		TRANSCATIONS PURPOSE.
+
+	DCL:
+		PERMISIONS PURPOSE
+
+
+
+
+	----------->> DDL AND DML  PRATICAL IMPLEMENTATION>>-----------
+
+
+------>CREATION OF DATABASE:
+
+	SYNTAX:
+		CREATE DATABASE DATABASE_NAME;
+
+ 		CREATE DATABASE FINAL_PRATICE;
+
+----->IT SHOW THE LIST OF DATABASES :
+	
+ 		SHOW DATABASES; 
+
+OUTPUT:
+   FINAL_PRATICE
+
+
+
+
+------>ENTER INTO THAT PARTICULAR DATABASE OR USE THE DATABASE:
+
+ 			USE FINAL_PRATICE;
+
+
+-------->CREATION OF TABLE:
+
+	CREATE:
+
+ 	CREATE TABLE PARENT(
+   		  ID INT PRIMARY KEY ,
+    		NAME VARCHAR(20),
+    		 AGE INT
+    	 );
+
+---------->STRUCTURE OF THE TABLE:
+
+
+ DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | NO   | PRI | NULL    |       |
+| NAME  | varchar(20) | YES  |     | NULL    |       |
+| AGE   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+
+-------->>INSERTING THE DATA INTO THE TABLE:
+
+	INSERT:
+
+ INSERT INTO PARENT VALUES (1,"VASU",21),
+     			 (2,"BALA",22),
+      			 (3,"KISHORE",19);
+
+
+--------->>SHOW THE DATA IN THE TABLE:
+
+ SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALA    |   22 |
+|  3 | KISHORE |   19 |
++----+---------+------+
+
+
+---------->>DELETE THE PARTICULAR ROW IN THE TABLE:
+
+	DELETE:
+
+		 DELETE FROM PARENT WHERE ID=3;
+
+
+mysql> SELECT *FROM PARENT;
++----+------+------+
+| ID | NAME | AGE  |
++----+------+------+
+|  1 | VASU |   21 |
+|  2 | BALA |   22 |
++----+------+------+
+
+
+---------->>UPDATION OF THE ROW:
+
+	UPDATE:
+
+ 	UPDATE PARENT SET NAME="HERRO" WHERE ID=2;
+
+
+mysql> SELECT *FROM PARENT;
++----+-------+------+
+| ID | NAME  | AGE  |
++----+-------+------+
+|  1 | VASU  |   21 |
+|  2 | HERRO |   22 |
++----+-------+------+
+
+
+
+------------------->>ALTER -ADD [ADDING COLUMN]
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | SHANKAR |   25 |
+|  3 | BALA    |   23 |
+|  4 | HARI    |   22 |
+|  5 | UPPU    |   19 |
++----+---------+------+
+
+mysql> ALTER TABLE PARENT ADD COLUMN GENDER VARCHAR(20);
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+--------+
+| ID | NAME    | AGE  | GENDER |
++----+---------+------+--------+
+|  1 | VASU    |   21 | NULL   |
+|  2 | SHANKAR |   25 | NULL   |
+|  3 | BALA    |   23 | NULL   |
+|  4 | HARI    |   22 | NULL   |
+|  5 | UPPU    |   19 | NULL   |
++----+---------+------+--------+
+
+
+------------------------->>>ALTER -ADD[PRIMARY KEY]
+
+**ADDING PRIMARY KEY CONSTRAINT TO THE EXISTING COLUMN
+
+mysql> DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | NO      |           | NULL    |       |
+|NAME| varchar(30)| YES|          | NULL    |       |
+| AGE   | int         | YES    | MUL  | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+
+mysql> ALTER TABLE PARENT ADD PRIMARY KEY(ID);
+
+mysql> DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | NO      | PRI   | NULL    |       |
+|NAME|varchar(30)| YES|         | NULL    |       |
+| AGE   | int         | YES   | MUL | NULL    |       |
++-------+-------------+------+-----+---------+-------
+
+
+----------------------->> ALTER-DROP [TO DELETE PARTICULAR COLUMN IN THE TABLE]
+
+QUERY:
+
+    ALTER TABLE PARENT DROP COLUMN GENDER;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | SHANKAR |   25 |
+|  3 | BALA    |   23 |
+|  4 | HARI    |   22 |
+|  5 | UPPU    |   19 |
++----+---------+------+
+
+
+
+------------------------------>>ALTER-DROP[PRIMARY KEY]
+
+**DROP A PRIMARY KEY CONSTRAINT:
+
+
+ DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | NO      | PRI   | NULL    |       |
+| NAME  | varchar(30)    | YES  || NULL    |       |
+| AGE   | int         | YES  | MUL | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+
+QUERY:
+
+	 ALTER TABLE PARENT DROP PRIMARY KEY;
+
+
+   DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int            | NO   |         | NULL    |       |
+| NAME| varchar(30)|YES|        | NULL    |       |
+| AGE   | int         | YES  | MUL | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+
+
+
+
+    -------------------->ACTUAL TABLE:
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | SHANKAR |   25 |
+|  3 | BALA    |   23 |
+|  4 | HARI    |   22 |
+|  5 | UPPU    |   19 |
++----+---------+------+
+
+
+
+------------->>ADD MORE THAN COLUMN TO EXISTING TABLE:
+	
+	ALTER-ADD
+
+    ALTER TABLE PARENT ADD  COLUMN GENDER VARCHAR(10),
+                                      ADD COLUMN SECTION VARCHAR(10);
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+--------+---------+
+| ID | NAME    | AGE  | GENDER | SECTION |
++----+---------+------+--------+---------+
+|  1 | VASU    |   21 | NULL   | NULL    |
+|  2 | SHANKAR |25 | NULL   | NULL    |
+|  3 | BALA    |   23 | NULL   | NULL    |
+|  4 | HARI    |   22 | NULL   | NULL    |
+|  5 | UPPU    |   19 | NULL   | NULL    |
++----+---------+------+--------+---------+
+
+------------->>DROP MORE THAN ONE COLUMN IN THE EXISTING TABLE:
+
+	ALTER-DROP
+
+mysql> ALTER TABLE PARENT DROP COLUMN GENDER,
+                               		 DROP COLUMN SECTION;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | SHANKAR |   25 |
+|  3 | BALA    |   23 |
+|  4 | HARI    |   22 |
+|  5 | UPPU    |   19 |
++----+---------+------+
+
+
+   ------------->>> RENAME A PARTICULAR COLUMN NAME
+
+		ALTER-RENAME
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | SHANKAR |   25 |
+|  3 | BALA    |   23 |
+|  4 | HARI    |   22 |
+|  5 | UPPU    |   19 |
++----+---------+------+
+
+
+mysql> ALTER TABLE PARENT RENAME COLUMN AGE TO STD_AGE;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+---------+
+| ID | NAME    | STD_AGE |
++----+---------+---------+
+|  1 | VASU    |      21 |
+|  2 | SHANKAR |      25 |
+|  3 | BALA    |      23 |
+|  4 | HARI    |      22 |
+|  5 | UPPU    |      19 |
++----+---------+---------+
+
+
+--------->>ALTER -MODIFY  [CHANGING THE DATA TYPE OF A PARTICULAR COLUMN:]
+
+ALTER-MODIFY:
+		CHANGING THE DATA TYPE OF A PARTICULAR COLUMN
+		ADDING THE CONSTRAINTS TO A PARTICULAR COLUMN
+
+mysql> DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | NO   | PRI | NULL    |       |
+| NAME  | varchar(20) | YES  |     | NULL    |       |
+| AGE   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+
+mysql> ALTER TABLE PARENT MODIFY COLUMN AGE BIGINT;
+
+
+mysql> DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | NO   | PRI | NULL    |       |
+| NAME  | varchar(20) | YES  |     | NULL    |       |
+| AGE   | bigint      | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+-------------->>ALTER -MODIFY[ADDING THE CONSTRAINT TO THE PARTICULAR COLUMN
+
+
+mysql> DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    |   int          | NO   | PRI | NULL    |       |
+|NAME|varchar(20)| YES|     | NULL    |       |
+|AGE   | bigint      | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+mysql> ALTER TABLE PARENT MODIFY COLUMN AGE BIGINT  NOT NULL;
+
+
+mysql> DESCRIBE PARENT;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int              |   NO  | PRI   | NULL    |       |
+|NAME|varchar(20) | YES   |     | NULL    |       |
+| AGE  | bigint         | NO    |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+
+
+--------------------->>TRUNCATE [DELETE WHOLE ROWS IN THE TABLE]
+
+	*TRUNCATE DELETE THE ALL THE ROWS IN THE TABEL
+	*TRUNCATE DOESNOT DELETE THE STRUCTURE OF THE TABLE 
+	*ONCE ROW WILL BE DELETED IT CAN 'T BE ROLLBACK IN TRUNCATE.
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+-----+
+| ID | NAME    | AGE |
++----+---------+-----+
+|  1 | VASU    |  21 |
+|  2 | SHANKAR |  25 |
+|  3 | BALA    |  23 |
+|  4 | HARI    |  22 |
+|  5 | UPPU    |  19 |
++----+---------+-----+
+
+
+mysql> TRUNCATE TABLE PARENT;
+
+
+mysql> SELECT *FROM PARENT;
+Empty set (0.00 sec)
+
+
+------------------>>>>DROP[TO DELETE THE WHOLE TABLE  || IT DELETE DATABASE]
+
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_final_pratice |
++-------------------------+
+| child                   |
+| parent                  |
+| sir_reg                 |
+| std_reg                 |
+| view_table              |
++-------------------------+
+
+
+mysql> DROP TABLE PARENT;
+
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_final_pratice |
++-------------------------+
+| child                   |
+| sir_reg                 |
+| std_reg                 |
+| view_table              |
++-------------------------+
+
+
+------------->>>>DROP[TO DELETE THE WHOLE DATABASE]
+
+DROP DATABASE EmployeeDB;
+
+
+
+
+--------------------------------------->> [CONSTRAINTS]  CONCEPT>>------------------
+
+===>>CONSTRAINTS :
+
+		SET OF INSTRUCTIONS OR RULES WHICH IS APPLIED 				OVER THE COLUMNS  OF A TABLE.
+
+=>PRIMARY KEY:
+
+	 *PRIMARY KEY UNIQUELY IDENTIFY THE  ROW.
+
+	 *IT WILL CREATE OVER A COLUMN..
+
+	 *IT DOESNT CONTAIN DUPLICATE VALUES.
+
+	 *IT DOESNT CONATAIN A NULL VALUES.
+
+	 *PRIMARY KEY=UNIQUEKEY+NOT NULL.
+
+
+=>FOREIGN KEY:
+
+	 	*IT CREATES A LINK BW THE TWO TABELS.
+
+ 		*IT ACTS AS FOREIGN KEY IN THE MAIN TABEL AND PRIMARY 			KEY IN THE ANOTHER TABEL.
+
+=>NOT NULL:
+		THAT COLUMN DOESNT CONTAIN THE NULL VALUES.
+
+=>UNIQUE :
+		COLUMN DOESNT CONTAIN THE DUPLICATE VALUES.
+
+=>CHECK:
+ 		CHECK CONSTRAINT ALLOWS YOU TO INSERT DATA BASED ON 			CONDITION.
+
+
+=>DEFAULT :
+ 		 DEFAULT CONSTRAINT ASSIGNS A DEFAULT VALUE TO A 				COLUMN. IF NO VALUE IS PROVIDED DURING AN INSERTION AT               		THAT TIME DEFAULT VALUE WILL BE INSERTED.
+
+
+==>>IMPLEMENTATION:
+
+ CREATE TABLE CONSTRAINTS_TABLE (
+
+     ID INT PRIMARY KEY AUTO_INCREMENT,
+
+     NAME VARCHAR(40) NOT NULL ,
+
+    LAST_NAME VARCHAR(40) NOT NULL DEFAULT 'HERO',
+
+    AGE INT NOT NULL CHECK(AGE>=18),
+
+     MIDDEL_NAME VARCHAR(30) NOT NULL UNIQUE
+     );
+
+
+ SHOW TABLES;
++-------------------------+
+| Tables_in_final_pratice |
++-------------------------+
+| child                   |
+| constraints_table       |
+| parent                  |
+| sir_reg                 |
+| std_reg                 |
+| view_table              |
++-------------------------+
+
+
+ INSERT INTO CONSTRAINTS_TABLE(NAME,LAST_NAME,AGE,MIDDEL_NAME)VALUES		("VASU","DEVA",21,"KURIMINELLI"),
+	("BALA","RAM",22,"KANDI");
+
+
+ SELECT *FROM CONSTRAINTS_TABLE;
++----+------+-----------+-----+-------------+
+| ID | NAME | LAST_NAME | AGE | MIDDEL_NAME |
++----+------+-----------+-----+-------------+
+|  1 | VASU | DEVA      |  21 | KURIMINELLI |
+|  2 | BALA | RAM       |  22 | KANDI       |
++----+------+-----------+-----+-------------+
+
+
+//HERE DEFAULT CONSTRAINT WORKS 
+//HERE I DID NOT PROVIDE ANY LAST_NAME BY DEFAULT IT INSERTS THE DEFAULT[HERO] VALUE.
+		\||/
+ INSERT INTO CONSTRAINTS_TABLE (NAME,AGE,MIDDEL_NAME) VALUES("KISHORE",25,"BA");
+
+
+ SELECT *FROM CONSTRAINTS_TABLE;
++----+---------+-----------+-----+-------------+
+| ID | NAME    | LAST_NAME | AGE | MIDDEL_NAME |
++----+---------+-----------+-----+-------------+
+|  1 | VASU         | DEVA      |  21 | KURIMINELLI |
+|  2 | BALA         | RAM       |  22 | KANDI       |
+|  3 | KISHORE   | HERO      |  25 | BA          |
++----+---------+-----------+-----+-------------+
+
+
+//CHECK CONSTRAINT CHECK THE CONDITION IF THE CONDITION TRUE THEN ONLY IT WILL INSERT THE DATA OTHER WISE IT DOESNOT INSERT.
+		\||/
+ INSERT INTO CONSTRAINTS_TABLE (NAME,AGE,MIDDEL_NAME) VALUES("HARI",17,"AA");
+ERROR 3819 (HY000): Check constraint 'constraints_table_chk_1' is violated.
+
+
+mysql> INSERT INTO CONSTRAINTS_TABLE (NAME,AGE,MIDDEL_NAME) VALUES("HARI",18,"AA");
+
+
+mysql> SELECT *FROM CONSTRAINTS_TABLE;
++----+---------+-----------+-----+-------------+
+| ID | NAME    | LAST_NAME | AGE | MIDDEL_NAME |
++----+---------+-----------+-----+-------------+
+|  1 | VASU    | DEVA      |  21 | KURIMINELLI |
+|  2 | BALA    | RAM       |  22 | KANDI       |
+|  3 | KISHORE | HERO      |  25 | BA          |
+|  4 | HARI    | HERO      |  18 | AA          |
++----+---------+-----------+-----+-------------+
+
+
+
+
+   --------------------------------------->> TCL COMMANDS:>>------------------
+
+COMMIT :
+	  IT SAVES THE CURRENT TRANSCATION.
+
+SAVEPOINT :
+	      IT SAVES THE CURRENT TRANSCATION POINT WITH SOME NAME.
+
+ROLLBACK TO :
+	        IT GOES BACKS TO THE PARTICULAR SAVEPOINT.
+
+ROLLBACK :
+	  IT GOES BACK TO THE INTIAL STAGE.
+
+
+
+IMP NOTE:
+
+		BY DEFAULT  MYSQL IN THE STATE OF AUTOCOMMIT=1;  TO 			MODIFY THESE STATE    BY WRITING LIKE THIS 
+                                SET AUTOCOMMIT=0; 
+
+		AUTOCOMMIT IS =1 IN THESE STAGE ALL CHANGES IN 		                                 PERMENTAT MODE.
+
+		TO CHANGE THESE STATE FROM PEMENTANT TO TEMPORARY 		              WE CAN ASSIGN SET AUTOCOMMIT =0.
+
+THEN ONLY CHANGES ARE CONVERTS FROM PERMENANT TO TEMPORARY.
+
+
+
+
+ SET AUTOCOMMIT=0;     -------->IT IS VERY IMPORTANT STEP
+
+INSERT INTO PARENT VALUES(7,"PRASANTH",21);
+
+
+mysql> SELECT *FROM PARENT;
++----+----------+------+
+| ID | NAME     | AGE  |
++----+----------+------+
+|  1 | VASU     |   21 |
+|  2 | BALU     |   22 |
+|  3 | UPPU     |   33 |
+|  4 | KISHORE  |   22 |
+|  5 | SHANKAR  |   33 |
+|  6 | HARI     |   25 |
+|  7 | PRASANTH |   21 |
++----+----------+------+
+
+
+mysql> COMMIT ;
+
+
+mysql> DELETE FROM PARENT WHERE ID=7;
+
+
+mysql> SAVEPOINT ONE;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+
+
+mysql> DELETE FROM PARENT WHERE ID=6;
+
+
+mysql> SAVEPOINT TWO;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
++----+---------+------+
+
+
+mysql> DELETE FROM PARENT WHERE ID=5;
+
+
+mysql> SAVEPOINT THREE ;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
++----+---------+------+
+
+
+mysql> DELETE FROM PARENT WHERE ID=4;
+
+
+mysql> SAVEPOINT FOUR ;
+
+
+mysql> SELECT *FROM PARENT;
++----+------+------+
+| ID | NAME | AGE  |
++----+------+------+
+|  1 | VASU |   21 |
+|  2 | BALU |   22 |
+|  3 | UPPU |   33 |
++----+------+------+
+
+
+mysql> ROLLBACK TO FOUR;
+
+
+mysql> SELECT *FROM PARENT;
++----+------+------+
+| ID | NAME | AGE  |
++----+------+------+
+|  1 | VASU |   21 |
+|  2 | BALU |   22 |
+|  3 | UPPU |   33 |
++----+------+------+
+
+
+mysql> ROLLBACK TO THREE;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
++----+---------+------+
+
+
+mysql> ROLLBACK TO TWO;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
++----+---------+------+
+
+
+mysql> ROLLBACK TO ONE;
+
+
+mysql> SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+
+
+mysql> ROLLBACK ;
+
+
+mysql> SELECT *FROM PARENT;
++----+----------+------+
+| ID | NAME     | AGE  |
++----+----------+------+
+|  1 | VASU     |   21 |
+|  2 | BALU     |   22 |
+|  3 | UPPU     |   33 |
+|  4 | KISHORE  |   22 |
+|  5 | SHANKAR  |   33 |
+|  6 | HARI     |   25 |
+|  7 | PRASANTH |   21 |
++----+----------+------+
+
+NOTE:
+	HERE 4 SAVE POINTS ARE THERE EACH AND EVERY TRANSCATION REPRESENTED WITH THESE SAVEPOINT NAMES. WE CAN MOVE TO ANY SAVEPOINTS WITH THE HELP OF THESE NAMES .WE CAN ALWAYS FOLLOWS MOVES THE LAST SAVEPOINT TO FIRST SAVEPOINT  IN THE SEQUENTIAL MANNER IS BETTER CHOICE.
+
+*SCINEARIO:
+	FOR SUPPOSE 4 SAVE POINTS ARE THERE NAME OF SAVEPOINTS ARE 
+	ONE 
+	TWO 
+	THREE
+	FOUR 
+IN THESE SCINEARIO WE ALWAYS GOES FROM  LAST SAVEPOINT TO FIRST SAVE POINT IN THESE SCINEARIO WE DIDNOT LOOSE ANY SAVEPOINTS DATA.
+
+*SECOND SCINEARIO:
+	FOR SUPPOSE WE CAN DIRECTLY MOVES TO THE TWO SAVE POINT AT THAT TIME WE LOOSE SAVEPOINT THREE AND FOUR DATA.  SO THAT IS THE REASON WE ALL WAYS MOVES FROM LAST SAVE POINT TO FIRST SAVE POINT IN SEQUENTIAL MANNER IS BETTER OPTION.
+
+
+
+ -------------------------------->> DCL COMMANDS::>>------------------
+
+DCL COMMANDS:
+
+ 	GRANT :
+		 TO GRANT THE PERMISSIONS TO THE USER.
+
+	REVOKE: 
+		TO GET BACK THE PERMISSIONS FROM THE USER.
+
+
+==>HERE WE PRINTS THE LIST OF USERS WHCIH ARE PRESENTED IN THE MYSQL WITH THE HELP OF THE BELOW COMMAND
+
+mysql> select user from mysql.user;
++------------------+
+| user             |
++------------------+
+| FRND             |
+| VASU             |
+| vasu1            |
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+
+==>  HERE WE CREATE THE ONE USER AND PROVIDED ONE PASSWORD FOR               THAT USER FOR IDENTIFICATION PURPOSE.
+
+mysql> CREATE USER 'DUMMY_USER' IDENTIFIED BY '123@';
+
+mysql> select user from mysql.user;
++------------------+
+| user             |
++------------------+
+| DUMMY_USER       |
+| FRND             |
+| VASU             |
+| vasu1            |
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+
+==>HERE WE GRANT SOME PERMISSIONS TO THE DUMMY_USER ::
+
+mysql> GRANT SELECT,INSERT,DELETE ON FINAL_PRATICE.PARENT TO 'DUMMY_USER';
+
+==>HERE WE EXIT FROM THE ROOT USER.
+mysql> EXIT
+Bye
+
+
+==>HERE WE LOGIN WITH DUMMY_USER WITH PASSWORD.
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u DUMMY_USER -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1448
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| final_pratice      |
+| information_schema |
+| performance_schema |
++--------------------+
+
+
+mysql> USE FINAL_PRATICE;
+Database changed
+
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_final_pratice |
++-------------------------+
+| parent                  |
++-------------------------+
+
+
+mysql> SELECT * FROM PARENT;
++----+----------+------+
+| ID | NAME     | AGE  |
++----+----------+------+
+|  1 | VASU     |   21 |
+|  2 | BALU     |   22 |
+|  3 | UPPU     |   33 |
+|  4 | KISHORE  |   22 |
+|  5 | SHANKAR  |   33 |
+|  6 | HARI     |   25 |
+|  7 | PRASANTH |   21 |
++----+----------+------+
+
+
+mysql> DELETE FROM PARENT WHERE ID =7;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> SELECT * FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+6 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+
+
+// HERE WE AGAIN LOG IN TO THE USER WITH CREDINTAIELS
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1449
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| backenddb          |
+| constraints        |
+| db_std             |
+| dcltcl             |
+| empdb              |
+| employee           |
+| employeedb         |
+| ems                |
+| exception_handling |
+| exceptiondb        |
+| final_pratice      |
+| vk                 |
++--------------------+
+
+
+mysql> USE FINAL_PRATICE;
+Database changed
+
+==>HERE WE TAKE BACK  THE PERMISSIONS FROM THE DUMMY_USER WITH THE HELP OF THE REVOKE COMMAND.
+ 
+mysql> REVOKE DELETE ON FINAL_PRATICE.PARENT FROM 'DUMMY_USER';
+
+mysql> EXIT
+Bye
+
+==>HERE WE AGAIN LOGIN WITH DUMMY_USER WITH THEIR PASSWORD. TO CHECK THE CHECK THE DELETE PERMISSON  PURPOSE.
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u DUMMY_USER -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1451
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| final_pratice      |
+| information_schema |
+| performance_schema |
++--------------------+
+
+
+mysql> USE FINAL_PRATICE;
+Database changed
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_final_pratice |
++-------------------------+
+| parent                  |
++-------------------------+
+
+
+mysql> SELECT * FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+6 rows in set (0.02 sec)
+
+mysql> DELETE FROM PARENT WHERE ID =6;
+ERROR 1142 (42000): DELETE command denied to user 'DUMMY_USER'@'localhost' for table 'parent'
+
+EXPLAINATION FOR THESE ERROR:
+
+	HERE IT SHOW S THE ERROR BCZ THERE IS NO RIGHTS TO  PERFORM THE  DELETE OPERATION ON THESE TABEL FOR THESE USER SO THAT IS THE REASON IT SHOWS THE ERROR. 
+
+
+
+
+--------------------------->> VIRTUAL GENERATION CONCEPT:>>------------------
+
+*CONCEPT:
+		VIRTUAL GENERATED COLUMNS ARE THE COLUMNS IN WHICH 		                 ONE COLUMN IS DEPENDENT ON ANOTHER COLUMN.FOR 				 VIRTUAL GENERATION PURPOSE WE USED AS  KEYWORD.
+		 THESE COLUMNS DOESNOT TAKE ANY SPACE RELATED TO 				 STORAGE AND IT CAN  RUN AT QUERY EXECUTION TIME.
+
+EX:
+	TOTAL_MARKS INT AS (M1+M2+M3)
+ 
+
+
+ CREATE TABLE STUDENT_MARKS (
+
+     ID INT PRIMARY KEY AUTO_INCREMENT,
+
+     NAME VARCHAR(50) NOT NULL,
+
+     M1 INT ,
+
+     M2 INT ,
+
+     M3 INT,
+
+     TOTAL INT AS (M1+M2+M3)
+     );
+
+
+ INSERT INTO STUDENT_MARKS(NAME,M1,M2,M3)VALUES("VASU",90,80,70);
+
+
+mysql> SELECT *FROM STUDENT_MARKS;
++----+------+------+------+------+-------+
+| ID | NAME | M1   | M2   | M3   | TOTAL |
++----+------+------+------+------+-------+
+|  1 | VASU |   90 |   80 |   70 |   240 |
++----+------+------+------+------+-------+
+
+
+mysql> INSERT INTO STUDENT_MARKS(NAME,M1,M2,M3)VALUES("BALA",80,70,70),		("KISHORE",89,78,88),
+	("UPPU",89,67,87),
+	("PRASANTH",98,99,78),
+	("HARI",98,89,78),
+	("HARI",99,89,99);
+
+
+mysql> SELECT *FROM STUDENT_MARKS;
++----+----------+------+------+------+-------+
+| ID | NAME     | M1   | M2   | M3   | TOTAL |
++----+----------+------+------+------+-------+
+|  1 | VASU     |   90 |   80 |   70 |   240 |
+|  2 | BALA     |   80 |   70 |   70 |   220 |
+|  3 | KISHORE  |   89 |   78 |   88 |   255 |
+|  4 | UPPU     |   89 |   67 |   87 |   243 |
+|  5 | PRASANTH |   98 |   99 |   78 |   275 |
+|  6 | HARI     |   98 |   89 |   78 |   265 |
+|  7 | HARI     |   99 |   89 |   99 |   287 |
++----+----------+------+------+------+-------+
+
+
+
+     --------------------------------------->> OPERATORS>>------------------
+			     ||
+
+
+*1.ARITHMETIC OPERATORS                                        *2.COMPARISION OPERATORS   
+ 
+                                           *3.LOGICAL OPERATORS
+
+      1. + ,  -  ,  * ,  / , %                                                            2.   <,  > ,   <=, >= ,!=  
+  
+                                  3. AND , OR,  NOT, BETWEEN ,LIKE, IN ,IS NULL
+
+	
+	*LOGICAL OPERATORS:
+
+   	 AND	 ==>TWO CONDITONS MUST BE TRUE.
+
+	 OR   	==>ANY ONE OF THE CONDITION HAS TO BE TRUE.
+
+	NOT  	==>INVERSE OF THE CONDITION.
+
+	BETWEEN ==>PRINTS IN THE RANGE..
+
+ 	LIKE 	 ==>IT USED FOR THE PATTRENS MATCHING PURPOSE.
+
+	IN  	 ==>ONLY SELECTD ROWS WILL BE DISPLAYED..
+
+	IS NULL 	==> IT CHECKS IS NULL  OR NOT.
+
+
+
+
+--------------------------------------->> COMPARISION OPERATORS>>------------------
+
+1.Equal to (=)
+
+QUERY:
+
+	SELECT * FROM EMPLOYEE WHERE SALARY = 20000;
+
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  2 | BALA | MALE   |  20000 |
+|  6 | CCC  | FEMALE |  20000 |
++----+------+--------+--------+
+
+2.Not Equal to (!= or <>):
+
+QUERY:
+	SELECT * FROM EMPLOYEE WHERE SALARY != 15000;
+
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
++----+---------+--------+--------+
+
+3.Greater Than (>):
+
+QUERY:
+
+	SELECT * FROM EMPLOYEE WHERE SALARY > 20000;
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  1 | VASU | MALE   |  25000 |
+|  5 | AAA  | FEMALE | 160000 |
++----+------+--------+--------+
+
+4.Less Than (<):
+
+QUERY:
+	SELECT * FROM EMPLOYEE WHERE SALARY < 15000;
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  4 | BBB  | FEMALE |  10000 |
++----+------+--------+--------+
+
+5.Greater Than or Equal To (>=):
+
+QUERY:
+	SELECT * FROM EMPLOYEE WHERE SALARY >= 20000;
+
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
++----+---------+--------+--------+
+
+
+6.Less Than or Equal To (<=):
+
+QUERY:
+
+	SELECT * FROM EMPLOYEE WHERE SALARY <= 20000;
+
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
++----+---------+--------+--------+
+
+:--------------------------------------->> LOGICAL OPERATORS>>------------------
+
+TRUTH TABLES:
+
+     *AND:
+
+	TRUE    TRUE       TRUE
+	TRUE     FALSE     FALSE
+	FALSE    TRUE      FALSE
+	FALSE     FALSE    FALSE
+
+
+
+    *OR:
+	FALSE     FALSE   FALSE
+	TRUE      TRUE    TRUE
+	TRUE      FALSE   TRUE
+	FALSE     TRUE    TRUE
+
+
+
+    *XOR:
+
+	FALSE      FALSE    FALSE
+	TRUE       TRUE     FALSE
+	TRUE       FALSE    TRUE
+	FALSE      TRUE     TRUE
+
+
+
+	1.AND Requires all conditions to be true then only true.
+	 2.OR Requires at least one condition to be true, then only it is true other                        wise false.
+
+1. AND Operator:
+
+QUERY:
+
+	SELECT * FROM EMPLOYEE WHERE GENDER = 'MALE' AND SALARY > 	20000;
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  1 | VASU | MALE   |  25000 |
+|  2 | BALA | MALE   |  20000 |
++----+------+--------+--------+
+
+2. OR Operator:
+
+QUERY:
+
+	SELECT * FROM EMPLOYEE WHERE GENDER = 'FEMALE' OR SALARY < 	15000;
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  4 | BBB  | FEMALE |  10000 |
+|  5 | AAA  | FEMALE | 160000 |
+|  6 | CCC  | FEMALE |  20000 |
++----+------+--------+--------+
+
+
+3. NOT Operator:
+
+QUERY:
+
+	SELECT * FROM EMPLOYEE WHERE NOT GENDER = 'MALE';
+
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  4 | BBB  | FEMALE |  10000 |
+|  5 | AAA  | FEMALE | 160000 |
+|  6 | CCC  | FEMALE |  20000 |
++----+------+--------+--------+
+
+Combining Logical Operators:
+
+QUERY:
+
+	SELECT * FROM EMPLOYEE 
+
+			WHERE 
+				GENDER = 'FEMALE' AND (SALARY < 15000 OR SALARY > 20000);
+
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  5 | AAA  | FEMALE | 160000 |
+|  6 | CCC  | FEMALE |  20000 |
++----+------+--------+--------+
+
+
+
+
+--------------------------------------->> FUNCTIONS>>------------------
+			||
+*STRING FUNCTIONS          *NUMERICAL FUNCTIONS          *DATE FUNCTIONS     
+
+*AGGREATION FUNCTIONS
+
+
+--------------------------------------->>STRING FUNCTIONS>>------------------
+
+
+
+     -->> UPPER ():
+
+	IT CONVERTS LOWER CASE TO UPPER CASE.
+
+
+mysql> SELECT UPPER("vasu");
++---------------+
+| UPPER("vasu") |
++---------------+
+| VASU          |
++---------------+
+
+
+	-->> LOWER ():
+
+		IT CONVERTS UPPER CASE TO LOWER CASE.
+
+mysql> SELECT LOWER("VASU");
++---------------+
+| LOWER("VASU") |
++---------------+
+| vasu          |
++---------------+
+
+	-->> LENGTH ():
+
+		IT GIVES THE LENGTH OF THE STRING.
+
+mysql> SELECT LENGTH("VASU");
++----------------+
+| LENGTH("VASU") |
++----------------+
+|              4 |
++----------------+
+
+
+	-->> TRIM ():
+		      IT REOMVES THE PREFIX AND SUFFIX SPACES 
+
+mysql> SELECT TRIM("  VASU  ");
++------------------+
+| TRIM("  VASU  ") |
++------------------+
+| VASU             |
++------------------+
+	
+	-->> SUBSTRING ():
+			IT GIVES SOME PART OF THE STRING 
+
+mysql> SELECT SUBSTRING("VASU KURIMINELLI",1,5);
++-----------------------------------+
+| SUBSTRING("VASU KURIMINELLI",1,5) |
++-----------------------------------+
+| VASU                              |
++-----------------------------------+
+
+
+mysql> SELECT SUBSTRING("VASU KURIMINELLI",2,6);
++-----------------------------------+
+| SUBSTRING("VASU KURIMINELLI",2,6) |
++-----------------------------------+
+| ASU KU                            |
++-----------------------------------+
+
+		-->> CONCAT ():
+				IT COMBINES THE TWO STRINGS.
+
+mysql> SELECT CONCAT("VASU","KURIMINELLI");
++------------------------------+
+| CONCAT("VASU","KURIMINELLI") |
++------------------------------+
+| VASUKURIMINELLI              |
++------------------------------+
+
+
+--------------------------------------->>NUMERIC FUNCTIONS>>------------------
+
+
+	-->> ABS ():
+		IT CONVERTS THE -VE VALUE TO +VE VALUE.
+
+ SELECT ABS(-2.6789);
++--------------+
+| ABS(-2.6789) |
++--------------+
+|       2.6789 |
++--------------+
+
+
+		-->> SQRT ():
+				IT GIVES SQUARE ROOT VALUE OF 						PARTICULAR NUMBER.
+mysql> SELECT SQRT(25);
++----------+
+| SQRT(25) |
++----------+
+|        5 |
++----------+
+
+		-->> MOD ():
+				IT GIVES THE REMAINDER  VALUE
+mysql> SELECT MOD(10,2);
++-----------+
+| MOD(10,2) |
++-----------+
+|         0 |
++-----------+
+
+
+mysql> SELECT MOD(5,2);
++----------+
+| MOD(5,2) |
++----------+
+|        1 |
++----------+
+		-->> POW ():
+			IT GIVES THE POWER OF THAT GIVEN VALUE.
+
+mysql> SELECT POW(2,3);
++----------+
+| POW(2,3) |
++----------+
+|        8 |
++----------+
+
+		-->>TRUNCATE ():
+				IT REMOVES THE VALUE BASED ON OUR 					PARAMETERS.
+mysql> SELECT TRUNCATE(2.8989,1);
++--------------------+
+| TRUNCATE(2.8989,1) |
++--------------------+
+|                2.8 |
++--------------------+
+
+
+--------------------------------------->>DATE FUNCTIONS>>------------------
+
+
+mysql> SELECT CURRENT_DATE();
++----------------+
+| CURRENT_DATE() |
++----------------+
+| 2024-09-28     |
++----------------+
+
+
+mysql> SELECT CURRENT_TIME();
++----------------+
+| CURRENT_TIME() |
++----------------+
+| 22:33:51       |
++----------------+
+
+
+mysql> SELECT NOW();
++---------------------+
+| NOW()               |
++---------------------+
+| 2024-09-28 22:34:00 |
++---------------------+
+
+
+mysql> SELECT SYSDATE();
++---------------------+
+| SYSDATE()           |
++---------------------+
+| 2024-09-28 22:35:16 |
++---------------------+
+
+
+
+mysql> SELECT MONTH('2024-09-28');
++---------------------+
+| MONTH('2024-09-28') |
++---------------------+
+|                   9 |
++---------------------+
+
+
+mysql> SELECT YEAR('2024-09-28');
++--------------------+
+| YEAR('2024-09-28') |
++--------------------+
+|               2024 |
++--------------------+
+
+
+mysql> SELECT DAY('2024-09-28');
++-------------------+
+| DAY('2024-09-28') |
++-------------------+
+|                28 |
++-------------------+
+
+
+
+
+  -------------------------------->> AGGREATION FUNCTIONS:>>------------------
+    
+
+
+Aggregate Functions:
+
+	MAX(): Returns the maximum value from a set of values.
+
+	MIN(): Returns the minimum value from a set of values.
+
+	AVG(): Returns the average value of a numeric column.
+
+	SUM(): Returns the total sum of a numeric column.
+
+	COUNT(): Returns the number of rows that match a specified condition.
+
+	ROUND(): Rounds a numeric value to a specified number of decimal 				places.
+
+
+
+mysql> SELECT * FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+
+
+
+---->>PRATICAL IMPLEMENTATION OF Aggregate FUNCTIONS:
+
+
+mysql> SELECT MIN(AGE) FROM PARENT;
++----------+
+| MIN(AGE) |
++----------+
+|       21 |
++----------+
+
+
+
+mysql> SELECT MAX(AGE) FROM PARENT;
++----------+
+| MAX(AGE) |
++----------+
+|       33 |
++----------+
+
+
+mysql> SELECT AVG(AGE) FROM PARENT;
++----------+
+| AVG(AGE) |
++----------+
+|  26.0000 |
++----------+
+
+
+mysql> SELECT SUM(AGE) FROM PARENT;
++----------+
+| SUM(AGE) |
++----------+
+|      156 |
++----------+
+
+
+mysql> SELECT COUNT(AGE) FROM PARENT;
++------------+
+| COUNT(AGE) |
++------------+
+|          6 |
++------------+
+
+
+mysql> SELECT DISTINCT AGE FROM PARENT;
++------+
+| AGE  |
++------+
+|   21 |
+|   22 |
+|   33 |
+|   25 |
++------+
+
+
+
+	--------------------------------------->> CLAUSES CONCEPT>>-----------------------
+
+CLAUSES:
+	 *CLAUSES ARE USED TO RETRIVE THE DATA.
+	 *DATA CAN BE RETRIVED BASED ON SOME CONDITIONS.
+
+*MAIN USAGE OF CLAUSES: 
+
+		*TO GET THE DATA ,*SORT THE DATA ,*SEARCH THE DATA, 			*GROUP THE DATA
+
+
+CLAUSES:
+ 
+*WHERE CLAUSE:
+		IT IS USED TO RETRIVE THE DATA AND DELETE THE DATA 				BASED ON CERTAIN CONDITION.
+
+*FROM CLAUSE:
+		WORKS WITH PATTRENS TO DISPLAY THE TABEL AND ITS VALUE
+
+*ORDER BY :
+		IT SHOWS THE DATA IN ASCENDING ORDER OR DESCENDING 		               ORDER BY DEFAULT  IS  ASCENDING ORDER. MAIN PURPOSE IS 			SORTING PURPOSE.
+
+*GROUP BY:
+		ARRANGING DATA INTO GROUPS.
+
+*HAVING:
+		IT APPLIES AFTER GROUP BY CLAUSE FOR CONDITION 				CHECKING PURPOSE.
+
+*DISTINCT:
+		IT GIVES UNIQUE VALUES.
+
+*LIMIT:
+		Row Limitation.
+
+
+
+*SEARCHING DATA:
+		 SELECT   CLAUSE.
+
+*GROUPING DATA:
+		GROUP BY  CLAUSE ----IT ARRANGES THE DATA IN TO GROUPS.
+
+*SORTING DATA: 
+		ORDER BY CLAUSE.
+
+*FILTERING DATA:
+		WHERE CLAUSE.
+
+
+--------------------->>BASE TABLE:
+
+mysql> SELECT *FROM EMPLOYEE;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
++----+---------+--------+--------+
+
+
+
+                         ----------------------->>SELECT   CLAUSE>>-----------------------
+
+
+mysql> SELECT *FROM EMPLOYEE;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
+
+
+                              ----------------------->> WHERE CLAUSE>>-----------------------
+
+
+--------------------->>BASE TABLE:
+
+mysql> SELECT *FROM EMPLOYEE;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
++----+---------+--------+--------+
+
+
+
+QUESTION :  
+	FETCH THE DATA WHOSE SALARY IS GREATEN THAN OR EQUAL TO  20000?
+
+ SELECT * FROM EMPLOYEE
+ 			WHERE
+				 SALARY >=20000;
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  1 | VASU | MALE   |  25000 |
+|  2 | BALA | MALE   |  20000 |
+|  5 | AAA  | FEMALE | 160000 |
+|  6 | CCC  | FEMALE |  20000 |
++----+------+--------+--------+
+
+
+
+                  ----------------------->>GROUP BY CLAUSE>>-----------------------
+
+
+--------------------->>BASE TABLE:
+
+mysql> SELECT *FROM EMPLOYEE;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
++----+---------+--------+--------+
+
+
+QUESTION :
+	Total Salary per Gender?
+
+	 SELECT GENDER,SUM(SALARY) FROM EMPLOYEE
+ 						GROUP BY GENDER;
++--------+-------------+
+| GENDER | SUM(SALARY) |
++--------+-------------+
+| MALE   |       60000 |
+| FEMALE |      190000 |
++--------+-------------+
+
+
+QUESTION :
+	AVERAGE SALARY FOR EACH GENDER?
+
+	 SELECT GENDER,AVG(SALARY) FROM EMPLOYEE 
+						GROUP BY GENDER;
++--------+-------------+
+| GENDER | AVG(SALARY) |
++--------+-------------+
+| MALE   |  20000.0000 |
+| FEMALE |  63333.3333 |
++--------+-------------+
+
+QUESTION :
+	Count of Employees per Gender ?
+
+	 SELECT GENDER, COUNT(*) FROM EMPLOYEE 
+					GROUP BY GENDER;
++--------+----------+
+| GENDER | COUNT(*) |
++--------+----------+
+| MALE   |        3 |
+| FEMALE |        3 |
++--------+----------+
+
+
+QUESTION :
+	Average Salary per Gender for Groups with Average Salary Above 30000 ?
+
+
+	 SELECT GENDER, AVG(SALARY) AS avg_salary FROM EMPLOYEE 
+			GROUP BY GENDER HAVING avg_salary > 30000;
+
++--------+------------+
+| GENDER | avg_salary |
++--------+------------+
+| FEMALE | 63333.3333 |
++--------+------------+
+
+
+
+
+		------------------------------->>ORDER BY CLAUSE>>-----------------------
+
+--------------------->>BASE TABLE:
+
+mysql> SELECT *FROM EMPLOYEE;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
++----+---------+--------+--------+
+
+
+Query 1: 
+	Order by SALARY in Ascending Order (Default)?
+
+		 SELECT *FROM EMPLOYEE ORDER BY SALARY  ;
+
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  4 | BBB     | FEMALE |  10000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  2 | BALA    | MALE   |  20000 |
+|  6 | CCC     | FEMALE |  20000 |
+|  1 | VASU    | MALE   |  25000 |
+|  5 | AAA     | FEMALE | 160000 |
++----+---------+--------+--------+
+
+
+Query 2: Order by SALARY in Descending Order
+
+	SELECT *FROM EMPLOYEE ORDER BY SALARY DESC;
+
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  5 | AAA     | FEMALE | 160000 |
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  6 | CCC     | FEMALE |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
++----+---------+--------+--------+
+
+
+
+Query : Order by NAME in Ascending Order
+
+ 	 SELECT *FROM EMPLOYEE ORDER BY NAME ;
+
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  5 | AAA     | FEMALE | 160000 |
+|  2 | BALA    | MALE   |  20000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  6 | CCC     | FEMALE |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  1 | VASU    | MALE   |  25000 |
++----+---------+--------+--------+
+
+
+Query : Order by SALARY and Display Only the Top 3 Employees 
+
+
+	 SELECT * FROM EMPLOYEE ORDER BY SALARY DESC LIMIT 3;
+
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  5 | AAA  | FEMALE | 160000 |
+|  1 | VASU | MALE   |  25000 |
+|  2 | BALA | MALE   |  20000 |
++----+------+--------+--------+
+
+
+
+
+		--------------------------->>LIMIT CLAUSE>>-----------------------
+
+MAIN PURPOSE OF LIMIT CLAUSE :
+				Row Limitation:
+
+
+--------------------->>BASE TABLE:
+
+mysql> SELECT *FROM EMPLOYEE;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
++----+---------+--------+--------+
+
+
+Query 1:
+	 Select the First 3 Employees?
+
+mysql> SELECT * FROM EMPLOYEE LIMIT 3;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
++----+---------+--------+--------+
+
+
+
+Query 2: 
+	Select Employees with the Highest Salary (Top 2)?
+
+mysql> SELECT * FROM EMPLOYEE ORDER BY SALARY DESC LIMIT 2;
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  5 | AAA  | FEMALE | 160000 |
+|  1 | VASU | MALE   |  25000 |
++----+------+--------+--------+
+
+
+Query 3:
+	 Select Employees with the Lowest Salary (Top 3)
+
+mysql> SELECT * FROM EMPLOYEE ORDER BY SALARY LIMIT 3;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  4 | BBB     | FEMALE |  10000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  2 | BALA    | MALE   |  20000 |
++----+---------+--------+--------+
+
+
+
+Query 4: 
+		PRINT THE ALL THE ROWS BASED UPON SALARY FROM 				HIGHEST TO LOWEST ?
+
+mysql> SELECT * FROM EMPLOYEE ORDER BY SALARY DESC;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  5 | AAA     | FEMALE | 160000 |
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  6 | CCC     | FEMALE |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
++----+---------+--------+--------+
+
+
+Query 4.0:
+	 Select the  TOP 3 Employees Based on Salary
+
+mysql> SELECT * FROM EMPLOYEE ORDER BY SALARY DESC LIMIT 3;
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  5 | AAA  | FEMALE | 160000 |
+|  1 | VASU | MALE   |  25000 |
+|  2 | BALA | MALE   |  20000 |
++----+------+--------+--------+
+
+
+Query 4.1:
+	 Select the Highest 2nd and 3rd Employees Based on Salary
+
+
+mysql> SELECT * FROM EMPLOYEE ORDER BY SALARY DESC  LIMIT 1,2;
+
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  1 | VASU | MALE   |  25000 |
+|  2 | BALA | MALE   |  20000 |
++----+------+--------+--------+
+
+
+Query 4.2: Select the Last 3 Employees in the Table
+
+
+mysql> SELECT * FROM EMPLOYEE ORDER BY SALARY  LIMIT 3,3;
++----+------+--------+--------+
+| ID | NAME | GENDER | SALARY |
++----+------+--------+--------+
+|  6 | CCC  | FEMALE |  20000 |
+|  1 | VASU | MALE   |  25000 |
+|  5 | AAA  | FEMALE | 160000 |
++----+------+--------+--------+
+
+
+
+	--------------------------------------->>DISTINCT CLAUSE>>-----------------------
+
+DISTINCT Clause :
+		The DISTINCT clause is used to return unique values in a 				column or combination of columns, eliminating duplicates 				from the result set.
+
+
+--------------------->>BASE TABLE:
+
+mysql> SELECT *FROM EMPLOYEE;
++----+---------+--------+--------+
+| ID | NAME    | GENDER | SALARY |
++----+---------+--------+--------+
+|  1 | VASU    | MALE   |  25000 |
+|  2 | BALA    | MALE   |  20000 |
+|  3 | KISHORE | MALE   |  15000 |
+|  4 | BBB     | FEMALE |  10000 |
+|  5 | AAA     | FEMALE | 160000 |
+|  6 | CCC     | FEMALE |  20000 |
++----+---------+--------+--------+
+
+Query 1:
+	 Select Distinct GENDER?
+
+mysql> SELECT DISTINCT GENDER FROM EMPLOYEE;
++--------+
+| GENDER |
++--------+
+| MALE   |
+| FEMALE |
++--------+
+
+
+
+Query 2:
+	 Select Distinct SALARY?
+
+mysql> SELECT DISTINCT SALARY FROM EMPLOYEE;
++--------+
+| SALARY |
++--------+
+|  25000 |
+|  20000 |
+|  15000 |
+|  10000 |
+| 160000 |
++--------+
+
+Query 3: 
+	Select Distinct GENDER and SALARY?
+
+mysql> SELECT DISTINCT GENDER,SALARY FROM EMPLOYEE;
++--------+--------+
+| GENDER | SALARY |
++--------+--------+
+| MALE   |  25000 |
+| MALE   |  20000 |
+| MALE   |  15000 |
+| FEMALE |  10000 |
+| FEMALE | 160000 |
+| FEMALE |  20000 |
++--------+--------+
+
+Query 4: 
+	Select Distinct NAME and SALARY
+
+mysql> SELECT DISTINCT NAME ,SALARY FROM EMPLOYEE;
++---------+--------+
+| NAME    | SALARY |
++---------+--------+
+| VASU    |  25000 |
+| BALA    |  20000 |
+| KISHORE |  15000 |
+| BBB     |  10000 |
+| AAA     | 160000 |
+| CCC     |  20000 |
++---------+--------+
+
+
+
+	-------------->> LIKE OPERATOR : CONCEPT>>------------------
+
+
+LIKE OPERATOR :
+
+ 	*PATTRENS MATCHING PURPOSE.
+
+	*BOTH _ AND % ARE CALLED AS THE WILD CARD CHARACTERS.
+
+	* _ MEANS -->SINGLE CHARACTER..
+
+	* % =>MEANS ZERO OR MORE THAN ONE CHARACTER.
+
+NOTE:
+	_ AND % BOTH ARE CALLED AS WILD CARD CHARACTERS.
+
+
+EXAMPLE :
+
+	==> V% MEANS :
+		 	IT GIVES THE LIST OF NAMES WHOSE NAMES STARTS 				WITH V CHARACTER.
+
+               ==>%V% MEANS:
+			 IT GIVES THE LIST OF NAMES WHOSE NAME 					CONTAINS  V  CHARACTER IN THE NAMES.
+
+	==> %V MEANS:
+			 IT GIVES THE LIST OF NAMES WHOSE NAMES ENDS 				WITH V CHARACTER.
+ 
+               ==>_A%:
+	              		IT GIVES THE LIST OF NAMES WHOSE NAME CONTAIN 				ONLY ONE CHARACTER BEFORE THE Ath CHARACTER 			AND NEXT CONTATINS A TH  CHARACTER AFTER 					THAT ANY CHARACTERS WILL BE PRESENT.
+	
+
+
+ SELECT *FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+
+
+ SELECT *FROM PARENT WHERE NAME LIKE 'V%'; 
++----+------+------+
+| ID | NAME | AGE  |
++----+------+------+
+|  1 | VASU |   21 |
++----+------+------+
+
+
+ SELECT *FROM PARENT WHERE NAME LIKE '%U';
++----+------+------+
+| ID | NAME | AGE  |
++----+------+------+
+|  1 | VASU |   21 |
+|  2 | BALU |   22 |
+|  3 | UPPU |   33 |
++----+------+------+
+
+
+ SELECT *FROM PARENT WHERE NAME LIKE '%A%';
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+
+
+ SELECT *FROM PARENT WHERE NAME LIKE '_A%';
++----+------+------+
+| ID | NAME | AGE  |
++----+------+------+
+|  1 | VASU |   21 |
+|  2 | BALU |   22 |
+|  6 | HARI |   25 |
++----+------+------+
+
+
+
+	----------->>FOREIGN KEY CONCEPT:>>-------------------
+
+
+
+FOREIGN KEY:
+
+	 *IT CREATES A LINK BW THE TWO TABELS.
+
+ 	*IT ACTS AS FOREIGN KEY IN THE MAIN TABEL AND PRIMARY KEY IN THE 		ANOTHER TABEL.
+			
+   
+ CREATE TABLE PARENT(
+
+	 ID INT PRIMARY KEY ,
+
+ 	NAME VARCHAR(20),
+
+	 AGE INT
+
+	 );
+
+
+ CREATE TABLE CHILD (
+
+	 ID INT PRIMARY KEY,
+
+	 NAME VARCHAR(30),
+
+	 P_ID INT,
+
+	 FOREIGN KEY(P_ID) REFERENCES PARENT(ID)
+
+ 	);
+
+
+	 DESCRIBE PARENT;
+-- +-------+-------------+------+-----+---------+-------+
+-- | Field | Type        | Null | Key | Default | Extra |
+-- +-------+-------------+------+-----+---------+-------+
+-- | ID    | int         | NO   | PRI | NULL    |       |
+-- | NAME  | varchar(20) | YES  |     | NULL    |       |
+-- | AGE   | int         | YES  |     | NULL    |       |
+-- +-------+-------------+------+-----+---------+-------+
+
+
+-- mysql> DESCRIBE CHILD;
+-- +-------+-------------+------+-----+---------+-------+
+-- | Field | Type        | Null | Key | Default | Extra |
+-- +-------+-------------+------+-----+---------+-------+
+-- | ID    | int         | NO   | PRI | NULL    |       |
+-- | NAME  | varchar(30) | YES  |     | NULL    |       |
+-- | P_ID  | int         | YES  | MUL | NULL    |       |
+-- +-------+-------------+------+-----+---------+-------+
+
+
+  INSERT INTO PARENT VALUES(1,"VASU",21),(2,"BALA",22),(3,"KISHORE",19);
+
+
+
+  INSERT INTO CHILD VALUES(100,"AAA",1),(200,"BBB",2),(300,"CC",3);
+
+
+
+-- mysql> SELECT *FROM PARENT;
+-- +----+---------+------+
+-- | ID | NAME    | AGE  |
+-- +----+---------+------+
+-- |  1 | VASU    |   21 |
+-- |  2 | BALA    |   22 |
+-- |  3 | KISHORE |   19 |
+-- +----+---------+------+
+
+
+-- mysql> SELECT *FROM CHILD;
+-- +-----+------+------+
+-- | ID  | NAME | P_ID |
+-- +-----+------+------+
+-- | 100 | AAA  |    1 |
+-- | 200 | BBB  |    2 |
+-- | 300 | CC   |    3 |
+-- +-----+------+------+
+
+
+ DELETE FROM PARENT WHERE ID=3;
+-- ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`final_pratice`.`child`, CONSTRAINT `child_ibfk_1` FOREIGN KEY (`P_ID`) REFERENCES `parent` (`ID`))
+
+
+ERROR EXPLANATION:
+
+               		HERE VALUE DIDNOT DELETE FROM THE PARENT 					TABLE WHYBCZ IT IS MAPPED OR REFERENCED  TO 				THE  CHILD TABLE. IF YOU WANT TO DELETE THE 					ROW IN THE PARENT TABLE FIRST YOU HAVE TO 					DELETE IN THE CHILD TABLE THEN ONLY U DELETE IN 				THE PARENT TABLE  OTHER WISE THEY SHOW THE 		ABOVE  ERROR.
+
+
+ DELETE FROM CHILD WHERE P_ID=3;
+
+ SELECT *FROM CHILD;
+-- +-----+------+------+
+-- | ID  | NAME | P_ID |
+-- +-----+------+------+
+-- | 100 | AAA  |    1 |
+-- | 200 | BBB  |    2 |
+-- +-----+------+------+
+
+
+ DELETE FROM PARENT WHERE ID=3;
+
+ SELECT *FROM PARENT;
+-- +----+------+------+
+-- | ID | NAME | AGE  |
+-- +----+------+------+
+-- |  1 | VASU |   21 |
+-- |  2 | BALA |   22 |
+-- +----+------+------+
+
+
+
+
+ *DELETE FOREIGN KEY :
+
+			WE CAN'T DIRECTLY DELETE THE FOREIGN KEY WITH 				THE HELP OF THE [COLUMN NAME] IN THE TABEL.
+			BY TYPING BELOW COMMAND IT GIVES CONSTRAINT 			 REFERNCE WITH HELP OF REFERNCE ONLY U CAN 	DELETE. 
+
+	 	*COMMAND :
+			SHOW CREATE TABLE TABEL_NAME; 
+
+		IT GIVES IN THE TABEL LIKE  THESE OPTION [[ CONSTRAINT `child_ibfk_1]] DROP THESE REFERNCE THEN ONLY IT DELETE THE FOREIGN KEY .
+
+
+WE CAN'T DELETE DIRECTLY :
+
+	mysql> ALTER TABLE CHILD DROP FOREIGN KEY P_ID;
+	ERROR 1091 (42000): Can't DROP 'P_ID'; check that column/key exists
+COMMAND:
+                 mysql> SHOW CREATE TABLE CHILD;
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                                                                                                                                                                                          |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CHILD | CREATE TABLE `child` (
+  `ID` int NOT NULL,
+  `NAME` varchar(30) DEFAULT NULL,
+  `P_ID` int DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `P_ID` (`P_ID`),
+  CONSTRAINT `child_ibfk_1` FOREIGN KEY (`P_ID`) REFERENCES `parent` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
+
+
+
+mysql> ALTER TABLE CHILD DROP FOREIGN KEY child_ibfk_1;
+
+
+
+
+41 TH PAGE IN THE PPT:
+
+ACCORDING TO PPT:
+ 
+ FOREIGN KEY DELETION:
+
+   ALTER  TABLE CHILD DROP FOREIGN KEY P_ID;
+
+ADDING A ONE PARTICULAR COLUMN AND THAT COLUMN MUST BE A FOREIGN KEY 
+THEN 
+
+	ALTER TABLE CHILD
+	ADD COLUMN P_ID  INT ,
+	ADD CONSTRAINT P_ID 
+	FOREIGN KEY(P_ID) REFERENCES PARENT(ID);
+
+
+
+
+	------------------->>>NORMALIZATION>>-----------------------------------------
+
+DEFINATION:
+		THE PROCESS OF REDUCES THE REDUNCANCY OR DUPLICATION 		OF DATA AND STORE THE DATA IN DATABASE IN EFFICIENT 				MANNER. IT IS CALLED NORMALIZATION.
+		
+------------------------------------------NORMALIZATION---------------------------------------------------------------
+    |                            |                                              |                                           |
+  1NF                       2NF                                         3NF                                 BCNF
+
+1NF:
+	A CELL CONTAIN SINGLE VALUE.
+
+2NF:
+	NO PARITIAL DEPENDENCIES.
+
+3NF:
+	NO TRANSTIVE DEPENDENCIES.
+ 
+BCNF:
+	BOYCADE NORMAL FORM
+	PRIME ATTRIBUTES DOES NOT DEPENDENT ON  NON PRIME ATTRIBUTES. 
+
+
+
+DEPENDENCIES:
+		A TABLE CONTAIN PRIME ATTRIBUTES AND NON PRIME 		                                 ATTRIBUTES.
+
+PRIME ATTRIBUTES:
+		IT REPRESENTS THE ROW IN THE UNIQUE MANNERIN THE TABLE.
+
+NON-PRIME ATTRIBUTES:
+		IT DOESNOT REPRESENTS THE  ROW IN THE UNIQUE MANNER.
+
+
+PARITIAL DEPENDECIES:
+	 		ONE OR MORE  NON PRIME ATTRIBUTES DOESNOT 			              FULLY DEPENDENT ON THE ONE PRIME ATTRIBUTE.
+
+TRANSITIVE DEPENDENCIES:
+			ONE NON-PRIME ATTRIBUTE DEPENDENT ON 					ANOTHER NON-PRIME ATTRIBUTE.
+
+
+
+	----------------------->>>ACID PROPRITIES>>-----------------------------------------------
+
+ACID:	
+	A=>ATOMACITY
+	C=>CONSISTENCY
+	I=>ISOLATION
+	D=>DURABILITY
+	
+MAIN REASON:
+		THE MAIN PURPOSE OF ACID PROPRITIES IS TO KEEP DATA SAFE 		AND CONSISTENCY DURING DATABASE TRANSCATIONS EVEN IF 			SOMETHING GOES WRONG.
+
+------------------------------------------------------------ACID>>--------------------------------------------------------------------
+      |                             |                                     |                                              |
+    ATOMACITY         CONSISTENCY	        ISOLATION		DURABILITY
+      ||			||		||		      ||
+  ALL [OR] NONE          CORECTNESS             INDEPENDENT                           ||     												          			          SAVES THE CHANGES PERMENANTLY
+
+
+
+*ATOMACITY: 
+	 	HERE ALL THE TRANSCATIONS WILL BE DONE OR NONE OF THE 			TRNSCATIONS WIIL NOT HAPPEN IF IT IS IN PENDING STATE 				IT IS UNDEREGOES INTO THE NON-AUTOMACITY.
+
+EX: CASE1:
+	HERE 2 PERSONS ARE THERE
+		P1                           P2
+		BAL:500                   BAL:500
+P1 SENDS 200 TO P2 THAT MEANS 200 IS DEBETED FROM THE P1 ACCOUNT AND 200 WILL BE ADD IN TO THE P2 ACCOUNT. THESE IS AUTOMACITY.
+
+SECOND CASE:
+		NONE OF THE TRANSCATIOS WILL BE DONE.
+THIRD CASE:
+		IF IT IS IN PENDING STATE THEN IT IS NON-AUTOMACITY 				OPERATIONS.
+
+
+*CONSISTENCY:
+		IN THE ABOVE SCINEARIO 200 WILL BE SUCESSFULLY DEBETED 			FROM P1 ACCOUNT AND 200 WILL BE ADDED TO P2 ACCOUNT 			THESE IS CORRECTNESS. THESE IS CALLED CONSISTENCY.
+
+
+*ISOLATION:
+		TRANSCATIONS ARE INDEPENDENT
+EX:
+	        HERE 3 PERSONS ARE THERE
+
+		 P1                           P2                     P3
+		BAL:500                   BAL:500             BAL:500
+
+
+HERE P1 SENDS 200 TO P2 AND P3 SENDS 100 TO P1 THESE TRANSCATIONS ARE INDEPENDENT ON EACH OTHER.MEANS ONE TRANSCATION DOESNOT DEPENDENT ON EACH OTHER.
+
+
+*DURABILITY:
+		IT SAVES THE DATA PERMENANTLY EVEN IF THE SYSTEM CRASH 		OR POWEOFF AFTER THE TRANSCATION .TRANSCATION MUST 			BE SAVE IN DATABASE.
+
+EX:
+	        HERE 2 PERSONS ARE THERE
+
+		 P1                           P2                     
+		BAL:500                   BAL:500    
+         
+  HERE PERSON P1 SEND AMOUNT TO P2 ONCE THE TRANSCATIONS WILL DONE PERSON P1 MOBILE IS SWITCH OFF AT THAT TIME IT DOESNOT EFFECT TO THAT TRANSCATION THAT TRANSCATION WILL BE SAFE.SUCH TYPE OF SITUATIONS DOESNOT EFFECT THE TRANSCATIONS THAT IS CALLED DURABILITY.IT SAVES THE TRANSCATIONS PERMENANTLY AND SAFELY.
+
+
+
+		
+	        ----------------------->>>SQL JOINS>>-----------------------------------------------
+
+JOINS:
+	JOINS COMBINES THE TWO OR MORE TABLES AND PRODUCE A SINGLE 			TABLE AS A RESULT.
+
+			JOINS ARE MAINLY DIVIDED INTO 3 TYPES :
+
+            1.INNER JOIN :
+
+            2.OUTER JOIN: 
+		FURTHRER IT CAN BE  DIVIDED INTO 3 TYPES:
+
+ 			1.LEFT OUTER JOIN
+
+		 	2.RIGHT OUTER JOIN 
+
+			3.FULL OUTER JOIN
+
+		*NOTE:
+				FULL OUTER JOIN  DOESNOT SUPPORT IN 					 MYSQL IT CAN BE ACHEIVED BY USING 						UNION KEYWORD).
+
+            3.CROSS JOIN:
+
+			
+	  ----------->>>INNER JOIN>>-----------------------
+
+               =>INNER JOIN:
+		  IT GIVES THE COMMON VALUES IN BOTH THE TABLES.
+
+
+	--------------------->>>OUTER JOIN>>----------------------------
+
+            =>LEFT JOIN:
+    			IT GIVES THE COMMON VALUES  AND LEFT SIDE 					TABLE VALUES  IN THE TABLES.
+
+        =>RIGHT JOIN:  
+			   IT GIVES THE COMMON VALUES  AND RIGHT SIDE  			 	 TABLE VALUES  IN THE TABLES.
+
+     => FULL OUTER JOIN:
+			   IT GIVES THE COMMON VALUES IN THE BOTH THE 				   TABLES  AND REMAINING  VALUES OF     					    THE BOTH THE TABLES  .
+
+
+	---------------->>>SELF JOIN>>-----------------------------
+
+==> SELF JOIN:    
+		JOINS ARE USED ON SAME TABLE  [OR] JOINING THE TABLE 				ITSELF IS CALLED SELFJOIN .HERE   JOINING CONDITION MUST 			BE BELONGS TO THE SAME DATA TYPE.
+
+
+	---------------->>>CROSS JOIN>>---------------------------
+
+ CROSS JOIN:
+	     	IT MULTIPLIES THE EACH ROW WITH THE EACH ROW IN THE 		                                 NEXT TABLE.
+                     	 IT  DOESN'T RECQURIED ANY JOIN CONDITIONS IT JOIN BASED 		                ON THE SHARING DATA COLUMENS IN THE  BOTH THE TABLES.
+          		 BY DEFAULT  BOTH TABLES HAVING SHARING SIMILAR				COLUMNS THEN CROSS JOIN PERFOREMS THE INNER JOIN 				OTHER WISE IT MULTPLIED EACH ROW IN THE TABLE WITH 
+           		EACH ROW  IN THE NEXT TABLE.
+           
+  ==>Disadvantage: 
+		FOR SUPPOSE BOTH  TABLES CONTAIN THE DIFFERENT COLUMN 		NAME BUT IT STORES THE   SAME DATA AT THAT TIME EACH 			ROW IS MULTPLYED WITH EACH ROW IN THE NEXT TABLE.
+
+EXAMPLE:
+                FOR EXAMPLE FIRST TABLE CONTIAN THE [EMP_ID] AND SECOND TABLE 		CONTAIN THE [ID] BOTH CONATIN THE   SAME DATA BUT DIFFERENT 			COLUMNS NAMES AT THAT TIME CROSS JOIN PERFOREMES THE EACH 			ROW MULTIPLIED WITH THE EACH ROW IN THE SECOND  TABLE. IT IS 			MAIN -DISADVANTAGE.
+
+
+
+	----->>>PRATICAL IMPLEMENTATION OF JOIN>>------------------
+
+
+
+ CREATE TABLE TABEL1(
+     COLUMN1 INT );
+
+
+ CREATE TABLE TABEL2 (
+     COLUMN2 INT  );
+
+
+ INSERT INTO TABEL2 VALUES(10),(20),(30),(40);
+
+
+ INSERT INTO TABEL1 VALUES(10),(20);
+
+
+ SELECT *FROM TABEL1;
++---------+
+| COLUMN1 |
++---------+
+|      10 |
+|      20 |
++---------+
+
+
+ INSERT INTO TABEL2 VALUES(50);
+
+
+ SELECT *FROM TABEL2;
++---------+
+| COLUMN2 |
++---------+
+|      10 |
+|      20 |
+|      30 |
+|      40 |
+|      50 |
++---------+
+
+  	--------------->>>INNER JOIN>>--------------------
+
+QUERY:
+ 	SELECT *FROM TABEL1 AS T1 
+
+		INNER JOIN TABEL2 AS T2 
+ 
+			ON T1.COLUMN1=T2.COLUMN2;
++---------+---------+
+| COLUMN1 | COLUMN2 |
++---------+---------+
+|      10	 |      10 |
+|      20	 |      20 |
++---------+---------+
+
+
+		------------->>>LEFT  JOIN>>----------------------
+
+QUERY:
+		 SELECT *FROM TABEL1 AS T1
+
+     			   LEFT  JOIN TABEL2 AS T2
+  
+          				    ON T1.COLUMN1=T2.COLUMN2;
+
++---------+---------+
+| COLUMN1 | COLUMN2 |
++---------+---------+
+|      10 |      10 |
+|      20 |      20 |
++---------+---------+
+
+
+		-------------RIGHT  JOIN>>-------------------
+
+QUERY:
+	 SELECT *FROM TABEL1 AS T1  
+
+       			RIGHT JOIN TABEL2 AS T2
+
+               				 ON T1.COLUMN1 =T2.COLUMN2;
++---------+---------+
+| COLUMN1 | COLUMN2 |
++---------+---------+
+|      10	 |      10 |
+|      20 	|      20 |
+|    NULL   |      30 |
+|    NULL   |      40 |
+|    NULL   |      50 |
++---------+---------+
+
+		-------------->>>FULLOUTER   JOIN>>----------------------
+
+NOTE:
+	FULLOUTER JOIN DOESNOT SUPPORT IN THE MYSQL IT CAN BE ACHEIVIED 	BY THE UNION KEYWORD.
+
+QUERY:
+
+ SELECT *FROM TABEL1 AS T1 
+
+		FULLOUTER JOIN
+
+ 			TABEL2 AS T2 ON T1.COLUMN1=T2.COLUMN2;
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FULLOUTER JOIN TABEL2 AS T2 T1.COLUMN1=T2.COLUMN2' at line 1
+
+
+Error-Explanation: FULL OUTER JOIN DOESNOT SUPPORT.
+
+
+#UNION KEYWORD:
+
+                             THE UNION OPERATOR IS USED TO COMBINE THE RESULT SET OF 			TWO OR MORE SELECT STATEMENTS.
+		UNION OPERATOR SELECTS ONLY DISTINICT VALUES ONLY.
+
+UNION ALL:
+		UNION ALL is used here, which combines the results from both 		TABEL1 and TABEL2 without removing duplicates.
+
+
+  NOTE:
+	UNION ALL, which keeps duplicates, UNION returns only distinct[UNIQUE] 	values from the two tables.
+
+QUERY:
+	 SELECT *FROM TABEL1
+
+  			UNION
+ 				SELECT * FROM TABEL2 ;
++---------+
+| COLUMN1 |
++---------+
+|      10 |
+|      20 |
+|      30 |
+|      40 |
+|      50 |
++---------+
+
+QUERY:
+	 SELECT *FROM TABEL1
+			 UNION ALL 
+				SELECT *FROM TABEL2;
+
++---------+
+| COLUMN1 |
++---------+
+|      10 |
+|      20 |
+|      10 |
+|      20 |
+|      30 |
+|      40 |
+|      50 |
++---------+
+
+	------------->>>CROSS   JOIN>>----------------------
+
+
+NOTE:
+		Since TABEL1 has 2 rows, and TABEL2 has 5 rows, the result 			contains[[ 2 x 5 = 10 rows]], where each row from TABEL1 is 			combined with every row from TABEL2.
+
+QUERY:
+	 SELECT *FROM TABEL1
+ 			CROSS JOIN 
+				TABEL2;
+
++---------+---------+
+| COLUMN1 | COLUMN2 |
++---------+---------+
+|      20 |      10 |
+|      10 |      10 |
+|      20 |      20 |
+|      10 |      20 |
+|      20 |      30 |
+|      10 |      30 |
+|      20 |      40 |
+|      10 |      40 |
+|      20 |      50 |
+|      10 |      50 |
++---------+---------+
+
+
+WE CAN WRITE CROSS JOIN IN THIS MANNER ALSO.
+QUERY:
+	 SELECT *FROM TABEL1,TABEL2;
+
++---------+---------+
+| COLUMN1 | COLUMN2 |
++---------+---------+
+|      20 |      10 |
+|      10 |      10 |
+|      20 |      20 |
+|      10 |      20 |
+|      20 |      30 |
+|      10 |      30 |
+|      20 |      40 |
+|      10 |      40 |
+|      20 |      50 |
+|      10 |      50 |
++---------+---------+
+
+
+
+-------------------------------->>>SELF   JOIN>>-----------------------------------------------
+
+
+ EXAMPLE:
+
+		TABEL:
+
+		 CUSTOMER_ID	NAME	AGE
+		        1	 	  John       30    
+ 		        2		Jane	25
+		        3	  	 Mike	35
+		        4		Lucy	28
+ 		        5		Anna	22
+
+
+QUERY:
+
+	 SELECT  S1.CUSTOMER_ID,  S1.AGE,  S2.CUSTOMER_ID,  S2.AGE FROM 				Customers S1 
+			JOIN Customers s2  
+				on s1.age>s2.age;
+
+    -----------# (OR)
+    
+ SELECT S1.CUSTOMER_ID AS customer_id_1, S1.AGE AS age_1, 
+        S2.CUSTOMER_ID AS customer_id_2, S2.AGE AS age_2
+          FROM Customers S1
+                      JOIN Customers S2 
+                               ON S1.AGE > S2.AGE;
+
+
+
+	OUTPUT:
+			
+customer_id_1                      age_1             customer_id_2	            age_2
+
+ 	1		30		2		25		             
+ 	1		30		4		28
+			
+ 	1		30		5		22
+			
+ 	3		35		1		30
+			
+ 	3		35		2		25
+			
+ 	3		35		4		28
+			
+ 	3		35		5		22
+			
+ 	4		28		2		25
+			
+ 	4		28		5		22
+			
+ 	2		25		5		22			
+
+		--------------------------->>>RANKSCONCEPT>>------------------
+
+
+=>RANKS:
+	RANKS CONCEPT CAN BE ACHEIVED  IN TO MAINLY THREE TYPES AS 			MENTIONED BELOW.
+
+
+  	  *RANK()		=> IT DOESNOT GIVE PERFECT RESULTS
+     	 *ROW_NUMBER()    =>  IT GIVES THE RANK BASED UPON ROWNUMBER
+       	  *DENSE_RANK()    =>  IT IS GOOD FOR RANKING PURPOSE
+
+
+
+=>Rank Functions Working Example:
+
+	=>RANK():
+		          Marks       Rank
+			95   -     1
+			95    -    1
+			91    -    3
+
+	=>ROW_NUMBER():
+
+	           		  Marks    Rank
+			       95   -  1
+		  	       95   -  2
+			       89   -  3
+
+	=>DENSE_RANK():
+
+	           		Marks     Rank
+			      95  -   1
+		   	      95  -   1
+			      89  -   2
+			      89  -   2
+		 	      78  -   3
+
+=>SYNTAX:
+
+=>RANK():
+		SELECT ID,MARKS,RANK() OVER(ORDER BY MARKS DESC) FROM 		                          STD_REG;
+
+=>ROW_NUMBER():
+		SELECT ID,MARKS,ROW_NUMBER() OVER(ORDER BY MARKS 		                                           DESC) FROM STD_REG;
+
+=>DENSE_RANK():
+		SELECT ID,MARKS,DENSE_RANK() OVER(ORDER BY MARKS DESC) 		FROM STD_REG;
+
+
+
+      
+        =>RANKS CONCEPT PRATICAL IMPLEMENTATION:
+
+
+  --------->>ACTULA TABLE>>-------->
+
+      QUERY:
+
+ 	SELECT *FROM STD_REG;
+
+ +----+-------+------+--------+-------+
+ | ID | NAME  | AGE  | SALARY | MARKS |
+-- +----+-------+------+--------+-------+
+-- |  1 | VASU  |   20 |   1200 	|    80 |
+-- |  2 | bala  |   22 |  1200 	|    90 |
+-- |  3 | UPPU  |   20 |   1000 	|   100 |
+-- |  4 | HERRO |   21 |   1000	 |    95 |
+-- |  5 | hari  |   22 |    500 	|   100 |
+-- +----+-------+------+--------+-------+
+
+
+	 --------->>BY APPLYING RANK() FUNCTION >>--------
+
+
+QUERY:
+
+       SELECT ID,MARKS,RANK() OVER(ORDER BY MARKS DESC) FROM STD_REG;
+
+-- +----+-------+----------------------------------+
+-- | ID | MARKS | RANK() OVER(ORDER BY MARKS DESC) |
+-- +----+-------+----------------------------------+
+-- |  3 |   100 |               1 		|
+-- |  5 |   100 |               1 		|
+-- |  4 |    95 |                3		 |
+-- |  2 |    90 |                4		 |
+-- |  1 |    80 |                5		 |
+-- +----+-------+----------------------------------+
+
+     
+
+	------>>BY APPLYING ROW_NUMBER() FUNCTION >>--------
+
+QUERY:
+	 SELECT ID,MARKS,ROW_NUMBER() OVER(ORDER BY MARKS DESC) FROM                         STD_REG;
+
+-- +----+-------+----------------------------------------+
+-- | ID | MARKS | ROW_NUMBER() OVER(ORDER BY MARKS DESC) |
+-- +----+-------+----------------------------------------+
+-- |  3 |   100 |                   1		 |
+-- |  5 |   100 |                   2 		|
+-- |  4 |    95 |                    3		 |
+-- |  2 |    90 |                    4		 |
+-- |  1 |    80 |                    5		 |
+-- +----+-------+----------------------------------------+
+
+
+       ----------->> BY APPLYING DENSE_RANK() FUNCTION>>------------------:
+
+QUERY:
+  	 SELECT ID,MARKS,DENSE_RANK() OVER(ORDER BY MARKS DESC) FROM 	                 STD_REG;
+
+-- +----+-------+----------------------------------------+
+-- | ID | MARKS | DENSE_RANK() OVER(ORDER BY MARKS DESC) |
+-- +----+-------+----------------------------------------+
+-- |  3 |   100     |                    1 		|
+-- |  5 |   100     |                    1 		|
+-- |  4 |    95      |                    2 		|
+-- |  2 |    90      |                    3 		|
+-- |  1 |    80      |                    4 		|
+-- +----+-------+----------------------------------------+
+
+
+
+
+		---------------->>VIEWS_CONCEPT>>---------------------------
+  
+ VIEWS IN SQL:
+
+	=> VIRTUAL TABLE.
+
+	=>IT IS USED T0 MAKE SECURE ACCESS OF THE DATA.
+
+               => SIMPLE WAY OF ACCESSING THE DATA.
+
+
+           NOTE:
+		IF ANY MODIFICATIONS DONE ON  VIEWS IT WILL DIRECTLY 			                EFFECT ON THE MAIN TABLE AND VICES- VERSA
+
+----->>SYNTAX:
+
+/*
+   CREATE VIEW VIEW_NAME AS
+      YOUR QUERY
+*/
+
+
+
+ #EXAMPLE OF VIEWS:
+ 
+ 	 CREATE TABLE  STD_REG(
+
+     		 ID INT PRIMARY KEY,
+     		 NAME VARCHAR(20),
+      		AGE INT
+
+		);
+
+
+    SHOW TABLES;
+
+-- +-------------------------+
+-- | Tables_in_final_pratice |
+-- +-------------------------+
+-- | std_reg                 |
+-- +-------------------------+
+
+
+ INSERT INTO STD_REG(ID,NAME,AGE)VALUES(1,"VASU",20),(2,"BALA",21),(3,"UPPU",20),(4,"SHANKAR",21);
+
+
+
+
+-- mysql> SELECT *FROM STD_REG;
+-- +----+---------+------+
+-- | ID | NAME    | AGE  |
+-- +----+---------+------+
+-- |  1 | VASU    |   20 |
+-- |  2 | BALA    |   21 |
+-- |  3 | UPPU    |   20 |
+-- |  4 | SHANKAR |   21 |
+-- +----+---------+------+
+
+
+-- mysql> CREATE VIEW VIEW_TABLE AS SELECT *FROM STD_REG;
+
+
+-- mysql> SHOW TABLES;
+-- +-------------------------+
+-- | Tables_in_final_pratice |
+-- +-------------------------+
+-- | std_reg                 |
+-- | view_table              |
+-- +-------------------------+
+
+
+-- mysql> SELECT *FROM VIEW_TABLE;
+-- +----+---------+------+
+-- | ID | NAME    | AGE  |
+-- +----+---------+------+
+-- |  1 | VASU    |   20 |
+-- |  2 | BALA    |   21 |
+-- |  3 | UPPU    |   20 |
+-- |  4 | SHANKAR |   21 |
+-- +----+---------+------+
+
+
+  mysql> UPDATE VIEW_TABLE SET NAME="HERRO" WHERE ID=4;
+
+# IF ANY MODIFICATIONS DONE ON  VIEWS IT WILL DIRECTLY EFFECT ON THE MAIN TABLE AND VICES-VERSA
+
+-- mysql> SELECT *FROM VIEW_TABLE;
+-- +----+-------+------+
+-- | ID | NAME  | AGE  |
+-- +----+-------+------+
+-- |  1 | VASU  |   20 |
+-- |  2 | BALA  |   21 |
+-- |  3 | UPPU  |   20 |
+-- |  4 | HERRO |   21 |
+-- +----+-------+------+
+
+
+-- mysql> SELECT *FROM STD_REG;
+-- +----+-------+------+
+-- | ID | NAME  | AGE  |
+-- +----+-------+------+
+-- |  1 | VASU  |   20 |
+-- |  2 | BALA  |   21 |
+-- |  3 | UPPU  |   20 |
+-- |  4 | HERRO |   21 |
+-- +----+-------+------+
+
+ 
+
+                 
+	             ---------------->>INDEXES>>>---------------------------
+   
+
+INDEXES IN SQL:
+
+    		  INDEXES ARE USED TO FAST RETRIVING OF THE DATA AND 			  REDUCES THE TIME  AND QUIERIES ARE WORK IN 			                  EFFICIENT MANNER.
+      
+      
+==>SYNTAX:
+	==> CREATION OF INDEX:
+
+		CREATE INDEX  INDEX_NAME ON TABLE_NAME(COLUMNS);
+		
+	==>SHOW THE INDEX :
+
+			SHOW INDEX FROM TABLE_NAME;
+
+	==>DROP THE INDEX:
+
+	                    DROP INDEX INDEX_NAME ON TABLE_NAME;
+
+
+
+
+
+==>BASE TABLE:
+
+ SELECT * FROM PARENT;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+
+
+
+
+
+                -------->>>CREATING INDEX ON SINGLE COLUMN>>----------
+
+QUERY: 
+
+   	CREATE INDEX AGE_INDEX ON PARENT(AGE);
+
+
+mysql> SHOW INDEX FROM PARENT;
++--------+------------+-----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table  | Non_unique | Key_name  | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++--------+------------+-----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| parent |          0 | PRIMARY   |            1 | ID          | A         |           6 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| parent |          1 | AGE_INDEX |            1 | AGE         | A         |           4 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++--------+------------+-----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------
+
+
+==>HERE INTERNALLY APPLY THESE INDEXING CONCEPT FOR FAST RETRAVIALS:
+
+SELECT * FROM PARENT WHERE AGE>=25;
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  6 | HARI      |   25 |
+|  3 | UPPU     |   33 |
+|  5 | SHANKAR |  33 |
++----+---------+------+
+
+
+
+
+
+		------>>>CREATING INDEX ON MULTIPLE COLUMNS>>---------
+
+QUERY: 
+
+ 	CREATE INDEX INDEX_AGE_NAME ON PARENT(AGE,NAME);
+
+
+mysql> SHOW INDEX FROM PARENT;
++--------+------------+----------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| Table  | Non_unique | Key_name       | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++--------+------------+----------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| parent |          0 | PRIMARY        |            1 | ID          | A         |           6 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| parent |          1 | AGE_INDEX      |            1 | AGE         | A         |           4 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| parent |          1 | INDEX_AGE_NAME |            1 | AGE         | A         |           4 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
+| parent |          1 | INDEX_AGE_NAME |            2 | NAME        | A         |           6 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++--------+------------+----------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------
+
+
+==>HERE INTERNALLY APPLY THESE INDEXING CONCEPT FOR FAST RETRAVIALS
+
+QUERY:
+
+             SELECT *FROM PARENT WHERE AGE=21 AND NAME="VASU";
++----+------+------+
+| ID | NAME | AGE  |
++----+------+------+
+|  1 | VASU |   21 |
++----+------+------+
+
+==>DROP THE INDEX ::
+	
+	 DROP INDEX INDEX_AGE_NAME ON PARENT;
+
+
+
+
+	------------------->>STORED PROCEDURES>>------------------------
+
+#STORED PROCEDURES:
+
+    =>STORED PROCEDURES ARE ACT LIKE A FUNCTIONS .
+
+     =>STORED PROCEDURES USED TO STORED THE QUIERS AND THIS QUIERS USED 		ANY NUMBER OF TIMES  AT  ANYWHERE  BY USING ALIAS NAMES.
+
+        =>REUSEBLITY OF THE CODE.
+
+          =>WE CAN IMPROVE THE PERFOMANCE & REDUCE THE TIME AND WORK
+
+
+SIMPLE TERMS:
+
+	==>CODE RESUABILITY:            WITH THE HELP OF PROCEDURES NAME WE 					 CAN CALL ANY NUMBERS TIMES.
+
+	==>IMPROVED PERFOMANCE:    THESE QUERIES  ARE PRECOMPILED SO IT 				 	  EXECUTES FASTLY.
+
+	==>SECURITY:                          THEY  DID NOT KNOW WT QUERY WRITE 	      				INSIDE THE STORED PROCEDURE 					                TO OTHERS SO IT IMPROVES THE SECURITY.
+
+	==>LOW NETWORK TRAFFIC :   THE SERVER ONLY PASS THE PROCEDURE 					NAME INSTED OF PASSING WHOLE QUERY.
+
+
+/*
+=>SYNTAX:
+
+                DELIMITER $$
+	 CREATE PROCEDURE PROCEDURE_NAME(PARAMATERS OPTIONAL)
+  	   BEGIN
+
+    	    QUERIES........
+	    QUERIES........
+
+    	   END $$
+
+CALLING THE PR0CEDURE:
+			CALL PROCEDURE_NAME();
+ */
+
+
+
+
+====>WITHOUT PARAMETERS:
+
+	 DELIMITER $$
+	 CREATE PROCEDURE M1()
+  	   BEGIN
+    	      	SELECT *FROM PARENT;
+    	   END $$
+
+
+mysql> DELIMITER ;
+mysql> CALL M1();
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  1 | VASU    |   21 |
+|  2 | BALU    |   22 |
+|  3 | UPPU    |   33 |
+|  4 | KISHORE |   22 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+
+
+====>WITH PARAMETERS:
+
+NOTE:
+
+	[IN] KEYWORD USED TO SEPARATE THE   PASSING PARAMETER AND  		ACTUAL COLUMN NAME OTHER WISE  COLUMN COMPARES IT SELF .
+
+
+	 DELIMITER //
+ 	CREATE PROCEDURE PARAMS_PROCEDURE1( IN AGE_PARA INT)  
+     	BEGIN
+     		SELECT *FROM PARENT WHERE AGE > AGE_PARA;
+     	END //
+
+mysql> DELIMITER ;
+
+
+ CALL PARAMS_PROCEDURE1(25);
+
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  3 | UPPU    |   33 |
+|  5 | SHANKAR |   33 |
++----+---------+------+
+
+
+mysql> CALL PARAMS_PROCEDURE1(22);
++----+---------+------+
+| ID | NAME    | AGE  |
++----+---------+------+
+|  3 | UPPU    |   33 |
+|  5 | SHANKAR |   33 |
+|  6 | HARI    |   25 |
++----+---------+------+
+
+
+
+                                 
+                             ----------------<<TRIGGERS CONCEPT---------------------------      
+
+ TRIGGERS:
+
+        TRIGGERS ARE BLOCK OF CODE .IT ALWAYS EXCUTED AUTOMATICALLY
+        MAIN PURPOSE OF TRIGGERS  IS TO AUTOMATE EXCUTION OF CODE WHEN 		        EVENT OCCURS.
+        
+        MAIN TRIGGERS ARE  INSERT, UPDATE, DELETE.
+       
+ 
+   ---->>SYNTAX:
+
+   DELIMITER$$
+   CREATE TRIGGER TRIGGER_NAME 
+     (AFTER| BEFORE)( INSERT|UPDATE|DELETE) ON TABLE_NAME FOR EACH ROW
+     BEGIN
+     ------VARIBLE DECLERATION
+     ---TRIGGER CODE
+     END $$;
+
+
+
+
+    ----->>>>BEST EXAMPLE FOR TRIGGERS: ---->  
+
+      ---> ACTUAL TABLE----->
+       mysql> SELECT *FROM STD_REG;
+-- +----+-------+------+
+-- | ID | NAME  | AGE  |
+-- +----+-------+------+
+-- |  1 | VASU  |   20 |
+-- |  2 | BALA  |   21 |
+-- |  3 | UPPU  |   20 |
+-- |  4 | HERRO |   21 |
+-- +----+-------+------+
+      
+      
+      <---CREATION OF TRIGGER-----> 
+    
+    DELIMITER $$
+	 CREATE TRIGGER TRIGGER_BEFORE_INSERT_STD_REG 
+		BEFORE 	
+              INSERT ON STD_REG FOR EACH ROW
+      	BEGIN
+      		SET NEW.NAME=LOWER(NEW.NAME);
+     	 END $$
+
+
+-- mysql> INSERT INTO STD_REG VALUES(5,"HARI",22);
+
+
+-- mysql> SELECT *FROM STD_REG ;
+-- +----+-------+------+
+-- | ID | NAME  | AGE  |
+-- +----+-------+------+
+-- |  1 | VASU  |   20 |
+-- |  2 | BALA  |   21 |
+-- |  3 | UPPU  |   20 |
+-- |  4 | HERRO |   21 |
+-- |  5 | hari  |   22 |
+-- +----+-------+------+
+       
+      ----> EXPLANITATION------->
+
+     HERE TRIGGER IS ACTUALLY WORKS WHENEVER WE INSERT THE DATA AT THAT 	                                    TIME THIS TRIGGER WILL  AUTOMATICALLY EXECUTED 
+                                      INSIDE THAT LOGIC WILL APPLY
+
+     LOGIC FOR ABOVE CODE:
+
+                   WHENEVER WE INSERT THE ROW NAME MUST BE CONVERT INTO LOWER                              CASE SO THAT IS THE REASON IT INSERT  IN THE LOWER CASE.
+    
+
+
+
+
+------------------------------------------>>SUB QUERIEES>>-------------------------
+
+CONCEPT:
+	SUBQUERIES NOTHING BUT QUERY INSIDE THE ANOTHER QUERY. 
+	IT IS ALSO KNOWN AS NESTED QUERIES OR INNERQUERIES  OR QUERIES                     ARE EMBADED IN ANTOHER QUERIES.
+
+SYNTAX:
+	OUTER QUERY(SUB QUERS)
+
+
+   --  ACTUAL TABLE   ----
+   
+-- mysql> SELECT *FROM STD_REG;
+-- +----+-------+------+--------+
+-- | ID | NAME  | AGE  | SALARY |
+-- +----+-------+------+--------+
+-- |  1 | VASU  |   20 |   1200 |
+-- |  2 | BALA  |   21 |   1200 |
+-- |  3 | UPPU  |   20 |   1000 |
+-- |  4 | HERRO |   21 |   1000 |
+-- |  5 | hari  |   22 |    500 |
+-- +----+-------+------+--------+
+
+QUESTION:
+
+     	PRINT THE SECOND MAX SALARY PERSON DETAILS FROM THE TABLE ?
+
+-- mysql> SELECT *,MAX(SALARY) FROM STD_REG WHERE SALARY<(SELECT MAX(SALARY) FROM STD_REG);
+-- +------+------+------+--------+-------------+
+-- | ID   | NAME | AGE  | SALARY | MAX(SALARY) |
+-- +------+------+------+--------+-------------+
+-- |    3 | UPPU |   20 |   1000 	|        1000 |
+-- +------+------+------+--------+-------------+
+
+-- PRIN THE AVG SALARY OF THE WHOLE TABLE
+
+-- mysql> SELECT AVG(SALARY) FROM STD_REG;
+-- +-------------+
+-- | AVG(SALARY) |
+-- +-------------+
+-- |    980.0000 |
+-- +-------------+
+
+
+QUESTION:
+                  PRINT THE  STUDENTS WHOSE SALARY IS GREATER THAN AVERAGE                 	  SALARY   FROM THE TABLE 
+
+-- mysql> SELECT * FROM STD_REG WHERE SALARY>(SELECT AVG(SALARY) FROM 	STD_REG);
+-- +----+-------+------+--------+
+-- | ID | NAME  | AGE  | SALARY |
+-- +----+-------+------+--------+
+-- |  1 | VASU  |   20 	|   1200 |
+-- |  2 | BALA  |   21	 |   1200 |
+-- |  3 | UPPU  |   20 	|   1000 |
+-- |  4 | HERRO |   21	 |   1000 |
+-- +----+-------+------+--------+
+
+
+
+
+	----------------------->>CTE CONCEPT>>>--------------
+
+         
+    CTE: 
+  
+    *COMMON TABLE EXPRESSION.
+
+    *IT IS A TEMPERORY TABLE IT DOESNOT STORE THE DATA. 
+
+    *CTE IS MAINLY USED FOR REDABLITY PURPOSE MEANS EVEN COMPLEX QUERYS 		ALSO READS VERY EASY BY USING THE CTE.
+
+    *COMPLEX QUERYS ALSO SOLVES VERY EASY MANNER .
+
+    *CODE RESULBILITY.
+    
+SYNTAX:
+
+      WITH CTE_NAME AS (QUERY)
+
+      (OR)
+			
+	WITH expression_name [ ( column_name [,...n] ) ] - it is optional
+		AS 
+		( CTE_query_definition )
+
+
+
+       
+   --  ACTUAL TABLE   ----
+   
+-- mysql> SELECT *FROM STD_REG;
+-- +----+-------+------+--------+
+-- | ID | NAME  | AGE  | SALARY |
+-- +----+-------+------+--------+
+-- |  1 | VASU  |   20 	|   1200 |
+-- |  2 | BALA  |   21	|   1200 |
+-- |  3 | UPPU  |   20 	|   1000 |
+-- |  4 | HERRO |   21 	|   1000 |
+-- |  5 | hari  |   22 	|    500 |
+-- +----+-------+------+--------+
+
+
+QUESTION:
+		 PRINT THE  STUDENTS WHOSE SALARY IS GREATER THAN 				AVERAGE SALARY   FROM THE TABLE  ??
+
+
+          -------------------------->>>WITH SUBQURIES>>----------------
+
+QUERY:
+
+	 SELECT * FROM STD_REG WHERE SALARY>(SELECT AVG(SALARY) FROM 			STD_REG);
+
+-- +----+-------+------+--------+
+-- | ID | NAME  | AGE  | SALARY |
+-- +----+-------+------+--------+
+-- |  1 | VASU  |   20 	|   1200 |
+-- |  2 | BALA  |   21 	|   1200 |
+-- |  3 | UPPU  |   20 	|   1000 |
+-- |  4 | HERRO |   21  |   1000 |
+-- +----+-------+------+--------+
+
+
+
+     --------->>>ABOVE QUESTION WITH [CTE CONCEPT]:
+    
+QUERY:
+
+       mysql> WITH CTE_TABLE1 AS (SELECT AVG(SALARY) AS AVG_SALARY FROM                            STD_REG)
+                   -> SELECT *FROM STD_REG,CTE_TABLE1 WHERE                     	      STD_REG.SALARY>CTE_TABLE1.AVG_SALARY;
+
+
+-- +----+-------+------+--------+------------+
+-- | ID | NAME  | AGE  | SALARY | AVG_SALARY |
+-- +----+-------+------+--------+------------+
+-- |  1 | VASU  |   20 |   1200 	|   980.0000 |
+-- |  2 | BALA  |   21 |   1200 	|   980.0000 |
+-- |  3 | UPPU  |   20 |   1000 	|   980.0000 |
+-- |  4 | HERRO |   21 |   1000 	|   980.0000 |
+-- +----+-------+------+--------+------------+
+
+
+
+
+: --------------------------->>>DBMS MAPPINGS IN SIMPLE TERMS>>----------------
+
+
+**ONE-TO-ONE (1:1): 
+		 A STUDENT HAS ONE AADHAAR.
+	* EXAMPLE: 
+		ONE STUDENT HAS ONE AADHAAR NUMBER, AND 				ONE AADHAAR BELONGS TO ONE STUDENT.
+* TABLES:
+
+	STUDENT (STUDENT_ID, NAME, AADHAAR_ID)
+	AADHAAR (AADHAAR_ID, AADHAAR_NUMBER).
+
+*RELATION: 
+	STUDENT.AADHAAR_ID → AADHAAR.AADHAAR_ID (FK).
+
+
+**ONE-TO-MANY (1:M):
+		  *A STUDENT HAS MANY PHONE NUMBERS.
+
+		 * EXAMPLE:
+			 ONE STUDENT CAN HAVE MULTIPLE PHONE 				   	NUMBERS, BUT EACH PHONE BELONGS TO ONE 					STUDENT.
+* TABLES:
+
+	STUDENT (STUDENT_ID, NAME)
+	PHONE (PHONE_ID, STUDENT_ID, PHONE_NUMBER)
+
+ *RELATION:
+	 PHONE.STUDENT_ID → STUDENT.STUDENT_ID (FK)
+
+
+**MANY-TO-ONE (M:1):
+		  *MANY STUDENTS BELONG TO ONE UNIVERSITY.
+
+		* EXAMPLE:
+			 MANY STUDENTS STUDY IN ONE UNIVERSITY, BUT A 		  		UNIVERSITY HAS MANY STUDENTS.
+* TABLES:
+
+	STUDENT (STUDENT_ID, NAME, UNIVERSITY_ID)
+	UNIVERSITY (UNIVERSITY_ID, UNIVERSITY_NAME).
+
+* RELATION: 
+	  STUDENT.UNIVERSITY_ID → UNIVERSITY.UNIVERSITY_ID (FK).
+
+
+** MANY-TO-MANY (M:M):
+
+		→ MANY STUDENTS WORK ON MANY PROJECTS.
+
+		* EXAMPLE: 
+			MANY STUDENTS CAN WORK ON MANY PROJECTS, 				AND A PROJECT CAN HAVE MANY STUDENTS.
+* TABLES:
+
+	STUDENT (STUDENT_ID, NAME)
+	PROJECT (PROJECT_ID, PROJECT_NAME)
+	STUDENT_PROJECT (STUDENT_ID, PROJECT_ID) (BRIDGE TABLE)
+
+* RELATION:
+	STUDENT_PROJECT.STUDENT_ID → STUDENT.STUDENT_ID (FK)
+	STUDENT_PROJECT.PROJECT_ID → PROJECT.PROJECT_ID (FK)
+
+** SUMMARY:
+
+	*1:1 → ONE STUDENT HAS ONE AADHAAR.
+
+	*1:M → ONE STUDENT HAS MANY PHONE NUMBERS.
+
+	*M:1 → MANY STUDENTS BELONG TO ONE UNIVERSITY.
+
+	*M:M → MANY STUDENTS WORK ON MANY PROJECTS.
+
+
+
+: --------------------------->>>PRATICE QUESTIONS>>----------------
+
+
+mysql> SELECT *FROM CUSTOMER;
++----+---------------+
+| ID | CUSTOMER_NAME |
++----+---------------+
+|  1 | VASU                      |
+|  2 | BALA         	      |
+|  3 | HARI        	      |
+|  4 | PRASANTH             |
+|  5 | SHANKAR      	     |
++----+---------------+   
+
+
+mysql> SELECT *FROM ORDERS;
++------+--------------+------+-------+
+| O_ID | ORDER_NAME   | C_ID | PRICE |
++------+--------------+------+-------+
+|  100 | LAPTOP             |    1 |   500 |
+|  200 |  GOGOLE_PIXEL |    2 |  1000 |
+|  300 | VIVO                 |    3 |  2000 |
+|  400 | REDMI               |    4 |  2000 |
+|  500 | MAC                 |    5 |  2000 |
+|  600 | BALL                 |    1 |  1000 |
+|  700 | BASKETBALL    |    2 |  2000 |
+|  800 | TENNISBALL    |    3 |   500 |
+|  900 | PLASTIC BALL |    4 |   500 |
+| 1000 | FOOTBALL     |    5 |  1000 |
++------+--------------+------+-------+  
+
+
+1. Find the total amount spent by each customer:
+
+QUERY:
+
+      SELECT C.CUSTOMER_NAME,SUM(O.PRICE) FROM CUSTOMER AS C
+
+	 INNER JOIN 
+
+		ORDERS O ON C.ID=O.C_ID
+ 			        GROUP BY CUSTOMER_NAME;
+
++---------------+--------------+
+| CUSTOMER_NAME | SUM(O.PRICE) |
++---------------+--------------+
+| VASU          	|         1500 |
+| BALA          	|         3000 |
+| HARI          	|         2500 |
+| PRASANTH             |         2500 |
+| SHANKAR               |         3000 |
++---------------+--------------+
+
+
+2. List all orders placed by a specific customer (e.g., VASU):
+
+QUERY:
+
+  SELECT C.CUSTOMER_NAME,O.ORDER_NAME FROM CUSTOMER AS C 
+
+        	  INNER JOIN 
+
+		ORDERS AS O ON C.ID=O.C_ID
+			 WHERE C.CUSTOMER_NAME="VASU";
++---------------+------------+
+| CUSTOMER_NAME | ORDER_NAME |
++---------------+------------+
+| VASU          	| LAPTOP           |
+| VASU          	| BALL                |
++---------------+------------+
+
+
+3. Find customers who have made orders costing more than 1500:
+
+QUERY:
+
+	 SELECT C.CUSTOMER_NAME FROM CUSTOMER AS C 
+
+		INNER JOIN
+
+			 ORDERS AS O ON C.ID=O.C_ID 
+				              WHERE O.PRICE>1500;
++---------------+
+| CUSTOMER_NAME 	   |
++---------------+
+| HARI         	   |
+| PRASANTH    	   |
+| SHANKAR     	   |
+| BALA         	   |
++---------------+
+
+
+4. Count the number of orders each customer has made:
+
+QUERY:
+
+	 SELECT C.CUSTOMER_NAME ,COUNT(*) FROM CUSTOMER AS C 
+
+		INNER JOIN
+
+			 ORDERS AS O ON C.ID=O.C_ID
+					 GROUP BY C.CUSTOMER_NAME;
++---------------+----------+
+| CUSTOMER_NAME    | COUNT(*) |
++---------------+----------+
+| VASU              	  |        2 |
+| BALA       	  |        2 |
+| HARI         	 |        2 |
+| PRASANTH 	 |        2 |
+| SHANKAR       	 |        2 |
++---------------+----------+
+
+
+5. Find the most 3 expensive order placed and the customer who placed it:
+
+QUERY:
+
+	 SELECT C.CUSTOMER_NAME,O.PRICE FROM CUSTOMER AS C
+
+ 		INNER JOIN
+
+			 ORDERS AS O ON C.ID=O.C_ID 
+					ORDER BY O.PRICE DESC LIMIT 3;
++---------------+-------+
+| CUSTOMER_NAME  | PRICE |
++---------------+-------+
+| HARI          	|  2000 |
+| PRASANTH             |  2000 |
+| SHANKAR       	|  2000 |
++---------------+-------+
+
+
+
+6.Find customers who ordered "BALL" items:
+
+QUERY:
+
+	 SELECT C.CUSTOMER_NAME, O.ORDER_NAME FROM CUSTOMER AS C
+  
+			INNER JOIN
+
+				 ORDERS AS O ON C.ID=O.C_ID
+ 					WHERE O.ORDER_NAME='BALL';
++---------------+------------+
+| CUSTOMER_NAME  | ORDER_NAME |
++---------------+------------+
+| VASU         	 | BALL       |
++---------------+------------+
+
+
+7. List customers who have placed more than 1 order:
+
+QUERY:
+
+	 SELECT C.CUSTOMER_NAME,COUNT(*) FROM CUSTOMER AS C
+
+		 INNER JOIN ORDERS AS O 
+
+				ON C.ID=O.C_ID
+
+			     GROUP BY CUSTOMER_NAME HAVING COUNT(*)>1;
++---------------+----------+
+| CUSTOMER_NAME | COUNT(*) |
++---------------+----------+
+| VASU       	   |        2 |
+| BALA        	  |        2 |
+| HARI         	 |        2 |
+| PRASANTH 	 |        2 |
+| SHANKAR     	  |        2 |
++---------------+----------+
+
+
+
+
+       --------------------->>>PRATICE QUESTIONS  WORKING WITH 3 TABLES :>>------------
+
+
+mysql> SELECT*FROM CUSTOMER;
++----+---------------+
+| ID | CUSTOMER_NAME |
++----+---------------+
+|  1 | VASU          |
+|  2 | BALA          |
+|  3 | HARI          |
+|  4 | PRASANTH      |
+|  5 | SHANKAR       |
++----+---------------+
+
+
+mysql> SELECT * FROM ORDERS;
++------+--------------+------+-------+
+| O_ID | ORDER_NAME   | C_ID | PRICE |
++------+--------------+------+-------+
+|  100 | LAPTOP       |    1 |   500 |
+|  200 | GOGOLE_PIXEL |    2 |  1000 |
+|  300 | VIVO         |    3 |  2000 |
+|  400 | REDMI        |    4 |  2000 |
+|  500 | MAC          |    5 |  2000 |
+|  600 | BALL         |    1 |  1000 |
+|  700 | BASKETBALL   |    2 |  2000 |
+|  800 | TENNISBALL   |    3 |   500 |
+|  900 | PLASTIC BALL |    4 |   500 |
+| 1000 | FOOTBALL     |    5 |  1000 |
++------+--------------+------+-------+
+
+
+ CREATE TABLE PAYMENT (
+
+         P_ID INT PRIMARY KEY,
+
+         O_ID INT,
+
+         PAYMENT_METHOD VARCHAR(50),
+
+         STATUS VARCHAR(20),
+
+         FOREIGN KEY (O_ID) REFERENCES ORDERS(O_ID)
+     );
+
+
+mysql> INSERT INTO PAYMENT (P_ID, O_ID, PAYMENT_METHOD, STATUS) VALUES
+    -> (1, 100, 'CREDIT_CARD', 'COMPLETED'),
+    -> (2, 200, 'PAYPAL', 'PENDING'),
+    -> (3, 300, 'CREDIT_CARD', 'COMPLETED'),
+    -> (4, 400, 'DEBIT_CARD', 'COMPLETED'),
+    -> (5, 500, 'NET_BANKING', 'FAILED'),
+    -> (6, 600, 'CREDIT_CARD', 'COMPLETED'),
+    -> (7, 700, 'PAYPAL', 'PENDING'),
+    -> (8, 800, 'DEBIT_CARD', 'COMPLETED'),
+    -> (9, 900, 'CREDIT_CARD', 'PENDING'),
+    -> (10, 1000, 'PAYPAL', 'COMPLETED');
+
+
+mysql> SELECT * FROM PAYMENT;
++------+------+----------------+-----------+
+| P_ID | O_ID | PAYMENT_METHOD | STATUS    |
++------+------+----------------+-----------+
+|    1 |  100 | CREDIT_CARD    | COMPLETED |
+|    2 |  200 | PAYPAL         | PENDING   |
+|    3 |  300 | CREDIT_CARD    | COMPLETED |
+|    4 |  400 | DEBIT_CARD     | COMPLETED |
+|    5 |  500 | NET_BANKING    | FAILED    |
+|    6 |  600 | CREDIT_CARD    | COMPLETED |
+|    7 |  700 | PAYPAL         | PENDING   |
+|    8 |  800 | DEBIT_CARD     | COMPLETED |
+|    9 |  900 | CREDIT_CARD    | PENDING   |
+|   10 | 1000 | PAYPAL         | COMPLETED |
++------+------+----------------+-----------+
+
+1. Retrieve all customers, their orders, and payment details:
+
+QUERY:
+
+	SELECT  C.CUSTOMER_NAME, O.ORDER_NAME, O.PRICE,   				P.PAYMENT_METHOD,  P.STATUS      FROM CUSTOMER AS C  
+
+    	            INNER JOIN 
+
+		      ORDERS AS O ON C.ID=O.C_ID
+
+			   INNER JOIN
+
+				 PAYMENT AS P ON O.O_ID=P.O_ID;
+
+
++---------------+--------------+-------+----------------+-----------+
+| CUSTOMER_NAME | ORDER_NAME   | PRICE | PAYMENT_METHOD | STATUS    |
++---------------+--------------+-------+----------------+-----------+
+| VASU        	  | LAPTOP       |   500     |  CREDIT_CARD        | COMPLETED |
+| VASU        	  | BALL            |  1000    | CREDIT_CARD         | COMPLETED |
+| BALA        	  | GOGOLE_PIXEL |  1000| PAYPAL                     | PENDING   |
+| BALA        	  | BASKETBALL   |  2000 | PAYPAL       	        | PENDING   |
+| HARI         	 | VIVO               |  2000 | CREDIT_CARD        | COMPLETED |
+| HARI          	| TENNISBALL    |   500 | DEBIT_CARD            | COMPLETED |
+| PRASANTH   	   | REDMI         |  2000 | DEBIT_CARD            | COMPLETED |
+| PRASANTH     	 | PLASTIC BALL |   500 | CREDIT_CARD            | PENDING   |
+| SHANKAR       	| MAC                |  2000 | NET_BANKING   	       | FAILED    |
+| SHANKAR      	 | FOOTBALL     |  1000 | PAYPAL                      | COMPLETED |
++---------------+--------------+-------+----------------+-----------+
+
+
+2. Retrieve orders and payment details for a specific customer (e.g., VASU):
+
+QUERY:
+        SELECT  C.CUSTOMER_NAME, O.ORDER_NAME, O.PRICE, P.PAYMENT_METHOD,                    P.STATUS FROM CUSTOMER AS C 
+
+		INNER JOIN 
+
+		       ORDERS AS O ON C.ID=O.C_ID 
+
+		             INNER JOIN 
+
+			    PAYMENT AS P ON  O.O_ID = P.O_ID 
+
+				WHERE C.CUSTOMER_NAME="VASU";
+
+
++---------------+------------+-------+----------------+-----------+
+| CUSTOMER_NAME | ORDER_NAME | PRICE | PAYMENT_METHOD | STATUS    |
++---------------+------------+-------+----------------+-----------+
+| VASU          | LAPTOP     |   500 | CREDIT_CARD    | COMPLETED |
+| VASU          | BALL       |  1000 | CREDIT_CARD    | COMPLETED |
++---------------+------------+-------+----------------+-----------+
+
+
+3. Retrieve orders that have COMPLETED payments:
+
+QUERY:
+ 	  SELECT  C.CUSTOMER_NAME  O.ORDER_NAME ,   		O.PRICE,P.PAYMENT_METHOD,P.STATUS FROM CUSTOMER AS C
+
+	 INNER JOIN 
+
+		ORDERS AS O ON C.ID=O.C_ID 
+
+			INNER JOIN
+
+				 PAYMENT AS P ON O.O_ID=P.O_ID
+
+					 WHERE P.STATUS="COMPLETED";
+
+
++---------------+------------+-------+----------------+-----------+
+| CUSTOMER_NAME | ORDER_NAME | PRICE |PAYMENT_METHOD | STATUS    |
++---------------+------------+-------+----------------+-----------+
+| VASU          | LAPTOP    	 |   500	 | CREDIT_CARD   	 | COMPLETED |
+| HARI          | VIVO      	 |  2000 	| CREDIT_CARD   	 | COMPLETED |
+| PRASANTH      | REDMI            |  2000 	| DEBIT_CARD    	 | COMPLETED |
+| VASU          | BALL                   |  1000 	| CREDIT_CARD  	  | COMPLETED |
+| HARI          | TENNISBALL 	 |   500 	| DEBIT_CARD    	 | COMPLETED |
+| SHANKAR       | FOOTBALL       |  1000 	| PAYPAL        	 | COMPLETED |
++---------------+------------+-------+----------------+-----------+
+
+
+-----------------------
+RANDOM QUESTIONS:
+
+**QUESTION:
+	   HOW CAN WE FIND THE DUPLICATE ROWS IN THE TABLE ?
+
+To find duplicate records in a table, we can use COUNT() function in addition to that we use the SQL's GROUP BY and HAVING clauses.
+
+
+
+Table: Employees
+
+ID	Name	Department
+1	Alice	HR
+2	Bob	IT
+3	Alice	HR
+4	Eve	IT
+5	Alice	HR
+
+QUERY:
+
+	SELECT Name, Department, COUNT(*)
+
+			FROM Employees
+
+				GROUP BY Name, Department
+
+					HAVING COUNT(*) > 1;
+
+---------------------------------------
+
+**QUESTION:
+	    I WANT TO PRINT THE FIRST 2 AND LAST 2 RECODS OF THE TABLE ?
+
+
+STUDENT TABLE:
+
+id	name		age	grade
+1	John Doe		20	A
+2	Jane Smith	22	B
+3	Mike Johnson	21	A
+4	Olivia Taylor	21	B
+5	James Anderson	23	A
+6	Emma Thomas	22	B
+
+
+QUERY:
+	SELECT *FROM STUDENT ORDER BY ID ASC LIMIT 2;
+
+			UNION
+
+		SELECT * FROM STUDENT ORDER BY ID DESC LIMIT 2;
+
+OUTPUT:
+
+
+id	name		age	grade
+1	John Doe		20	A
+2	Jane Smith	22	B
+5	James Anderson	23	A
+6	Emma Thomas	22	B
+

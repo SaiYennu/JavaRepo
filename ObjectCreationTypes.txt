@@ -1,0 +1,179 @@
+
+
+-------->>>>HOW MANY WAYS CAN WE CREATE A OBJECT FOR THAT CLASS
+
+	1.NEW KEYWORD
+	2.CLONE METHODE
+	3.Class.forName()
+	4.Factory Method
+
+
+
+
+1.NEW KEYWORD:
+
+class Main
+{
+  
+  public static void main(String[]args)
+  {
+    
+   Test2 test2= new Test2(10);
+   test2.hello();
+   
+  }
+}
+
+
+class Test2
+{
+  int a;
+
+   Test2(int a)
+   {
+         this.a=a;
+        System.out.println(a);
+      }
+
+
+public void hello()
+{
+
+  System.out.println("Test2 methode");
+
+  }
+}
+
+
+
+
+---------------->>>>>>>>>2.CLONE METHODE
+
+IMP-Note:
+	 Step 1: Implement Cloneable
+	 Step 2: Override clone and make it public.
+
+class Test1 implements Cloneable { 
+
+         int a;
+
+    Test1(int a) 
+   {
+        this.a = a;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException { 
+        return super.clone();
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) 
+   {
+
+        try 
+       {
+            Test1 test1 = new Test1(10);
+            Test1 test2 = (Test1) test1.clone(); // Now you can call clone
+            System.out.println("Original: " + test1.a);
+            System.out.println("Cloned: " + test2.a);
+        } 
+       catch (CloneNotSupportedException e)
+       {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+----------------------->>>>>>>>3.Class.forName()
+
+class Test1 
+{
+    int a;
+
+    // No-argument constructor for Class.forName().newInstance()
+    public Test1()
+   {
+        this.a = 0; // Default value
+    }
+
+    public Test1(int a) 
+    {
+        this.a = a;
+    }
+
+    public void display() 
+   {
+        System.out.println("Value of a: " + a);
+    }
+}
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+
+        try 
+        {
+            // Using Class.forName() and getDeclaredConstructor().newInstance() to             	create an instance of Test1
+
+            Test1 test1 = (Test1) Class.forName("Test1").getDeclaredConstructor                                   ().newInstance();
+
+            test1.display(); // Output will show the default value of a
+
+            // Setting the value manually since we used the no-argument constructor
+            test1.a = 10;
+            test1.display(); // Output with updated value of a
+
+        } 
+catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | java.lang.reflect.InvocationTargetException e) 
+       {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+--------------------------------4.Factory Method
+
+4.Factory Method:
+		 You can create a static method within Test to allow controlled 		                 object creation.
+
+class Test
+{
+    
+  public static void main(String[]args)
+ {
+    
+   Test2 test2= Test2.instance(10);
+   test2.hello();
+   
+  }
+}
+	class Test2
+               {
+
+ 	 int a;
+	private Test2(int a)
+                {
+ 	 this.a=a;
+	 System.out.println(a);
+
+	}
+
+    public static Test2 instance(int a)
+   {
+       return new Test2(a);
+   }
+
+        public void hello()
+       {
+              System.out.println("Test2 methode");
+       }
+}
+
+

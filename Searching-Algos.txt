@@ -1,0 +1,250 @@
+CONCEPT:
+ 	SEARCHING IS NOTHING BUT FINDING THE ELEMENT IN THE GIVEN ARRAY.
+	MAINLY TWO TYPES OF SEARCHING ALGO ARE THERE
+
+	1.LINEAR SEARCH      	2.BINARY SEARCH
+
+IMP NOTE:
+	BINARY SEARCH ALGO ONLY USED FOR SORTED  ARRAYS ONLY.
+	IT IS MORE EFFICIENT THEN THE LINEAR SEARCH.
+
+TIME COMPLEXITY:
+		LINEAR SEARCH: O(n)
+
+	BINARY SEARCH:
+
+		BEST CASE :O(1)
+
+		AVG AND WORST CASE: O(logn)
+
+-------------------------------->>>>>LINEAR SEARCH
+
+		ITERATE THROUGH A ARRAY ONE ELEMENT AT A TIME.
+
+RUNTIME COMPLEXITY: 0[N].
+
+DISADVANTAGES:
+		*SLOW FOR THE LARGE DATA SETS.
+
+ADVANTAGES:
+		*FAST FOR SMALL AND MEDIUM DATA SETS.
+
+		*ARRAY ELEMENTS DOESNOT NEED TO SORTED.
+
+		*USEFUL FOR DATA STRUCTURES THAT DO NOT HAVE RANDOM 			ACCESS[LINKED LIST].
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+
+     int arr1[]=new int[]{10,20,1,5};
+
+     int elem=200,found=0;
+     
+     for(int i=0;i<arr1.length;i++)
+     {
+         if(arr1[i]==elem)
+         {
+            
+             found=1;
+	break;
+         }
+     }
+     if(found==1)
+     {
+        System.out.println(elem+"->"+"element found");  
+     }
+     else
+     {
+          System.out.println(elem+"->"+"element not  found");
+     }
+    }
+}
+
+
+------------------------------>>>>>>>>>>>>BINARY SERACH
+
+
+			SEARCH ALGO THAT FINDS THE POSITION OF A 					TARGET VALUE WITHIN A SORTED ARRAY.
+
+			HALF OF THE ARRAY IS ELIMINATED DURING EACH 				STEP.
+
+ADVANTAGE:
+		GOOD FOR LARGE DATASETS.
+
+THUMB RULE:
+		STEP1:
+			CALCULATE MID VALUE.
+		STEP2:
+			COMPARE SEARCH_ELEMENT AND MID 
+			
+		STEP3:
+			BASED ON THE ABOVE CASE REDUCE THE SEARCH 				SPACE.
+
+---->> WITH WHILE LOOP:
+
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+      
+      
+      int arr[]={1,2,3,4,5,6};
+      int search_ele=5;
+      int low=0,found=0;
+      int high=arr.length-1;
+      
+      while(low<=high)
+      {
+
+        int mid=(low+high)/2;
+        
+        if(search_ele==arr[mid])
+         {
+          System.out.print(arr[mid]);
+          found=1;
+          break;
+        }
+        else if(search_ele<arr[mid])
+        {
+          high=mid-1;
+        }
+        else
+        {
+          low=mid+1;
+        }
+   }
+      
+      if(found==1)
+        {
+        System.out.println(" found");
+        }
+      else
+       {
+        System.out.println("not-found");
+      }
+      
+  }
+}
+
+
+
+
+---->> WITH FOR LOOP:
+
+import java.util.*;
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+        
+     int arr[]=new int[]{10,20,1,5};
+     
+     Arrays.sort(arr);
+     
+    int search=5,found=0;
+    int low=0;
+    int high=arr.length;
+    
+   for(;low<=high;)
+   {
+       int mid=(low+high)/2;
+       
+               if(search==arr[mid])
+               {
+                   found=1;
+                   
+                   break;
+               }
+               else if(search<arr[mid])
+               {
+                   high=mid-1;
+               }
+               else
+               {
+                   low=mid+1;
+               }
+   }
+    if(found==1)
+    {
+       System.out.println("element is found");
+    }
+       else
+       {
+            System.out.println("element is not found");
+       }
+    
+    }
+}
+
+
+
+---->> WITH  PREDEFINED METHODE IN COLLECTIONS:
+
+int index=Arrays.binarySearch(array,target);
+
+	if(index>0)
+		System.out.println("ELEMENT FOUND");
+	else
+		System.out.println("ELEMENT NOT FOUND");
+
+
+
+---->>>BY USING RECURSION:
+	
+	
+import java.util.*;
+
+public class Main {
+  
+  static boolean binary_search(int arr[],int low,int high,int search_ele)
+{
+  
+  if(low>high)
+  {
+    return false;
+  }
+  
+  int mid=(low+high)/2;
+  
+  if(search_ele==arr[mid])
+  {
+    return true;
+  }
+  else if(search_ele<arr[mid])
+  {
+    return binary_search(arr,low,mid-1,search_ele);
+  }
+  else
+  {
+    return binary_search(arr,mid+1,high,search_ele);
+  }
+  
+  
+}
+    public static void main(String[] args)
+  {
+      
+      int arr[]={1,2,3,4,5};
+      
+      int search_ele=2;
+      
+      if(binary_search(arr,0,arr.length-1,search_ele))
+      {
+        System.out.println("found");
+      }
+      else
+      {
+        System.out.println("Not found");
+      }
+      
+        
+  }
+}
+
+Output:
+
+found

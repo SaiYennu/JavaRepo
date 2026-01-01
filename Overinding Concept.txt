@@ -1,0 +1,158 @@
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+        child c=new child();
+        c.show();
+    }
+}
+class parent{
+     void show()
+    {
+        System.out.println("parent class methode");
+    }
+}
+class child extends parent{
+     void show()
+    {
+        System.out.println("child  class methode");
+    }
+}
+
+output:
+          child  class methode
+
+
+------Another way of calling [UP CASTING]
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+             
+        parent p=new child(); //upcasting
+        p.show();
+    }
+}
+class parent{
+     void show()
+    {
+        System.out.println("parent class methode");
+    }
+}
+class child extends parent{
+     void show()
+    {
+        System.out.println("child  class methode");
+    }
+}
+
+output:
+child  class methode
+
+------------------------------------>>>>Static methods cant be overiden
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+        
+        child c=new child(); 
+        c.show();
+    }
+}
+class parent{
+      static void show()
+    {
+        System.out.println("parent class methode");
+    }
+}
+class child extends parent{
+     void show()
+    {
+        System.out.println("child  class methode");
+    }
+}
+
+
+Output:
+
+ERROR!
+/tmp/xq0x4QqNTv/HelloWorld.java:18: error: show() in child cannot override show() in parent
+     void show()
+          ^
+  overridden method is static
+1 error
+
+
+-------------------------------->>>>>>>We   Can't Overide the Varibles
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+            
+        parent p=new child();   ---[upcasting]
+        p.show();
+        System.out.println(p.a);
+    }
+}
+class parent{
+    int a=10;
+     void show()
+    {
+        System.out.println("parent class methode");
+    }
+}
+class child extends parent{
+    int a=20;
+     void show()
+    {
+        System.out.println("child  class methode");
+    }
+}
+output:
+child  class methode
+10
+
+
+=====>if we want to access the child class varibles then we use the [Downcasting]
+
+
+class HelloWorld {
+
+    public static void main(String[] args) {
+         
+        parent p=new child(); //upcasting
+        p.show();
+        System.out.println("parentclass varible"+"->"+p.a);
+        
+        child c = (child) p;
+        System.out.println("child class varible"+"->"+c.a);//down casting
+    }
+}
+
+class parent
+{
+    int a=10;
+     void show()
+    {
+        System.out.println("parent class methode");
+    }
+}
+class child extends parent{
+    int a=20;
+     void show()
+    {
+        System.out.println("child  class methode");
+    }
+}
+
+Output:
+
+	child  class methode
+	parentclass varible->10
+	child class varible->20
+
+
+

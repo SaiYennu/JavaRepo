@@ -1,0 +1,175 @@
+  
+------------->>>>Find even numbers without using the % operator?
+
+   int number=4;
+     if ((number & 1) == 0) 
+     {
+   	 System.out.println(number + " is even.");
+     } 
+   else
+    {
+    System.out.println(number + " is odd.");
+     }
+
+Output:
+
+	4 is even.
+
+EXPLANATION:
+
+BINARY REPRESENTAION:
+
+	
+	16  8  4  2  1
+	
+	
+		4 --- 100
+		1---  001 
+
+& TABLE:
+
+1 1 --1
+1 0 --0
+0 1 --0
+0 0 --0
+
+		 100
+		    &
+		 001
+		-----------
+		 0 0 [0]
+		-----------
+ IT TAKES THE LAST DIGIT  IS --0.  SO IT  IS A EVEN NUMBER .
+
+IF THE LAST DIGIT  IS --1 THEN IT IS ODD NUMBER.
+
+NUMBER=5 
+ 	101
+	&
+	001
+	-------
+	00[1]
+	-------
+HERE LAST DIGIT IS 1 SO IT IS ODD NUMBER
+
+
+--------------------------------------->>>>
+
+Find the largest of three numbers without using conditional statements
+
+    int a=1,b=2,c=3; 
+ 
+	int max = Math.max(a, Math.max(b, c));
+
+	System.out.println("Largest number: " + max);
+
+Output:
+
+	Largest number: 3
+
+
+
+
+------------->>>> Find the Square of a number without using *
+
+	int number=5,square=0;
+    
+    for(int i=1;i<=number;i++)
+    {
+
+           square=square+number;
+
+    }
+    
+    System.out.println("Square of the Number"+"->"+square);
+
+
+Output:
+
+         Square of the Number->25
+    
+
+------------->>>>Divide two numbers without using / operator and Get the remainder                     without using % operator
+
+	int a=5,b=2;
+
+	int quotient = 0;
+		while (a >= b)
+		 {
+ 		       a -= b;
+  		       quotient++;
+		  }
+
+	System.out.println("Quotient: " + quotient);
+	System.out.println("Remainder: " + a);
+
+
+Output:
+
+	Quotient: 2
+	Remainder: 1
+
+------------->>>>Count Occurrences of a Character in a String
+
+	String str = "programming";
+	char target = 'g';
+	int count = 0;
+
+	for (char c : str.toCharArray())
+               {
+   	 if (c == target) 
+	 {
+                    count++;
+             	 }
+              }
+
+System.out.println("Character " + target + " occurs " + count + " times.");
+
+Output:
+
+	Character g occurs 2 times.
+
+
+--------------------------->>LEFT SHIFT AND RIGHT SHIFT
+
+
+        int n1=4,n2=6;
+        System.out.println(n1<<1);
+        System.out.println(n1>>1);
+        
+        System.out.println(n2<<2);
+        System.out.println(n2>>2);
+
+OUTPUT:
+	8
+	2
+	24
+	1
+
+EXPLANATION:
+		16   8  4  2 1
+
+	BINARY REPRESENTATION.
+		4---100
+		6--110
+
+	4<<1:
+		HERE ONE BIT IS MOVES TOWARDS THE LEFT SIDE
+
+		4-100
+		4<<1
+		1000 --->8
+
+	4>>1:
+		HERE ONE BIT IS MOVES TOWARDS THE RIGHT SIDE
+
+		4-100
+		4>>1
+		10--->2
+
+	NOTE:
+		LEFT SIDE MOVE MEANS THE VALUE WILL BE INCREASED.
+		RIGHT SIDE MOVES MEANS THE VALUE WILL BE 				DECREASED.
+
+
+	
