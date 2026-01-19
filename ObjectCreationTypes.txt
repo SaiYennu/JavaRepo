@@ -119,9 +119,9 @@ public class Main
 
         try 
         {
-            // Using Class.forName() and getDeclaredConstructor().newInstance() to             	create an instance of Test1
+            // Using Class.forName() and getDeclaredConstructor().newInstance() to create an instance of Test1
 
-            Test1 test1 = (Test1) Class.forName("Test1").getDeclaredConstructor                                   ().newInstance();
+            Test1 test1 = (Test1) Class.forName("Test1").getDeclaredConstructor().newInstance();
 
             test1.display(); // Output will show the default value of a
 
@@ -141,7 +141,7 @@ catch (ClassNotFoundException | InstantiationException | IllegalAccessException 
 --------------------------------4.Factory Method
 
 4.Factory Method:
-		 You can create a static method within Test to allow controlled 		                 object creation.
+		 You can create a static method within Test to allow controlled object creation.
 
 class Test
 {
